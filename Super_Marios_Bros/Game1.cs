@@ -61,7 +61,7 @@ namespace Super_Marios_Bros
             GlobalContent.Initialize();
 
             			CameraSetup.SetupCamera(SpriteManager.Camera, graphics);
-            Type startScreenType = null;
+            Type startScreenType = typeof(Super_Marios_Bros.Screens.World1level1);
 
             var commandLineArgs = Environment.GetCommandLineArgs();
             if (commandLineArgs.Length > 0)

@@ -65,6 +65,11 @@ C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\FlatRedBallDesktopGL.pdb
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\GumCoreXnaPc.pdb
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\StateInterpolation.pdb
-C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\x86\Debug\content\screens\gamescreen\tiled.tmx
-C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\screens\world_1_1\tiles.png
-C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\screens\world_1_1\world_1_1map.tmx
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\flatredballprojects\platformers\platformers\content\standardtileset.tsx
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\flatredballprojects\platformers\platformers\content\standardtileseticons.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\screens\world1level1\tiled.tmx
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\screens\world1level1\tiles.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\flatredballprojects\platformers\platformers\content\standardtileset.tsx
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\flatredballprojects\platformers\platformers\content\standardtileseticons.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\screens\world1level1\tiled.tmx
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\screens\world1level1\tiles.png

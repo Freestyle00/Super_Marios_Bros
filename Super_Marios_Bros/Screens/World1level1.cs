@@ -16,12 +16,12 @@ using FlatRedBall.Localization;
 
 namespace Super_Marios_Bros.Screens
 {
-    public partial class GameScreen
+    public partial class World1level1
     {
 
         void CustomInitialize()
         {
-            Camera.Main.Y = -120;
+
 
         }
 

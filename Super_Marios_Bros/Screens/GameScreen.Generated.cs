@@ -14,8 +14,6 @@ namespace Super_Marios_Bros.Screens
         #if DEBUG
         static bool HasBeenLoadedWithGlobalContentManager = false;
         #endif
-        protected static Microsoft.Xna.Framework.Graphics.Texture2D tiles;
-        protected static FlatRedBall.TileGraphics.LayeredTileMap World_1_1Map;
         
         protected FlatRedBall.TileGraphics.LayeredTileMap Map;
         protected FlatRedBall.TileCollisions.TileShapeCollection SolidCollision;
@@ -60,7 +58,6 @@ namespace Super_Marios_Bros.Screens
         }
         public override void AddToManagers () 
         {
-            World_1_1Map.AddToManagers(mLayer);
             Factories.MarioFactory.Initialize(ContentManagerName);
             Factories.MarioFactory.AddList(MarioList);
             FlatRedBall.TileEntities.TileEntityInstantiator.CreateEntitiesFrom(Map);
@@ -73,7 +70,6 @@ namespace Super_Marios_Bros.Screens
             if (!IsPaused)
             {
                 
-                World_1_1Map?.AnimateSelf();;
                 for (int i = MarioList.Count - 1; i > -1; i--)
                 {
                     if (i < MarioList.Count)
@@ -96,9 +92,6 @@ namespace Super_Marios_Bros.Screens
         {
             base.Destroy();
             Factories.MarioFactory.Destroy();
-            tiles = null;
-            World_1_1Map.Destroy();
-            World_1_1Map = null;
             
             MarioList.MakeOneWay();
             for (int i = MarioList.Count - 1; i > -1; i--)
@@ -131,7 +124,6 @@ namespace Super_Marios_Bros.Screens
         }
         public virtual void RemoveFromManagers () 
         {
-            World_1_1Map.Destroy();
             for (int i = MarioList.Count - 1; i > -1; i--)
             {
                 MarioList[i].Destroy();
@@ -184,8 +176,6 @@ namespace Super_Marios_Bros.Screens
                 throw new System.Exception("This type has been loaded with a Global content manager, then loaded with a non-global.  This can lead to a lot of bugs");
             }
             #endif
-            tiles = FlatRedBall.FlatRedBallServices.Load<Microsoft.Xna.Framework.Graphics.Texture2D>(@"content/screens/world_1_1/tiles.png", contentManagerName);
-            World_1_1Map = FlatRedBall.TileGraphics.LayeredTileMap.FromTiledMapSave("content/screens/world_1_1/world_1_1map.tmx", contentManagerName);
             CustomLoadStaticContent(contentManagerName);
         }
         public override void PauseThisScreen () 
@@ -201,35 +191,14 @@ namespace Super_Marios_Bros.Screens
         [System.Obsolete("Use GetFile instead")]
         public static object GetStaticMember (string memberName) 
         {
-            switch(memberName)
-            {
-                case  "tiles":
-                    return tiles;
-                case  "World_1_1Map":
-                    return World_1_1Map;
-            }
             return null;
         }
         public static object GetFile (string memberName) 
         {
-            switch(memberName)
-            {
-                case  "tiles":
-                    return tiles;
-                case  "World_1_1Map":
-                    return World_1_1Map;
-            }
             return null;
         }
         object GetMember (string memberName) 
         {
-            switch(memberName)
-            {
-                case  "tiles":
-                    return tiles;
-                case  "World_1_1Map":
-                    return World_1_1Map;
-            }
             return null;
         }
     }

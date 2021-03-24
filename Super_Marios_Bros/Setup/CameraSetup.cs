@@ -40,7 +40,7 @@
                 IsFullScreen = false,
                 AllowWidowResizing = true,
                 TextureFilter = Microsoft.Xna.Framework.Graphics.TextureFilter.Point,
-                ResizeBehavior = ResizeBehavior.IncreaseVisibleArea,
+                ResizeBehavior = ResizeBehavior.StretchVisibleArea,
                 DominantInternalCoordinates = WidthOrHeight.Height,
             }
             ;

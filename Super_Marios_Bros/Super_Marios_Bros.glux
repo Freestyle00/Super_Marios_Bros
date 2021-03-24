@@ -169,38 +169,6 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>false</IndependentOfCamera>
         </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>AssociateWithFactory</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-            <PropertySave>
-              <Name>SortAxis</Name>
-              <ValueAsInt>0</ValueAsInt>
-            </PropertySave>
-            <PropertySave>
-              <Name>PartitionWidthHeight</Name>
-              <ValueAsFloat>32</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsSortListEveryFrameChecked</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile>PositionedObjectList (Generic)</SourceFile>
-          <SourceClassType>FlatRedBall.Math.PositionedObjectList&lt;T&gt;</SourceClassType>
-          <SourceClassGenericType>Entities\Mario</SourceClassGenericType>
-          <InstanceName>MarioList</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>false</IndependentOfCamera>
-        </NamedObjectSave>
       </NamedObjects>
       <Name>Screens\GameScreen</Name>
     </ScreenSave>
@@ -379,6 +347,103 @@
           <DefinedByBase>true</DefinedByBase>
           <IndependentOfCamera>false</IndependentOfCamera>
         </NamedObjectSave>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>X</Member>
+            <ValueAsFloat>100</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Y</Member>
+            <ValueAsFloat>-200</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Z</Member>
+            <ValueAsFloat>1</ValueAsFloat>
+          </CustomProperty>
+          <Properties>
+            <PropertySave>
+              <Name>AssociateWithFactory</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">Entity</ValueAsObject>
+            </PropertySave>
+            <PropertySave>
+              <Name>SortAxis</Name>
+              <ValueAsInt>0</ValueAsInt>
+            </PropertySave>
+            <PropertySave>
+              <Name>PartitionWidthHeight</Name>
+              <ValueAsFloat>32</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsSortListEveryFrameChecked</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+          </Properties>
+          <SourceType>Entity</SourceType>
+          <SourceFile>Entities/Mario</SourceFile>
+          <SourceClassType>Entities\Mario</SourceClassType>
+          <InstanceName>MarioInstance</InstanceName>
+          <AttachToContainer>false</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>false</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>AssociateWithFactory</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsAutoNameEnabled</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionName</Name>
+              <ValueAsString>MarioInstance</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionName</Name>
+              <ValueAsString>SolidCollision</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionType</Name>
+              <ValueAsInt>3</ValueAsInt>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionMass</Name>
+              <ValueAsFloat>0</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionElasticity</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsCollisionActive</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile>Collision Relationship</SourceFile>
+          <SourceClassType>FlatRedBall.Math.Collision.DelegateCollisionRelationship&lt;Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection&gt;</SourceClassType>
+          <InstanceName>MarioInstanceVsSolidCollision</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>false</IndependentOfCamera>
+        </NamedObjectSave>
       </NamedObjects>
       <Name>Screens\World1level1</Name>
       <BaseScreen>Screens\GameScreen</BaseScreen>
@@ -396,6 +461,12 @@
           <Name>Entities/Mario/PlatformerValuesStatic.csv</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <CreatesDictionary>true</CreatesDictionary>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/Mario/Mario_walking.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
       </ReferencedFiles>
@@ -486,6 +557,19 @@
             <Member>TextureScale</Member>
             <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
+          <CustomProperty>
+            <Type>string</Type>
+            <Member>CurrentChainName</Member>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>Microsoft.Xna.Framework.Graphics.Texture2D</Type>
+            <Member>Texture</Member>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
+            <Member>AnimationChains</Member>
+            <ValueAsString>Mario_walking</ValueAsString>
+          </CustomProperty>
           <Properties>
             <PropertySave>
               <Name>AssociateWithFactory</Name>
@@ -508,12 +592,12 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Height</Member>
-            <ValueAsFloat>32</ValueAsFloat>
+            <ValueAsFloat>16</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
             <Member>Width</Member>
-            <ValueAsFloat>32</ValueAsFloat>
+            <ValueAsFloat>16</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
@@ -578,6 +662,12 @@
       <Name>PlatformerValues</Name>
       <GenerateCode>true</GenerateCode>
     </CustomClassSave>
+    <CustomClassSave>
+      <CsvFilesUsingThis />
+      <RequiredProperties />
+      <Name>TopDownValues</Name>
+      <GenerateCode>true</GenerateCode>
+    </CustomClassSave>
   </CustomClasses>
   <ApplyToFixedResolutionPlatforms>true</ApplyToFixedResolutionPlatforms>
   <ExternallyBuiltFileDirectory>../../</ExternallyBuiltFileDirectory>
@@ -606,7 +696,7 @@
     <AllowWindowResizing>true</AllowWindowResizing>
     <Scale>100</Scale>
     <ScaleGum>100</ScaleGum>
-    <ResizeBehavior>IncreaseVisibleArea</ResizeBehavior>
+    <ResizeBehavior>StretchVisibleArea</ResizeBehavior>
     <ResizeBehaviorGum>StretchVisibleArea</ResizeBehaviorGum>
     <DominantInternalCoordinates>Height</DominantInternalCoordinates>
     <TextureFilter>1</TextureFilter>

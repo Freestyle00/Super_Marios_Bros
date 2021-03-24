@@ -18,7 +18,6 @@ namespace Super_Marios_Bros.Screens
         protected FlatRedBall.TileGraphics.LayeredTileMap Map;
         protected FlatRedBall.TileCollisions.TileShapeCollection SolidCollision;
         protected FlatRedBall.TileCollisions.TileShapeCollection CloudCollision;
-        private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Mario> MarioList;
         public GameScreen () 
         	: base ("GameScreen")
         {
@@ -29,8 +28,6 @@ namespace Super_Marios_Bros.Screens
             // Not instantiating for FlatRedBall.TileGraphics.LayeredTileMap Map in Screens\GameScreen (Screen) because properties on the object prevent it
             // Not instantiating for FlatRedBall.TileCollisions.TileShapeCollection SolidCollision in Screens\GameScreen (Screen) because properties on the object prevent it
             // Not instantiating for FlatRedBall.TileCollisions.TileShapeCollection CloudCollision in Screens\GameScreen (Screen) because properties on the object prevent it
-            MarioList = new FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Mario>();
-            MarioList.Name = "MarioList";
             // normally we wait to set variables until after the object is created, but in this case if the
             // TileShapeCollection doesn't have its Visible set before creating the tiles, it can result in
             // really bad performance issues, as shapes will be made visible, then invisible. Really bad perf!
@@ -58,8 +55,6 @@ namespace Super_Marios_Bros.Screens
         }
         public override void AddToManagers () 
         {
-            Factories.MarioFactory.Initialize(ContentManagerName);
-            Factories.MarioFactory.AddList(MarioList);
             FlatRedBall.TileEntities.TileEntityInstantiator.CreateEntitiesFrom(Map);
             base.AddToManagers();
             AddToManagersBottomUp();
@@ -70,14 +65,6 @@ namespace Super_Marios_Bros.Screens
             if (!IsPaused)
             {
                 
-                for (int i = MarioList.Count - 1; i > -1; i--)
-                {
-                    if (i < MarioList.Count)
-                    {
-                        // We do the extra if-check because activity could destroy any number of entities
-                        MarioList[i].Activity();
-                    }
-                }
             }
             else
             {
@@ -91,14 +78,7 @@ namespace Super_Marios_Bros.Screens
         public override void Destroy () 
         {
             base.Destroy();
-            Factories.MarioFactory.Destroy();
             
-            MarioList.MakeOneWay();
-            for (int i = MarioList.Count - 1; i > -1; i--)
-            {
-                MarioList[i].Destroy();
-            }
-            MarioList.MakeTwoWay();
             FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Clear();
             CustomDestroy();
         }
@@ -124,10 +104,6 @@ namespace Super_Marios_Bros.Screens
         }
         public virtual void RemoveFromManagers () 
         {
-            for (int i = MarioList.Count - 1; i > -1; i--)
-            {
-                MarioList[i].Destroy();
-            }
         }
         public virtual void AssignCustomVariables (bool callOnContainedElements) 
         {
@@ -154,10 +130,6 @@ namespace Super_Marios_Bros.Screens
             }
             if (CloudCollision != null)
             {
-            }
-            for (int i = 0; i < MarioList.Count; i++)
-            {
-                MarioList[i].ConvertToManuallyUpdated();
             }
         }
         public static void LoadStaticContent (string contentManagerName) 

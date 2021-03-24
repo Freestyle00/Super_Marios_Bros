@@ -25,10 +25,14 @@ namespace Super_Marios_Bros.DataTypes
         public System.Decimal DownhillMaxSpeedBoostPercentage;
         public const string Ground = "Ground";
         public const string Air = "Air";
+        public const string Running = "Running";
+        public const string RunningAir = "RunningAir";
         public static System.Collections.Generic.List<System.String> OrderedList = new System.Collections.Generic.List<System.String>
         {
         Ground
         ,Air
+        ,Running
+        ,RunningAir
         };
         
         

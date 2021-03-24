@@ -73,3 +73,7 @@ C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\flatredballprojects\platformers\platformers\content\standardtileseticons.png
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\screens\world1level1\tiled.tmx
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\screens\world1level1\tiles.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\entities\mario\mario_walking.achx
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\entities\mario\nes - super mario bros - mario & luigi.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\mario\mario_walking.achx
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\mario\nes - super mario bros - mario & luigi.png

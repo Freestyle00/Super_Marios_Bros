@@ -24,6 +24,7 @@ namespace Super_Marios_Bros.Entities
         static System.Collections.Generic.List<string> mRegisteredUnloads = new System.Collections.Generic.List<string>();
         static System.Collections.Generic.List<string> LoadedContentManagers = new System.Collections.Generic.List<string>();
         protected static System.Collections.Generic.Dictionary<System.String, Super_Marios_Bros.DataTypes.PlatformerValues> PlatformerValuesStatic;
+        protected static FlatRedBall.Graphics.Animation.AnimationChainList Mario_walking;
         
         private FlatRedBall.Sprite SpriteInstance;
         private FlatRedBall.Math.Geometry.AxisAlignedRectangle mAxisAlignedRectangleInstance;
@@ -430,13 +431,14 @@ namespace Super_Marios_Bros.Entities
                 SpriteInstance.AttachTo(this, false);
             }
             SpriteInstance.TextureScale = 1f;
+            SpriteInstance.AnimationChains = Mario_walking;
             if (mAxisAlignedRectangleInstance.Parent == null)
             {
                 mAxisAlignedRectangleInstance.CopyAbsoluteToRelative();
                 mAxisAlignedRectangleInstance.AttachTo(this, false);
             }
-            AxisAlignedRectangleInstance.Width = 32f;
-            AxisAlignedRectangleInstance.Height = 32f;
+            AxisAlignedRectangleInstance.Width = 16f;
+            AxisAlignedRectangleInstance.Height = 16f;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = oldShapeManagerSuppressAdd;
@@ -464,8 +466,9 @@ namespace Super_Marios_Bros.Entities
             {
             }
             SpriteInstance.TextureScale = 1f;
-            AxisAlignedRectangleInstance.Width = 32f;
-            AxisAlignedRectangleInstance.Height = 32f;
+            SpriteInstance.AnimationChains = Mario_walking;
+            AxisAlignedRectangleInstance.Width = 16f;
+            AxisAlignedRectangleInstance.Height = 16f;
             GroundMovement = Entities.Mario.PlatformerValuesStatic["Ground"];
             AirMovement = Entities.Mario.PlatformerValuesStatic["Air"];
             AfterDoubleJump = Entities.Mario.PlatformerValuesStatic["Air"];
@@ -517,6 +520,11 @@ namespace Super_Marios_Bros.Entities
                         PlatformerValuesStatic = temporaryCsvObject;
                     }
                 }
+                if (!FlatRedBall.FlatRedBallServices.IsLoaded<FlatRedBall.Graphics.Animation.AnimationChainList>(@"content/entities/mario/mario_walking.achx", ContentManagerName))
+                {
+                    registerUnload = true;
+                }
+                Mario_walking = FlatRedBall.FlatRedBallServices.Load<FlatRedBall.Graphics.Animation.AnimationChainList>(@"content/entities/mario/mario_walking.achx", ContentManagerName);
             }
             if (registerUnload && ContentManagerName != FlatRedBall.FlatRedBallServices.GlobalContentManager)
             {
@@ -544,6 +552,10 @@ namespace Super_Marios_Bros.Entities
                 {
                     PlatformerValuesStatic= null;
                 }
+                if (Mario_walking != null)
+                {
+                    Mario_walking= null;
+                }
             }
         }
         [System.Obsolete("Use GetFile instead")]
@@ -553,6 +565,8 @@ namespace Super_Marios_Bros.Entities
             {
                 case  "PlatformerValuesStatic":
                     return PlatformerValuesStatic;
+                case  "Mario_walking":
+                    return Mario_walking;
             }
             return null;
         }
@@ -562,11 +576,18 @@ namespace Super_Marios_Bros.Entities
             {
                 case  "PlatformerValuesStatic":
                     return PlatformerValuesStatic;
+                case  "Mario_walking":
+                    return Mario_walking;
             }
             return null;
         }
         object GetMember (string memberName) 
         {
+            switch(memberName)
+            {
+                case  "Mario_walking":
+                    return Mario_walking;
+            }
             return null;
         }
         protected bool mIsPaused;

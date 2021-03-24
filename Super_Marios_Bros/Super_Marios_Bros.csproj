@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="DataTypes\PlatformerValues.Generated.cs" />
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
+    <Compile Include="DataTypes\TopDownValues.Generated.cs" />
     <Compile Include="Entities\Mario.cs" />
     <Compile Include="Entities\Mario.Generated.cs">
       <DependentUpon>Mario.cs</DependentUpon>
@@ -104,6 +105,10 @@
     <Compile Include="TileGraphics\TileNodeNetworkCreator.cs" />
     <Compile Include="TileGraphics\Tileset.cs" />
     <Compile Include="TileGraphics\TilesetExtensionMethods.cs" />
+    <Compile Include="TopDown\AnimationSet.Generated.cs" />
+    <Compile Include="TopDown\DirectionBasedAnimationLayer.Generated.cs" />
+    <Compile Include="TopDown\Enums.Generated.cs" />
+    <Compile Include="TopDown\Interfaces.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FlatRedBall.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -141,6 +146,14 @@
     <Content Include="Content\shader.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="content\entities\mario\mario_walking.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Mario_walking</Name>
+    </None>
+    <None Include="content\entities\mario\nes - super mario bros - mario &amp; luigi.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>nes - super mario bros - mario &amp; luigi</Name>
+    </None>
     <None Include="content\entities\mario\platformervaluesstatic.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PlatformerValuesStatic</Name>

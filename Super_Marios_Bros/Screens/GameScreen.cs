@@ -21,13 +21,11 @@ namespace Super_Marios_Bros.Screens
 
         void CustomInitialize()
         {
-            Camera.Main.Y = -120;
 
         }
 
         void CustomActivity(bool firstTimeCalled)
         {
-
 
         }
 

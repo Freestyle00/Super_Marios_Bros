@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AESettingsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OffsetMultiplier>1</OffsetMultiplier>
+  <AnimationChainSettings />
+  <ExpandedNode>Walking_smallRight</ExpandedNode>
+  <ExpandedNode>Walking_smallLeft</ExpandedNode>
+  <ExpandedNode>Running_smallRight</ExpandedNode>
+  <ExpandedNode>Running_smallLeft</ExpandedNode>
+  <ExpandedNode>Idle_smallRight</ExpandedNode>
+  <ExpandedNode>Idle_smallLeft</ExpandedNode>
+  <ExpandedNode>Jumping_smallRight</ExpandedNode>
+  <ExpandedNode>Jumping_smallLeft</ExpandedNode>
+  <ExpandedNode>Drifting_smallRight</ExpandedNode>
+  <ExpandedNode>Drifting_smallLeft</ExpandedNode>
+  <ExpandedNode>Walking_BigRight</ExpandedNode>
+  <ExpandedNode>Walking_BigLeft</ExpandedNode>
+  <UnitType>Pixel</UnitType>
+</AESettingsSave>

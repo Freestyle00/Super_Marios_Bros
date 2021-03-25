@@ -5,4 +5,7 @@
     <property name="AirMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Air in PlatformerValuesStatic.csv" />
     <property name="AfterDoubleJump" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Air in PlatformerValuesStatic.csv" />
   </objecttype>
+  <objecttype name="Mario_Middle">
+    <property name="SpriteInstanceVisible" type="bool" default="true" />
+  </objecttype>
 </objecttypes>

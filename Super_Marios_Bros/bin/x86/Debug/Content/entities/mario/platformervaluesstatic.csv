@@ -1,3 +1,5 @@
 "Name (System.String, required)",MaxSpeedX (System.Single),AccelerationTimeX (System.Single),DecelerationTimeX (System.Single),Gravity (System.Single),MaxFallSpeed (System.Single),JumpVelocity (System.Single),JumpApplyLength (System.Single),JumpApplyByButtonHold (System.Boolean),UsesAcceleration (System.Boolean),CanFallThroughCloudPlatforms (System.Boolean),CloudFallThroughDistance (System.Single),IsUsingCustomDeceleration (System.Boolean),CustomDecelerationValue (System.Single),MoveSameSpeedOnSlopes (System.Boolean),UphillFullSpeedSlope (System.Decimal),UphillStopSpeedSlope (System.Decimal),DownhillFullSpeedSlope (System.Decimal),DownhillMaxSpeedSlope (System.Decimal),DownhillMaxSpeedBoostPercentage (System.Decimal)
 Ground,125,0.25,0.25,900,500,190,0.3,True,True,True,16,False,0,True,0,60,0,60,50
 Air,140,0.75,0.5,900,500,0,0,False,True,False,0,False,0,True,0,0,0,0,0
+Running,170,0.25,0.75,900,500,190,0.3,True,True,False,0,False,0,True,0,0,0,0,0
+RunningAir,190.4,0.75,0.5,900,500,0,0,False,True,False,0,False,0,True,0,0,0,0,0

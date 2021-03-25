@@ -34,11 +34,12 @@ namespace Super_Marios_Bros.Entities
         {
             animationController.Activity();
             RUN();
+            PassonClass.marioX = this.X;
+            PassonClass.marioY = this.Y;
         }
 
         private void CustomDestroy()
         {
-
 
         }
 
@@ -47,7 +48,6 @@ namespace Super_Marios_Bros.Entities
 
 
         }
-
         void RUN()
         {
             animationController.Activity();
@@ -159,5 +159,7 @@ namespace Super_Marios_Bros.Entities
             //animationController.Layers.Add(runJump);
 
         }
+
+
     }
 }

@@ -56,7 +56,10 @@
     <Compile Include="Entities\Mario.Generated.cs">
       <DependentUpon>Mario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Mario_Middle.cs" />
+    <Compile Include="Entities\Mario_Middle.Generated.cs" />
     <Compile Include="Factories\MarioFactory.Generated.cs" />
+    <Compile Include="Factories\Mario_MiddleFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Game1.Generated.cs">
@@ -64,6 +67,7 @@
     </Compile>
     <Compile Include="GlobalContent.Generated.cs" />
     <Compile Include="GlueControl\GlueControlManager.Generated.cs" />
+    <Compile Include="PassonClass.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
     <Compile Include="Performance\PoolList.Generated.cs" />
     <Compile Include="Platformer\Enums.Generated.cs" />
@@ -157,6 +161,10 @@
     <None Include="content\entities\mario\platformervaluesstatic.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PlatformerValuesStatic</Name>
+    </None>
+    <None Include="content\entities\mario_middle\mariomiddle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>MarioMiddle</Name>
     </None>
     <None Include="content\flatredballprojects\platformers\platformers\content\standardtileset.tsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

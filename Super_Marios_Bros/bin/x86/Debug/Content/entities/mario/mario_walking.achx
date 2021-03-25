@@ -61,60 +61,60 @@
     </Frame>
   </AnimationChain>
   <AnimationChain>
-    <Name>Walking_BigRight</Name>
+    <Name>Running_smallRight</Name>
     <Frame>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
-      <FrameLength>0.1</FrameLength>
+      <FrameLength>0.05</FrameLength>
       <LeftCoordinate>43</LeftCoordinate>
       <RightCoordinate>59</RightCoordinate>
-      <TopCoordinate>26</TopCoordinate>
-      <BottomCoordinate>58</BottomCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
     </Frame>
     <Frame>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
-      <FrameLength>0.1</FrameLength>
+      <FrameLength>0.05</FrameLength>
       <LeftCoordinate>60</LeftCoordinate>
       <RightCoordinate>76</RightCoordinate>
-      <TopCoordinate>26</TopCoordinate>
-      <BottomCoordinate>58</BottomCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
     </Frame>
     <Frame>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
-      <FrameLength>0.1</FrameLength>
+      <FrameLength>0.05</FrameLength>
       <LeftCoordinate>77</LeftCoordinate>
       <RightCoordinate>93</RightCoordinate>
-      <TopCoordinate>26</TopCoordinate>
-      <BottomCoordinate>59</BottomCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
     </Frame>
   </AnimationChain>
   <AnimationChain>
-    <Name>Walking_BigLeft</Name>
+    <Name>Running_smallLeft</Name>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
-      <FrameLength>0.1</FrameLength>
+      <FrameLength>0.05</FrameLength>
       <LeftCoordinate>43</LeftCoordinate>
       <RightCoordinate>59</RightCoordinate>
-      <TopCoordinate>26</TopCoordinate>
-      <BottomCoordinate>58</BottomCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
-      <FrameLength>0.1</FrameLength>
+      <FrameLength>0.05</FrameLength>
       <LeftCoordinate>60</LeftCoordinate>
       <RightCoordinate>76</RightCoordinate>
-      <TopCoordinate>26</TopCoordinate>
-      <BottomCoordinate>58</BottomCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
-      <FrameLength>0.1</FrameLength>
+      <FrameLength>0.05</FrameLength>
       <LeftCoordinate>77</LeftCoordinate>
       <RightCoordinate>93</RightCoordinate>
-      <TopCoordinate>26</TopCoordinate>
-      <BottomCoordinate>59</BottomCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -184,6 +184,63 @@
       <RightCoordinate>114</RightCoordinate>
       <TopCoordinate>9</TopCoordinate>
       <BottomCoordinate>25</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Walking_BigRight</Name>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>43</LeftCoordinate>
+      <RightCoordinate>59</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>58</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>60</LeftCoordinate>
+      <RightCoordinate>76</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>58</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>77</LeftCoordinate>
+      <RightCoordinate>93</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>59</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Walking_BigLeft</Name>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>43</LeftCoordinate>
+      <RightCoordinate>59</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>58</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>60</LeftCoordinate>
+      <RightCoordinate>76</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>58</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>77</LeftCoordinate>
+      <RightCoordinate>93</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>59</BottomCoordinate>
     </Frame>
   </AnimationChain>
   <ProjectFile>../../../super_marios_bros.glux</ProjectFile>

@@ -4,8 +4,7 @@
     <property name="GroundMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Ground in PlatformerValuesStatic.csv" />
     <property name="AirMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Air in PlatformerValuesStatic.csv" />
     <property name="AfterDoubleJump" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Air in PlatformerValuesStatic.csv" />
-  </objecttype>
-  <objecttype name="Mario_Middle">
-    <property name="SpriteInstanceVisible" type="bool" default="true" />
+    <property name="SpriteInstanceAnimationChains" type="AnimationChainList" />
+    <property name="SpriteInstanceCurrentChainName" type="string" />
   </objecttype>
 </objecttypes>

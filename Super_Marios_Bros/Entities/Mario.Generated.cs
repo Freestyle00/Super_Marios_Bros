@@ -105,6 +105,28 @@ namespace Super_Marios_Bros.Entities
                 return mAfterDoubleJump;
             }
         }
+        public FlatRedBall.Graphics.Animation.AnimationChainList SpriteInstanceAnimationChains
+        {
+            get
+            {
+                return SpriteInstance.AnimationChains;
+            }
+            set
+            {
+                SpriteInstance.AnimationChains = value;
+            }
+        }
+        public string SpriteInstanceCurrentChainName
+        {
+            get
+            {
+                return SpriteInstance.CurrentChainName;
+            }
+            set
+            {
+                SpriteInstance.CurrentChainName = value;
+            }
+        }
         public int Index { get; set; }
         public bool Used { get; set; }
         private FlatRedBall.Math.Geometry.ShapeCollection mGeneratedCollision;
@@ -431,7 +453,6 @@ namespace Super_Marios_Bros.Entities
                 SpriteInstance.AttachTo(this, false);
             }
             SpriteInstance.TextureScale = 1f;
-            SpriteInstance.AnimationChains = Mario_walking;
             if (mAxisAlignedRectangleInstance.Parent == null)
             {
                 mAxisAlignedRectangleInstance.CopyAbsoluteToRelative();
@@ -466,7 +487,6 @@ namespace Super_Marios_Bros.Entities
             {
             }
             SpriteInstance.TextureScale = 1f;
-            SpriteInstance.AnimationChains = Mario_walking;
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
             GroundMovement = Entities.Mario.PlatformerValuesStatic["Ground"];

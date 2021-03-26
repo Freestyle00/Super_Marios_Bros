@@ -70,6 +70,7 @@ namespace Super_Marios_Bros.Entities
             var idleLayer = new AnimationLayer();
             idleLayer.EveryFrameAction = () =>
             {
+                SpriteInstance.AnimationChains.Name = "Mario_walking";
                 return "Idle_small" + DirectionFacing;
             };
             animationController.Layers.Add(idleLayer);
@@ -90,6 +91,7 @@ namespace Super_Marios_Bros.Entities
             {
                 if (this.Velocity.X != 0)
                 {
+                    SpriteInstance.AnimationChains.Name = "Mario_walking";
                     return "Walking_small" + DirectionFacing;
                 }
                 return null;
@@ -102,6 +104,7 @@ namespace Super_Marios_Bros.Entities
                 if (this.XVelocity != 0 && this.HorizontalInput.Value != 0 &&
                     Math.Sign(XVelocity) != Math.Sign(this.HorizontalInput.Value))
                 {
+                    SpriteInstance.AnimationChains.Name = "Mario_walking";
                     return "Drifting_small" + DirectionFacing;
                 }
                 return null;
@@ -113,6 +116,7 @@ namespace Super_Marios_Bros.Entities
             {
                 if (this.XVelocity != 0 && RunInput.IsDown)
                 {
+                    SpriteInstance.AnimationChains.Name = "Mario_walking";
                     return "Running_small" + DirectionFacing;
                 }
                 return null;
@@ -141,6 +145,7 @@ namespace Super_Marios_Bros.Entities
             {
                 if (this.IsOnGround == false) //&& YVelocity > 0
                 {
+                    SpriteInstance.AnimationChains.Name = "Mario_walking";
                     return "Jumping_small" + DirectionFacing;
                 }
                 return null;

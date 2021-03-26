@@ -187,6 +187,35 @@
     </Frame>
   </AnimationChain>
   <AnimationChain>
+    <Name>Mario_evolvin</Name>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.5</FrameLength>
+      <LeftCoordinate>1</LeftCoordinate>
+      <RightCoordinate>17</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.5</FrameLength>
+      <LeftCoordinate>373</LeftCoordinate>
+      <RightCoordinate>389</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.5</FrameLength>
+      <LeftCoordinate>1</LeftCoordinate>
+      <RightCoordinate>17</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>41</BottomCoordinate>
+      <RelativeY>8</RelativeY>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
     <Name>Walking_BigRight</Name>
     <Frame>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>

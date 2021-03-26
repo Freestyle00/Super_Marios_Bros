@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
@@ -29,8 +29,8 @@ namespace Super_Marios_Bros.Screens
             {
                 Camera.Main.X = MarioInstance.X;
             }
-            FlatRedBall.Debugging.Debugger.Write("X" + MarioInstance.X + "\nY" + MarioInstance.Y);
-            if (MarioInstance.Y <= -230) { RestartScreen(true, true); }
+            FlatRedBall.Debugging.Debugger.Write("X" + MarioInstance.X + "\nY" + MarioInstance.Y); //(╯ ͠° ͟ʖ ͡°)╯┻━┻ 
+            if (MarioInstance.Y <= -230) { RestartScreen(true, true); };
         }
         void CustomDestroy()
         {

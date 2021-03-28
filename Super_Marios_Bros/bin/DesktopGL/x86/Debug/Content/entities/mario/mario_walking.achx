@@ -272,5 +272,66 @@
       <BottomCoordinate>59</BottomCoordinate>
     </Frame>
   </AnimationChain>
+  <AnimationChain>
+    <Name>Mario_evolvingRight</Name>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.333333343</FrameLength>
+      <LeftCoordinate>1</LeftCoordinate>
+      <RightCoordinate>17</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.333333343</FrameLength>
+      <LeftCoordinate>373</LeftCoordinate>
+      <RightCoordinate>389</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.333333343</FrameLength>
+      <LeftCoordinate>1</LeftCoordinate>
+      <RightCoordinate>17</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Mario_evolvingLeft</Name>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.333333343</FrameLength>
+      <LeftCoordinate>1</LeftCoordinate>
+      <RightCoordinate>17</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.333333343</FrameLength>
+      <LeftCoordinate>373</LeftCoordinate>
+      <RightCoordinate>389</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.333333343</FrameLength>
+      <LeftCoordinate>1</LeftCoordinate>
+      <RightCoordinate>17</RightCoordinate>
+      <TopCoordinate>26</TopCoordinate>
+      <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
+    </Frame>
+  </AnimationChain>
   <ProjectFile>../../../super_marios_bros.glux</ProjectFile>
 </AnimationChainArraySave>

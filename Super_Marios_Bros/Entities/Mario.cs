@@ -11,7 +11,6 @@ using FlatRedBall.Math.Geometry;
 
 namespace Super_Marios_Bros.Entities
 {
-    
     public partial class Mario
     {
         /// <summary>
@@ -20,7 +19,7 @@ namespace Super_Marios_Bros.Entities
         /// added to managers will not have this method called.
         /// </summary>
         ///   AnimationController animationController;
-        float animgoanimtime = 1.5f;
+
         public IPressableInput RunInput { get; set; }
 
         AnimationController animationController;
@@ -37,10 +36,6 @@ namespace Super_Marios_Bros.Entities
             RUN();
             PassonClass.marioX = this.X;
             PassonClass.marioY = this.Y;
-            if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.G))
-            {
-                PassonClass.animgo = true;
-            }
         }
 
         private void CustomDestroy()
@@ -75,29 +70,11 @@ namespace Super_Marios_Bros.Entities
             var idleLayer = new AnimationLayer();
             idleLayer.EveryFrameAction = () =>
             {
+                SpriteInstance.AnimationChains.Name = "Mario_walking";
                 return "Idle_small" + DirectionFacing;
             };
             animationController.Layers.Add(idleLayer);
 
-            var EvolvingLayer = new AnimationLayer();
-            EvolvingLayer.EveryFrameAction = () =>
-            {
-                if (PassonClass.animgo == true)
-                {
-                         animgoanimtime -= TimeManager.SecondDifference;
-                         if (animgoanimtime <= 0)
-                         {
-                                animgoanimtime = 1.5f;
-                                PassonClass.animgo = false;
-                        Console.WriteLine("Reset");
-                         }
-                    Console.WriteLine("Animation PLaying");
-                         return "Mario_evolving" + DirectionFacing;
-                        
-                }
-                return null;
-            };
-            animationController.Layers.Add(EvolvingLayer);
             //var lookUpLayer = new AnimationLayer();
             //lookUpLayer.EveryFrameAction = () =>
             //{
@@ -114,6 +91,7 @@ namespace Super_Marios_Bros.Entities
             {
                 if (this.Velocity.X != 0)
                 {
+                    SpriteInstance.AnimationChains.Name = "Mario_walking";
                     return "Walking_small" + DirectionFacing;
                 }
                 return null;
@@ -126,6 +104,7 @@ namespace Super_Marios_Bros.Entities
                 if (this.XVelocity != 0 && this.HorizontalInput.Value != 0 &&
                     Math.Sign(XVelocity) != Math.Sign(this.HorizontalInput.Value))
                 {
+                    SpriteInstance.AnimationChains.Name = "Mario_walking";
                     return "Drifting_small" + DirectionFacing;
                 }
                 return null;
@@ -137,6 +116,7 @@ namespace Super_Marios_Bros.Entities
             {
                 if (this.XVelocity != 0 && RunInput.IsDown)
                 {
+                    SpriteInstance.AnimationChains.Name = "Mario_walking";
                     return "Running_small" + DirectionFacing;
                 }
                 return null;
@@ -165,6 +145,7 @@ namespace Super_Marios_Bros.Entities
             {
                 if (this.IsOnGround == false) //&& YVelocity > 0
                 {
+                    SpriteInstance.AnimationChains.Name = "Mario_walking";
                     return "Jumping_small" + DirectionFacing;
                 }
                 return null;

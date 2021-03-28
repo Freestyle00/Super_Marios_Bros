@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\users\\nick\\documents\\flatredballprojects\\super_marios_bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj": {}
+    "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj": {}
   },
   "projects": {
-    "c:\\users\\nick\\documents\\flatredballprojects\\super_marios_bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj": {
+    "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\users\\nick\\documents\\flatredballprojects\\super_marios_bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj",
+        "projectUniqueName": "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj",
         "projectName": "Super_Marios_Bros",
-        "projectPath": "c:\\users\\nick\\documents\\flatredballprojects\\super_marios_bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj",
+        "projectPath": "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj",
         "packagesPath": "C:\\Users\\Nick\\.nuget\\packages\\",
-        "outputPath": "c:\\users\\nick\\documents\\flatredballprojects\\super_marios_bros\\Super_Marios_Bros\\obj\\",
+        "outputPath": "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [

@@ -453,6 +453,7 @@ namespace Super_Marios_Bros.Entities
                 SpriteInstance.AttachTo(this, false);
             }
             SpriteInstance.TextureScale = 1f;
+            SpriteInstance.AnimationChains = Mario_walking;
             if (mAxisAlignedRectangleInstance.Parent == null)
             {
                 mAxisAlignedRectangleInstance.CopyAbsoluteToRelative();
@@ -487,11 +488,13 @@ namespace Super_Marios_Bros.Entities
             {
             }
             SpriteInstance.TextureScale = 1f;
+            SpriteInstance.AnimationChains = Mario_walking;
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
             GroundMovement = Entities.Mario.PlatformerValuesStatic["Ground"];
             AirMovement = Entities.Mario.PlatformerValuesStatic["Air"];
             AfterDoubleJump = Entities.Mario.PlatformerValuesStatic["Air"];
+            SpriteInstanceAnimationChains = Mario_walking;
         }
         public virtual void ConvertToManuallyUpdated () 
         {

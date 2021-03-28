@@ -12,8 +12,17 @@
   <ExpandedNode>Jumping_smallLeft</ExpandedNode>
   <ExpandedNode>Drifting_smallRight</ExpandedNode>
   <ExpandedNode>Drifting_smallLeft</ExpandedNode>
-  <ExpandedNode>Mario_evolvin</ExpandedNode>
+  <ExpandedNode>Mario_evolvingRight</ExpandedNode>
+  <ExpandedNode>Mario_evolvingLeft</ExpandedNode>
   <ExpandedNode>Walking_BigRight</ExpandedNode>
   <ExpandedNode>Walking_BigLeft</ExpandedNode>
+  <ExpandedNode>Running_BigRight</ExpandedNode>
+  <ExpandedNode>Running_BigLeft</ExpandedNode>
+  <ExpandedNode>Idle_BigRight</ExpandedNode>
+  <ExpandedNode>Idle_BigLeft</ExpandedNode>
+  <ExpandedNode>Jumping_BigRight</ExpandedNode>
+  <ExpandedNode>Jumping_BigLeft</ExpandedNode>
+  <ExpandedNode>Drifting_BigRight</ExpandedNode>
+  <ExpandedNode>Drifting_BigLeft</ExpandedNode>
   <UnitType>Pixel</UnitType>
 </AESettingsSave>

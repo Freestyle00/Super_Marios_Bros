@@ -20,29 +20,23 @@ namespace Super_Marios_Bros.Entities
         /// added to managers will not have this method called.
         /// </summary>
         ///   AnimationController animationController;
-        float animgoanimtime = 1.5f;
         public IPressableInput RunInput { get; set; }
-
         AnimationController animationController;
         private void CustomInitialize()
         {
             animations();
             RunInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.LeftShift);
-
         }
-
         private void CustomActivity()
         {
             animationController.Activity();
             RUN();
+            marioisbignowheneedssomebiggershoes(); 
+            debugthings();
             PassonClass.marioX = this.X;
             PassonClass.marioY = this.Y;
-            if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.G))
-            {
-                PassonClass.animgo = true;
-            }
-        }
 
+        }
         private void CustomDestroy()
         {
 
@@ -52,6 +46,30 @@ namespace Super_Marios_Bros.Entities
         {
 
 
+        }
+        void marioisbignowheneedssomebiggershoes()
+        {
+            if (PassonClass.mariobig == true)
+            {
+                AxisAlignedRectangleInstanceY = 8;
+                AxisAlignedRectangleInstanceHeight = 32;
+            }
+            else if (PassonClass.mariobig == false)
+            {
+                AxisAlignedRectangleInstanceY = 0;
+                AxisAlignedRectangleInstanceHeight = 16;
+            }
+        }
+        void debugthings()
+        {
+            if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.G))
+            {
+                PassonClass.mariobig = true;
+            }
+            if  (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.H))
+            {
+                PassonClass.mariobig = false;
+            }
         }
         void RUN()
         {
@@ -75,115 +93,70 @@ namespace Super_Marios_Bros.Entities
             var idleLayer = new AnimationLayer();
             idleLayer.EveryFrameAction = () =>
             {
+                if (PassonClass.mariobig == true)
+                {
+                    return "Idle_Big" + DirectionFacing;
+                }
                 return "Idle_small" + DirectionFacing;
             };
             animationController.Layers.Add(idleLayer);
-
-            var EvolvingLayer = new AnimationLayer();
-            EvolvingLayer.EveryFrameAction = () =>
-            {
-                if (PassonClass.animgo == true)
-                {
-                         animgoanimtime -= TimeManager.SecondDifference;
-                         if (animgoanimtime <= 0)
-                         {
-                                animgoanimtime = 1.5f;
-                                PassonClass.animgo = false;
-                        Console.WriteLine("Reset");
-                         }
-                    Console.WriteLine("Animation PLaying");
-                         return "Mario_evolving" + DirectionFacing;
-                        
-                }
-                return null;
-            };
-            animationController.Layers.Add(EvolvingLayer);
-            //var lookUpLayer = new AnimationLayer();
-            //lookUpLayer.EveryFrameAction = () =>
-            //{
-            //    if (this.VerticalInput.Value > 0)
-            //    {
-            //        return "LookUp" + DirectionFacing;
-            //    }
-            //    return null;
-            //};
-            //animationController.Layers.Add(lookUpLayer);
-
             var walkLayer = new AnimationLayer();
             walkLayer.EveryFrameAction = () =>
             {
                 if (this.Velocity.X != 0)
                 {
+                    if (PassonClass.mariobig == true)
+                    {
+                        return "Walking_Big" + DirectionFacing;
+                    }
                     return "Walking_small" + DirectionFacing;
                 }
                 return null;
             };
             animationController.Layers.Add(walkLayer);
-
+            var runLayer = new AnimationLayer();
+            runLayer.EveryFrameAction = () =>
+            {
+                if (this.XVelocity != 0 && RunInput.IsDown)
+                {
+                    if (PassonClass.mariobig == true)
+                    {
+                        return "Running_Big" + DirectionFacing;
+                    }
+                    return "Running_small" + DirectionFacing;
+                }
+                return null;
+            };
+            animationController.Layers.Add(runLayer);
             var skidLayer = new AnimationLayer();
             skidLayer.EveryFrameAction = () =>
             {
                 if (this.XVelocity != 0 && this.HorizontalInput.Value != 0 &&
                     Math.Sign(XVelocity) != Math.Sign(this.HorizontalInput.Value))
                 {
+                    if (PassonClass.mariobig == true)
+                    {
+                        return "Drifting_Big" + DirectionFacing;
+                    }
                     return "Drifting_small" + DirectionFacing;
                 }
                 return null;
             };
             animationController.Layers.Add(skidLayer);
-
-            var runLayer = new AnimationLayer();
-            runLayer.EveryFrameAction = () =>
-            {
-                if (this.XVelocity != 0 && RunInput.IsDown)
-                {
-                    return "Running_small" + DirectionFacing;
-                }
-                return null;
-            };
-            animationController.Layers.Add(runLayer);
-
-
-
-            //var duckLayer = new AnimationLayer();
-            //duckLayer.EveryFrameAction = () =>
-            //{
-            //    if (this.VerticalInput.Value < 0) { return "Duck" + DirectionFacing; }
-            //    return null;
-            //}; animationController.Layers.Add(duckLayer); var fallLayer = new AnimationLayer(); fallLayer.EveryFrameAction = () =>
-            //{
-            //    if (this.IsOnGround == false)
-            //    {
-            //        return "Fall" + DirectionFacing;
-            //    }
-            //    return null;
-            //};
-            //animationController.Layers.Add(fallLayer);
-
             var jumpLayer = new AnimationLayer();
             jumpLayer.EveryFrameAction = () =>
             {
                 if (this.IsOnGround == false) //&& YVelocity > 0
                 {
+                    if (PassonClass.mariobig == true)
+                    {
+                        return "Jumping_Big" + DirectionFacing;
+                    }
                     return "Jumping_small" + DirectionFacing;
                 }
                 return null;
             };
             animationController.Layers.Add(jumpLayer);
-
-            //var runJump = new AnimationLayer();
-            //runJump.EveryFrameAction = () =>
-            //{
-            //    if (this.IsOnGround == false && RunInput.IsDown)
-            //    {
-            //        return "RunJump" + DirectionFacing;
-            //    }
-            //    return null;
-            //};
-            //animationController.Layers.Add(runJump);
-
         }
-
-
     }
 }

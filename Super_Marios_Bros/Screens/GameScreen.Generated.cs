@@ -18,6 +18,10 @@ namespace Super_Marios_Bros.Screens
         protected FlatRedBall.TileGraphics.LayeredTileMap Map;
         protected FlatRedBall.TileCollisions.TileShapeCollection SolidCollision;
         protected FlatRedBall.TileCollisions.TileShapeCollection CloudCollision;
+        private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.A_Brick> A_BrickList;
+        private Super_Marios_Bros.Entities.Mario MarioInstance;
+        private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection> MarioInstanceVsSolidCollision;
+        private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.A_Brick>> MarioInstanceVsA_BrickList;
         public GameScreen () 
         	: base ("GameScreen")
         {
@@ -28,6 +32,42 @@ namespace Super_Marios_Bros.Screens
             // Not instantiating for FlatRedBall.TileGraphics.LayeredTileMap Map in Screens\GameScreen (Screen) because properties on the object prevent it
             // Not instantiating for FlatRedBall.TileCollisions.TileShapeCollection SolidCollision in Screens\GameScreen (Screen) because properties on the object prevent it
             // Not instantiating for FlatRedBall.TileCollisions.TileShapeCollection CloudCollision in Screens\GameScreen (Screen) because properties on the object prevent it
+            A_BrickList = new FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.A_Brick>();
+            A_BrickList.Name = "A_BrickList";
+            MarioInstance = new Super_Marios_Bros.Entities.Mario(ContentManagerName, false);
+            MarioInstance.Name = "MarioInstance";
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection>(MarioInstance, SolidCollision);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            return first.CollideAgainst(second, isCloud);
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        MarioInstanceVsSolidCollision = temp;
+    }
+    MarioInstanceVsSolidCollision.Name = "MarioInstanceVsSolidCollision";
+
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.A_Brick>>(MarioInstance, A_BrickList);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            var didCollide = false;
+            foreach (var collidableItem in second)
+            {
+                var collidedInternal = first.CollideAgainst(collidableItem.Collision, isCloud);
+                didCollide = didCollide || collidedInternal;
+            }
+            return didCollide;
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        MarioInstanceVsA_BrickList = temp;
+    }
+    MarioInstanceVsA_BrickList.Name = "MarioInstanceVsA_BrickList";
+
             // normally we wait to set variables until after the object is created, but in this case if the
             // TileShapeCollection doesn't have its Visible set before creating the tiles, it can result in
             // really bad performance issues, as shapes will be made visible, then invisible. Really bad perf!
@@ -55,6 +95,9 @@ namespace Super_Marios_Bros.Screens
         }
         public override void AddToManagers () 
         {
+            Factories.A_BrickFactory.Initialize(ContentManagerName);
+            Factories.A_BrickFactory.AddList(A_BrickList);
+            MarioInstance.AddToManagers(mLayer);
             FlatRedBall.TileEntities.TileEntityInstantiator.CreateEntitiesFrom(Map);
             base.AddToManagers();
             AddToManagersBottomUp();
@@ -65,6 +108,15 @@ namespace Super_Marios_Bros.Screens
             if (!IsPaused)
             {
                 
+                for (int i = A_BrickList.Count - 1; i > -1; i--)
+                {
+                    if (i < A_BrickList.Count)
+                    {
+                        // We do the extra if-check because activity could destroy any number of entities
+                        A_BrickList[i].Activity();
+                    }
+                }
+                MarioInstance.Activity();
             }
             else
             {
@@ -78,7 +130,19 @@ namespace Super_Marios_Bros.Screens
         public override void Destroy () 
         {
             base.Destroy();
+            Factories.A_BrickFactory.Destroy();
             
+            A_BrickList.MakeOneWay();
+            for (int i = A_BrickList.Count - 1; i > -1; i--)
+            {
+                A_BrickList[i].Destroy();
+            }
+            if (MarioInstance != null)
+            {
+                MarioInstance.Destroy();
+                MarioInstance.Detach();
+            }
+            A_BrickList.MakeTwoWay();
             FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Clear();
             CustomDestroy();
         }
@@ -95,6 +159,30 @@ namespace Super_Marios_Bros.Screens
             if (CloudCollision!= null)
             {
             }
+            if (MarioInstance.Parent == null)
+            {
+                MarioInstance.X = 100f;
+            }
+            else
+            {
+                MarioInstance.RelativeX = 100f;
+            }
+            if (MarioInstance.Parent == null)
+            {
+                MarioInstance.Y = -200f;
+            }
+            else
+            {
+                MarioInstance.RelativeY = -200f;
+            }
+            if (MarioInstance.Parent == null)
+            {
+                MarioInstance.Z = 1f;
+            }
+            else
+            {
+                MarioInstance.RelativeZ = 1f;
+            }
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = oldShapeManagerSuppressAdd;
         }
         public virtual void AddToManagersBottomUp () 
@@ -104,11 +192,17 @@ namespace Super_Marios_Bros.Screens
         }
         public virtual void RemoveFromManagers () 
         {
+            for (int i = A_BrickList.Count - 1; i > -1; i--)
+            {
+                A_BrickList[i].Destroy();
+            }
+            MarioInstance.RemoveFromManagers();
         }
         public virtual void AssignCustomVariables (bool callOnContainedElements) 
         {
             if (callOnContainedElements)
             {
+                MarioInstance.AssignCustomVariables(true);
             }
             if (Map != null)
             {
@@ -118,6 +212,30 @@ namespace Super_Marios_Bros.Screens
             }
             if (CloudCollision != null)
             {
+            }
+            if (MarioInstance.Parent == null)
+            {
+                MarioInstance.X = 100f;
+            }
+            else
+            {
+                MarioInstance.RelativeX = 100f;
+            }
+            if (MarioInstance.Parent == null)
+            {
+                MarioInstance.Y = -200f;
+            }
+            else
+            {
+                MarioInstance.RelativeY = -200f;
+            }
+            if (MarioInstance.Parent == null)
+            {
+                MarioInstance.Z = 1f;
+            }
+            else
+            {
+                MarioInstance.RelativeZ = 1f;
             }
         }
         public virtual void ConvertToManuallyUpdated () 
@@ -131,6 +249,11 @@ namespace Super_Marios_Bros.Screens
             if (CloudCollision != null)
             {
             }
+            for (int i = 0; i < A_BrickList.Count; i++)
+            {
+                A_BrickList[i].ConvertToManuallyUpdated();
+            }
+            MarioInstance.ConvertToManuallyUpdated();
         }
         public static void LoadStaticContent (string contentManagerName) 
         {
@@ -148,6 +271,7 @@ namespace Super_Marios_Bros.Screens
                 throw new System.Exception("This type has been loaded with a Global content manager, then loaded with a non-global.  This can lead to a lot of bugs");
             }
             #endif
+            Super_Marios_Bros.Entities.Mario.LoadStaticContent(contentManagerName);
             CustomLoadStaticContent(contentManagerName);
         }
         public override void PauseThisScreen () 

@@ -256,6 +256,7 @@
       <RightCoordinate>59</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
     <Frame>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
@@ -264,6 +265,7 @@
       <RightCoordinate>76</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
     <Frame>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
@@ -272,6 +274,7 @@
       <RightCoordinate>93</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -284,6 +287,7 @@
       <RightCoordinate>59</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -293,6 +297,7 @@
       <RightCoordinate>76</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -302,6 +307,7 @@
       <RightCoordinate>93</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -313,6 +319,7 @@
       <RightCoordinate>59</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
     <Frame>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
@@ -321,6 +328,7 @@
       <RightCoordinate>76</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
     <Frame>
       <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
@@ -329,6 +337,7 @@
       <RightCoordinate>93</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -341,6 +350,7 @@
       <RightCoordinate>59</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -350,6 +360,7 @@
       <RightCoordinate>76</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
@@ -359,6 +370,7 @@
       <RightCoordinate>93</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -370,6 +382,7 @@
       <RightCoordinate>17</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -382,6 +395,7 @@
       <RightCoordinate>17</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -393,6 +407,7 @@
       <RightCoordinate>135</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -405,6 +420,7 @@
       <RightCoordinate>135</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -416,6 +432,7 @@
       <RightCoordinate>114</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -428,6 +445,7 @@
       <RightCoordinate>114</RightCoordinate>
       <TopCoordinate>26</TopCoordinate>
       <BottomCoordinate>58</BottomCoordinate>
+      <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
   <ProjectFile>../../../super_marios_bros.glux</ProjectFile>

@@ -17,8 +17,6 @@ namespace Super_Marios_Bros.Screens
         protected static FlatRedBall.TileGraphics.LayeredTileMap tiled;
         protected static Microsoft.Xna.Framework.Graphics.Texture2D tiles;
         
-        private Super_Marios_Bros.Entities.Mario MarioInstance;
-        private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection> MarioInstanceVsSolidCollision;
         public World1level1 () 
         	: base ()
         {
@@ -29,21 +27,6 @@ namespace Super_Marios_Bros.Screens
             Map = tiled;
             SolidCollision = new FlatRedBall.TileCollisions.TileShapeCollection();
             CloudCollision = new FlatRedBall.TileCollisions.TileShapeCollection();
-            MarioInstance = new Super_Marios_Bros.Entities.Mario(ContentManagerName, false);
-            MarioInstance.Name = "MarioInstance";
-                {
-        var temp = new FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection>(MarioInstance, SolidCollision);
-        var isCloud = false;
-        temp.CollisionFunction = (first, second) =>
-        {
-            return first.CollideAgainst(second, isCloud);
-        }
-        ;
-        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
-        MarioInstanceVsSolidCollision = temp;
-    }
-    MarioInstanceVsSolidCollision.Name = "MarioInstanceVsSolidCollision";
-
             
             
             base.Initialize(addToManagers);
@@ -51,7 +34,6 @@ namespace Super_Marios_Bros.Screens
         public override void AddToManagers () 
         {
             tiled.AddToManagers(mLayer);
-            MarioInstance.AddToManagers(mLayer);
             base.AddToManagers();
             CustomInitialize();
         }
@@ -61,7 +43,6 @@ namespace Super_Marios_Bros.Screens
             {
                 
                 tiled?.AnimateSelf();;
-                MarioInstance.Activity();
             }
             else
             {
@@ -91,11 +72,6 @@ namespace Super_Marios_Bros.Screens
             {
                 CloudCollision.Visible = false;
             }
-            if (MarioInstance != null)
-            {
-                MarioInstance.Destroy();
-                MarioInstance.Detach();
-            }
             FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Clear();
             CustomDestroy();
         }
@@ -104,30 +80,6 @@ namespace Super_Marios_Bros.Screens
             bool oldShapeManagerSuppressAdd = FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue;
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = true;
             base.PostInitialize();
-            if (MarioInstance.Parent == null)
-            {
-                MarioInstance.X = 100f;
-            }
-            else
-            {
-                MarioInstance.RelativeX = 100f;
-            }
-            if (MarioInstance.Parent == null)
-            {
-                MarioInstance.Y = -200f;
-            }
-            else
-            {
-                MarioInstance.RelativeY = -200f;
-            }
-            if (MarioInstance.Parent == null)
-            {
-                MarioInstance.Z = 1f;
-            }
-            else
-            {
-                MarioInstance.RelativeZ = 1f;
-            }
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = oldShapeManagerSuppressAdd;
         }
         public override void AddToManagersBottomUp () 
@@ -150,44 +102,17 @@ namespace Super_Marios_Bros.Screens
             {
                 CloudCollision.Visible = false;
             }
-            MarioInstance.RemoveFromManagers();
         }
         public override void AssignCustomVariables (bool callOnContainedElements) 
         {
             base.AssignCustomVariables(callOnContainedElements);
             if (callOnContainedElements)
             {
-                MarioInstance.AssignCustomVariables(true);
-            }
-            if (MarioInstance.Parent == null)
-            {
-                MarioInstance.X = 100f;
-            }
-            else
-            {
-                MarioInstance.RelativeX = 100f;
-            }
-            if (MarioInstance.Parent == null)
-            {
-                MarioInstance.Y = -200f;
-            }
-            else
-            {
-                MarioInstance.RelativeY = -200f;
-            }
-            if (MarioInstance.Parent == null)
-            {
-                MarioInstance.Z = 1f;
-            }
-            else
-            {
-                MarioInstance.RelativeZ = 1f;
             }
         }
         public override void ConvertToManuallyUpdated () 
         {
             base.ConvertToManuallyUpdated();
-            MarioInstance.ConvertToManuallyUpdated();
         }
         public static new void LoadStaticContent (string contentManagerName) 
         {
@@ -208,7 +133,6 @@ namespace Super_Marios_Bros.Screens
             #endif
             tiled = FlatRedBall.TileGraphics.LayeredTileMap.FromTiledMapSave("content/screens/world1level1/tiled.tmx", contentManagerName);
             tiles = FlatRedBall.FlatRedBallServices.Load<Microsoft.Xna.Framework.Graphics.Texture2D>(@"content/screens/world1level1/tiles.png", contentManagerName);
-            Super_Marios_Bros.Entities.Mario.LoadStaticContent(contentManagerName);
             CustomLoadStaticContent(contentManagerName);
         }
         public override void PauseThisScreen () 

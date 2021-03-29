@@ -4,7 +4,9 @@
     <property name="GroundMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Ground in PlatformerValuesStatic.csv" />
     <property name="AirMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Air in PlatformerValuesStatic.csv" />
     <property name="AfterDoubleJump" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Air in PlatformerValuesStatic.csv" />
-    <property name="SpriteInstanceAnimationChains" type="AnimationChainList" />
+    <property name="SpriteInstanceAnimationChains" type="AnimationChainList" default="Mario_walking" />
     <property name="SpriteInstanceCurrentChainName" type="string" />
+    <property name="AxisAlignedRectangleInstanceY" type="float" default="0" />
+    <property name="AxisAlignedRectangleInstanceHeight" type="float" default="16" />
   </objecttype>
 </objecttypes>

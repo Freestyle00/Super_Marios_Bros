@@ -20,17 +20,11 @@ namespace Super_Marios_Bros.Screens
     {
         void CustomInitialize()
         {
-            Camera.Main.Y = -120;
-            Camera.Main.X = 140;
+
         }
         void CustomActivity(bool firstTimeCalled)
         {
-            if (MarioInstance.X > 140 && MarioInstance.X < 3232)
-            {
-                Camera.Main.X = MarioInstance.X;
-            }
-            FlatRedBall.Debugging.Debugger.Write("X" + MarioInstance.X + "\nY" + MarioInstance.Y); //(╯ ͠° ͟ʖ ͡°)╯┻━┻ 
-            if (MarioInstance.Y <= -230) { RestartScreen(true, true); };
+
         }
         void CustomDestroy()
         {

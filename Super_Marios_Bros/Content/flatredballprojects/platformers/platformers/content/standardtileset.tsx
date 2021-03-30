@@ -10,4 +10,5 @@
  <tile id="36" type="A_Brick"/>
  <tile id="64" type="Door"/>
  <tile id="96" type="Ladder"/>
+ <tile id="163" type="Lucky_block"/>
 </tileset>

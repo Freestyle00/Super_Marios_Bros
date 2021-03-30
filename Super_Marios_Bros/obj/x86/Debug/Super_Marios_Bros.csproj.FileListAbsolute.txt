@@ -79,3 +79,9 @@ C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\mario\nes - super mario bros - mario & luigi.png
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\a_brick\the_brick.png
 c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\entities\a_brick\the_brick.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\mario\mariojumpsound.xnb
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\lucky_block\luckyblockhasbeentouched.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\lucky_block\luckyblocknormal.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\entities\mario\mariojumpsound.xnb
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\entities\lucky_block\luckyblockhasbeentouched.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\entities\lucky_block\luckyblocknormal.png

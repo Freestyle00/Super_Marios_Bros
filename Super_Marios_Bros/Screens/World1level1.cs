@@ -12,8 +12,6 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
 
-
-
 namespace Super_Marios_Bros.Screens
 {
     public partial class World1level1
@@ -21,9 +19,11 @@ namespace Super_Marios_Bros.Screens
         void CustomInitialize()
         {
 
+
         }
         void CustomActivity(bool firstTimeCalled)
         {
+
 
         }
         void CustomDestroy()
@@ -36,6 +36,5 @@ namespace Super_Marios_Bros.Screens
 
 
         }
-
     }
 }

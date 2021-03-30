@@ -22,6 +22,8 @@ namespace Super_Marios_Bros.Screens
         private Super_Marios_Bros.Entities.Mario MarioInstance;
         private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection> MarioInstanceVsSolidCollision;
         private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.A_Brick>> MarioInstanceVsA_BrickList;
+        private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Lucky_block> Lucky_blockList;
+        private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.Lucky_block>> MarioInstanceVsLucky_blockList;
         public GameScreen () 
         	: base ("GameScreen")
         {
@@ -36,6 +38,8 @@ namespace Super_Marios_Bros.Screens
             A_BrickList.Name = "A_BrickList";
             MarioInstance = new Super_Marios_Bros.Entities.Mario(ContentManagerName, false);
             MarioInstance.Name = "MarioInstance";
+            Lucky_blockList = new FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Lucky_block>();
+            Lucky_blockList.Name = "Lucky_blockList";
                 {
         var temp = new FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection>(MarioInstance, SolidCollision);
         var isCloud = false;
@@ -68,6 +72,25 @@ namespace Super_Marios_Bros.Screens
     }
     MarioInstanceVsA_BrickList.Name = "MarioInstanceVsA_BrickList";
 
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.Lucky_block>>(MarioInstance, Lucky_blockList);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            var didCollide = false;
+            foreach (var collidableItem in second)
+            {
+                var collidedInternal = first.CollideAgainst(collidableItem.Collision, isCloud);
+                didCollide = didCollide || collidedInternal;
+            }
+            return didCollide;
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        MarioInstanceVsLucky_blockList = temp;
+    }
+    MarioInstanceVsLucky_blockList.Name = "MarioInstanceVsLucky_blockList";
+
             // normally we wait to set variables until after the object is created, but in this case if the
             // TileShapeCollection doesn't have its Visible set before creating the tiles, it can result in
             // really bad performance issues, as shapes will be made visible, then invisible. Really bad perf!
@@ -96,7 +119,9 @@ namespace Super_Marios_Bros.Screens
         public override void AddToManagers () 
         {
             Factories.A_BrickFactory.Initialize(ContentManagerName);
+            Factories.Lucky_blockFactory.Initialize(ContentManagerName);
             Factories.A_BrickFactory.AddList(A_BrickList);
+            Factories.Lucky_blockFactory.AddList(Lucky_blockList);
             MarioInstance.AddToManagers(mLayer);
             FlatRedBall.TileEntities.TileEntityInstantiator.CreateEntitiesFrom(Map);
             base.AddToManagers();
@@ -117,6 +142,14 @@ namespace Super_Marios_Bros.Screens
                     }
                 }
                 MarioInstance.Activity();
+                for (int i = Lucky_blockList.Count - 1; i > -1; i--)
+                {
+                    if (i < Lucky_blockList.Count)
+                    {
+                        // We do the extra if-check because activity could destroy any number of entities
+                        Lucky_blockList[i].Activity();
+                    }
+                }
             }
             else
             {
@@ -131,8 +164,10 @@ namespace Super_Marios_Bros.Screens
         {
             base.Destroy();
             Factories.A_BrickFactory.Destroy();
+            Factories.Lucky_blockFactory.Destroy();
             
             A_BrickList.MakeOneWay();
+            Lucky_blockList.MakeOneWay();
             for (int i = A_BrickList.Count - 1; i > -1; i--)
             {
                 A_BrickList[i].Destroy();
@@ -142,7 +177,12 @@ namespace Super_Marios_Bros.Screens
                 MarioInstance.Destroy();
                 MarioInstance.Detach();
             }
+            for (int i = Lucky_blockList.Count - 1; i > -1; i--)
+            {
+                Lucky_blockList[i].Destroy();
+            }
             A_BrickList.MakeTwoWay();
+            Lucky_blockList.MakeTwoWay();
             FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Clear();
             CustomDestroy();
         }
@@ -197,6 +237,10 @@ namespace Super_Marios_Bros.Screens
                 A_BrickList[i].Destroy();
             }
             MarioInstance.RemoveFromManagers();
+            for (int i = Lucky_blockList.Count - 1; i > -1; i--)
+            {
+                Lucky_blockList[i].Destroy();
+            }
         }
         public virtual void AssignCustomVariables (bool callOnContainedElements) 
         {
@@ -254,6 +298,10 @@ namespace Super_Marios_Bros.Screens
                 A_BrickList[i].ConvertToManuallyUpdated();
             }
             MarioInstance.ConvertToManuallyUpdated();
+            for (int i = 0; i < Lucky_blockList.Count; i++)
+            {
+                Lucky_blockList[i].ConvertToManuallyUpdated();
+            }
         }
         public static void LoadStaticContent (string contentManagerName) 
         {

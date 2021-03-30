@@ -11,7 +11,6 @@ using FlatRedBall.Math.Geometry;
 
 namespace Super_Marios_Bros.Entities
 {
-    
     public partial class Mario
     {
         /// <summary>
@@ -24,15 +23,16 @@ namespace Super_Marios_Bros.Entities
         AnimationController animationController;
         private void CustomInitialize()
         {
-            animations();
+            Animations();
             RunInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.LeftShift);
         }
         private void CustomActivity()
         {
             animationController.Activity();
             RUN();
-            marioisbignowheneedssomebiggershoes(); 
-            debugthings();
+            Marioisbignowheneedssomebiggershoes(); 
+            Debugthings();
+            Jumping();
             PassonClass.marioX = this.X;
             PassonClass.marioY = this.Y;
 
@@ -47,7 +47,7 @@ namespace Super_Marios_Bros.Entities
 
 
         }
-        void marioisbignowheneedssomebiggershoes()
+        void Marioisbignowheneedssomebiggershoes()
         {
             if (PassonClass.mariobig == true)
             {
@@ -60,7 +60,14 @@ namespace Super_Marios_Bros.Entities
                 AxisAlignedRectangleInstanceHeight = 16;
             }
         }
-        void debugthings()
+        void Jumping()
+        {
+            if (this.IsOnGround == true && InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space))
+            {
+                Mariojumpsound.Play();
+            }
+        }
+        void Debugthings()
         {
             if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.G))
             {
@@ -86,10 +93,9 @@ namespace Super_Marios_Bros.Entities
             }
             
         }
-        void animations()
+        void Animations()
         {
             animationController = new AnimationController(SpriteInstance);
-
             var idleLayer = new AnimationLayer();
             idleLayer.EveryFrameAction = () =>
             {

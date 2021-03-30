@@ -56,11 +56,16 @@
     <Compile Include="Entities\A_Brick.Generated.cs">
       <DependentUpon>A_Brick.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Lucky_block.cs" />
+    <Compile Include="Entities\Lucky_block.Generated.cs">
+      <DependentUpon>Lucky_block.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Mario.cs" />
     <Compile Include="Entities\Mario.Generated.cs">
       <DependentUpon>Mario.cs</DependentUpon>
     </Compile>
     <Compile Include="Factories\A_BrickFactory.Generated.cs" />
+    <Compile Include="Factories\Lucky_blockFactory.Generated.cs" />
     <Compile Include="Factories\MarioFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Game1.cs" />
@@ -155,9 +160,22 @@
     <Content Include="Content\shader.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="..\builtxnbs\desktopgl\entities\mario\mariojumpsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Mariojumpsound</Name>
+      <Link>content\entities\mario\mariojumpsound.xnb</Link>
+    </None>
     <None Include="content\entities\a_brick\the_brick.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>The_BRICK</Name>
+    </None>
+    <None Include="content\entities\lucky_block\luckyblockhasbeentouched.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>luckyblockhasbeentouched</Name>
+    </None>
+    <None Include="content\entities\lucky_block\luckyblocknormal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>luckyblocknormal</Name>
     </None>
     <None Include="content\entities\mario\mario_walking.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

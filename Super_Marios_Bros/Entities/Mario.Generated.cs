@@ -25,6 +25,7 @@ namespace Super_Marios_Bros.Entities
         static System.Collections.Generic.List<string> LoadedContentManagers = new System.Collections.Generic.List<string>();
         protected static System.Collections.Generic.Dictionary<System.String, Super_Marios_Bros.DataTypes.PlatformerValues> PlatformerValuesStatic;
         protected static FlatRedBall.Graphics.Animation.AnimationChainList Mario_walking;
+        protected static Microsoft.Xna.Framework.Audio.SoundEffect Mariojumpsound;
         
         private FlatRedBall.Sprite SpriteInstance;
         private FlatRedBall.Math.Geometry.AxisAlignedRectangle mAxisAlignedRectangleInstance;
@@ -495,7 +496,7 @@ namespace Super_Marios_Bros.Entities
                 mAxisAlignedRectangleInstance.CopyAbsoluteToRelative();
                 mAxisAlignedRectangleInstance.AttachTo(this, false);
             }
-            AxisAlignedRectangleInstance.Width = 16f;
+            AxisAlignedRectangleInstance.Width = 16.2f;
             AxisAlignedRectangleInstance.Height = 16f;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
@@ -525,7 +526,7 @@ namespace Super_Marios_Bros.Entities
             }
             SpriteInstance.TextureScale = 1f;
             SpriteInstance.AnimationChains = Mario_walking;
-            AxisAlignedRectangleInstance.Width = 16f;
+            AxisAlignedRectangleInstance.Width = 16.2f;
             AxisAlignedRectangleInstance.Height = 16f;
             GroundMovement = Entities.Mario.PlatformerValuesStatic["Ground"];
             AirMovement = Entities.Mario.PlatformerValuesStatic["Air"];
@@ -586,6 +587,7 @@ namespace Super_Marios_Bros.Entities
                     registerUnload = true;
                 }
                 Mario_walking = FlatRedBall.FlatRedBallServices.Load<FlatRedBall.Graphics.Animation.AnimationChainList>(@"content/entities/mario/mario_walking.achx", ContentManagerName);
+                Mariojumpsound = FlatRedBall.FlatRedBallServices.Load<Microsoft.Xna.Framework.Audio.SoundEffect>(@"content/entities/mario/mariojumpsound", ContentManagerName);
             }
             if (registerUnload && ContentManagerName != FlatRedBall.FlatRedBallServices.GlobalContentManager)
             {
@@ -617,6 +619,10 @@ namespace Super_Marios_Bros.Entities
                 {
                     Mario_walking= null;
                 }
+                if (Mariojumpsound != null)
+                {
+                    Mariojumpsound= null;
+                }
             }
         }
         [System.Obsolete("Use GetFile instead")]
@@ -628,6 +634,8 @@ namespace Super_Marios_Bros.Entities
                     return PlatformerValuesStatic;
                 case  "Mario_walking":
                     return Mario_walking;
+                case  "Mariojumpsound":
+                    return Mariojumpsound;
             }
             return null;
         }
@@ -639,6 +647,8 @@ namespace Super_Marios_Bros.Entities
                     return PlatformerValuesStatic;
                 case  "Mario_walking":
                     return Mario_walking;
+                case  "Mariojumpsound":
+                    return Mariojumpsound;
             }
             return null;
         }
@@ -648,6 +658,8 @@ namespace Super_Marios_Bros.Entities
             {
                 case  "Mario_walking":
                     return Mario_walking;
+                case  "Mariojumpsound":
+                    return Mariojumpsound;
             }
             return null;
         }

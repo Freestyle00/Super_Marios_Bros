@@ -131,8 +131,8 @@ namespace Super_Marios_Bros.Entities
                 mAxisAlignedRectangleInstance.CopyAbsoluteToRelative();
                 mAxisAlignedRectangleInstance.AttachTo(this, false);
             }
-            AxisAlignedRectangleInstance.Width = 16f;
-            AxisAlignedRectangleInstance.Height = 16f;
+            AxisAlignedRectangleInstance.Width = 15f;
+            AxisAlignedRectangleInstance.Height = 14.5f;
             AxisAlignedRectangleInstance.Color = Microsoft.Xna.Framework.Color.Violet;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
@@ -162,8 +162,8 @@ namespace Super_Marios_Bros.Entities
             }
             SpriteInstance.Texture = The_BRICK;
             SpriteInstance.TextureScale = 1f;
-            AxisAlignedRectangleInstance.Width = 16f;
-            AxisAlignedRectangleInstance.Height = 16f;
+            AxisAlignedRectangleInstance.Width = 15f;
+            AxisAlignedRectangleInstance.Height = 14.5f;
             AxisAlignedRectangleInstance.Color = Microsoft.Xna.Framework.Color.Violet;
         }
         public virtual void ConvertToManuallyUpdated () 

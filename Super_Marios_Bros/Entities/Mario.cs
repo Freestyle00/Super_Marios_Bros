@@ -64,7 +64,7 @@ namespace Super_Marios_Bros.Entities
         {
             if (this.IsOnGround == true && InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space))
             {
-                Mariojumpsound.Play();
+                //Mariojumpsound.Play();
             }
         }
         void Debugthings()

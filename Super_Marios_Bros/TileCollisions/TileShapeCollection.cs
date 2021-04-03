@@ -754,20 +754,20 @@ namespace FlatRedBall.TileCollisions
                     var down = GetRectangleAtPosition(center.X, center.Y - GridSize);
                     var downLeft = GetRectangleAtPosition(center.X - GridSize, center.Y - GridSize);
 
-                    //UpdateLShapedPassNeighbors(center, left, upLeft, up, upRight, right, downRight, down, downLeft);
+                    UpdateLShapedPassNeighbors(center, left, upLeft, up, upRight, right, downRight, down, downLeft);
                 }
             }
 
-            //void UpdateLShapedPassNeighbors(AARect center, AARect left, AARect upLeft, AARect up, AARect upRight, AARect right, AARect downRight, AARect down, AARect downLeft)
-            //{
-            //    center.RepositionHalfSize =
-            //        left != null && up != null && upLeft == null ||
-            //        up != null && right != null && upRight == null ||
-            //        right != null && down != null && downRight == null ||
-            //        down != null && left != null && downLeft == null;
-            //}
+            void UpdateLShapedPassNeighbors(AARect center, AARect left, AARect upLeft, AARect up, AARect upRight, AARect right, AARect downRight, AARect down, AARect downLeft)
+            {
+                center.RepositionHalfSize =
+                    left != null && up != null && upLeft == null ||
+                    up != null && right != null && upRight == null ||
+                    right != null && down != null && downRight == null ||
+                    down != null && left != null && downLeft == null;
+            }
 
-            //UpdateLShapedPassNeighbors(positionedObject as AARect, rectangleLeftOf, rectangleUpLeft, rectangleAbove, rectangleUpRight, rectangleRightOf, rectangleDownRight, rectangleBelow, rectangleDownLeft);
+            UpdateLShapedPassNeighbors(positionedObject as AARect, rectangleLeftOf, rectangleUpLeft, rectangleAbove, rectangleUpRight, rectangleRightOf, rectangleDownRight, rectangleBelow, rectangleDownLeft);
             UpdateLShaped(rectangleLeftOf);
             UpdateLShaped(rectangleUpLeft);
             UpdateLShaped(rectangleAbove);

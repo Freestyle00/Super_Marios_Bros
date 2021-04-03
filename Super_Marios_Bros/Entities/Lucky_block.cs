@@ -52,5 +52,9 @@ namespace Super_Marios_Bros.Entities
                 SpriteInstanceTexture = luckyblocknormal;
             }
         }
+        public void HandleHit()
+        {
+            SpriteInstanceTexture = luckyblockhasbeentouched;
+        }
     }
 }

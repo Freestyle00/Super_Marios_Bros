@@ -144,8 +144,8 @@ namespace Super_Marios_Bros.Entities
                 mAxisAlignedRectangleInstance.CopyAbsoluteToRelative();
                 mAxisAlignedRectangleInstance.AttachTo(this, false);
             }
-            AxisAlignedRectangleInstance.Width = 16f;
-            AxisAlignedRectangleInstance.Height = 16f;
+            AxisAlignedRectangleInstance.Width = 15f;
+            AxisAlignedRectangleInstance.Height = 14.5f;
             AxisAlignedRectangleInstance.RepositionDirections = FlatRedBall.Math.Geometry.RepositionDirections.All;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
@@ -176,10 +176,9 @@ namespace Super_Marios_Bros.Entities
             SpriteInstance.Texture = luckyblocknormal;
             SpriteInstance.TextureAddressMode = Microsoft.Xna.Framework.Graphics.TextureAddressMode.Clamp;
             SpriteInstance.TextureScale = 1f;
-            AxisAlignedRectangleInstance.Width = 16f;
-            AxisAlignedRectangleInstance.Height = 16f;
+            AxisAlignedRectangleInstance.Width = 15f;
+            AxisAlignedRectangleInstance.Height = 14.5f;
             AxisAlignedRectangleInstance.RepositionDirections = FlatRedBall.Math.Geometry.RepositionDirections.All;
-            SpriteInstanceTexture = luckyblocknormal;
         }
         public virtual void ConvertToManuallyUpdated () 
         {

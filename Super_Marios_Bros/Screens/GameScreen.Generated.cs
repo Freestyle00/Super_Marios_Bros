@@ -25,7 +25,9 @@ namespace Super_Marios_Bros.Screens
         private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection> MarioInstanceVsSolidCollision;
         private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickList;
         private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockList;
-        private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaList;
+        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaList;
+        private FlatRedBall.Math.Collision.CollidableListVsTileShapeCollectionRelationship<Entities.Gumba> GumbaListVsSolidCollision;
+        public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockListCollisionOccurred;
         public GameScreen () 
         	: base ("GameScreen")
         {
@@ -83,18 +85,13 @@ namespace Super_Marios_Bros.Screens
     }
     MarioInstanceVsLucky_blockList.Name = "MarioInstanceVsLucky_blockList";
 
-                {
-        var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba>(MarioInstance, GumbaList);
-        var isCloud = false;
-        temp.CollisionFunction = (first, second) =>
-        {
-            return first.CollideAgainst(second, isCloud);
-        }
-        ;
-        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
-        MarioInstanceVsGumbaList = temp;
-    }
+                MarioInstanceVsGumbaList = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, GumbaList);
     MarioInstanceVsGumbaList.Name = "MarioInstanceVsGumbaList";
+    MarioInstanceVsGumbaList.SetMoveCollision(1f, 1f);
+
+                GumbaListVsSolidCollision = FlatRedBall.Math.Collision.CollisionManagerTileShapeCollectionExtensions.CreateTileRelationship(FlatRedBall.Math.Collision.CollisionManager.Self, GumbaList, SolidCollision);
+    GumbaListVsSolidCollision.Name = "GumbaListVsSolidCollision";
+    GumbaListVsSolidCollision.SetBounceCollision(0f, 1f, 1f);
 
             // normally we wait to set variables until after the object is created, but in this case if the
             // TileShapeCollection doesn't have its Visible set before creating the tiles, it can result in
@@ -212,6 +209,8 @@ namespace Super_Marios_Bros.Screens
         {
             bool oldShapeManagerSuppressAdd = FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue;
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = true;
+            MarioInstanceVsLucky_blockList.CollisionOccurred += OnMarioInstanceVsLucky_blockListCollisionOccurred;
+            MarioInstanceVsLucky_blockList.CollisionOccurred += OnMarioInstanceVsLucky_blockListCollisionOccurredTunnel;
             if (Map!= null)
             {
             }

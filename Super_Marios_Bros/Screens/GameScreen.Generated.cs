@@ -21,9 +21,9 @@ namespace Super_Marios_Bros.Screens
         private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.A_Brick> A_BrickList;
         private Super_Marios_Bros.Entities.Mario MarioInstance;
         private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection> MarioInstanceVsSolidCollision;
-        private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.A_Brick>> MarioInstanceVsA_BrickList;
+        private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickList;
         private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Lucky_block> Lucky_blockList;
-        private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.Lucky_block>> MarioInstanceVsLucky_blockList;
+        private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockList;
         public GameScreen () 
         	: base ("GameScreen")
         {
@@ -54,17 +54,11 @@ namespace Super_Marios_Bros.Screens
     MarioInstanceVsSolidCollision.Name = "MarioInstanceVsSolidCollision";
 
                 {
-        var temp = new FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.A_Brick>>(MarioInstance, A_BrickList);
+        var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick>(MarioInstance, A_BrickList);
         var isCloud = false;
         temp.CollisionFunction = (first, second) =>
         {
-            var didCollide = false;
-            foreach (var collidableItem in second)
-            {
-                var collidedInternal = first.CollideAgainst(collidableItem.Collision, isCloud);
-                didCollide = didCollide || collidedInternal;
-            }
-            return didCollide;
+            return first.CollideAgainst(second, isCloud);
         }
         ;
         FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
@@ -73,17 +67,11 @@ namespace Super_Marios_Bros.Screens
     MarioInstanceVsA_BrickList.Name = "MarioInstanceVsA_BrickList";
 
                 {
-        var temp = new FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.Lucky_block>>(MarioInstance, Lucky_blockList);
+        var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block>(MarioInstance, Lucky_blockList);
         var isCloud = false;
         temp.CollisionFunction = (first, second) =>
         {
-            var didCollide = false;
-            foreach (var collidableItem in second)
-            {
-                var collidedInternal = first.CollideAgainst(collidableItem.Collision, isCloud);
-                didCollide = didCollide || collidedInternal;
-            }
-            return didCollide;
+            return first.CollideAgainst(second, isCloud);
         }
         ;
         FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);

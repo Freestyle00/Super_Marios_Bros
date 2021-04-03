@@ -275,7 +275,7 @@ namespace Super_Marios_Bros.Entities
             }
         }
         /// <summary>
-        /// Which direciton the character is facing.
+        /// Which direction the character is facing.
         /// </summary>
         public HorizontalDirection DirectionFacing
         {
@@ -726,6 +726,13 @@ namespace Super_Marios_Bros.Entities
         /// </summary>
         private void ApplyInput()
         {
+#if DEBUG
+            if(InputDevice == null)
+            {
+                throw new NullReferenceException("The InputDevice must be set before activity is performed on this entity. This can be set in Glue or manually in code");
+            }
+#endif
+
             ApplyHorizontalInput();
 
             ApplyJumpInput();
@@ -943,6 +950,14 @@ namespace Super_Marios_Bros.Entities
         #endregion
 
         
+
+        /// <summary>
+        /// Performs a standard solid collision against an ICollidable.
+        /// </summary>
+        public bool CollideAgainst(FlatRedBall.Math.Geometry.ICollidable collidable, bool isCloudCollision = false)
+        {
+            return CollideAgainst(collidable.Collision, isCloudCollision);
+        }
 
         /// <summary>
         /// Performs a standard solid collision against a ShapeCollection.

@@ -4,6 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/Nick/Documents/GitHub/Super_Marios_Bros/Super_Marios_Bros/Content/Entities/Mario/Mariojumpsound.wav</File>
     <File>c:/users/nick/documents/flatredballprojects/super_marios_bros/Super_Marios_Bros/Content/Entities/Mario/Mariojumpsound.wav</File>
   </SourceFiles>
   <DestFiles>

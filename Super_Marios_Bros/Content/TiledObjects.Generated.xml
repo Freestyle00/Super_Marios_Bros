@@ -2,7 +2,7 @@
 <objecttypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <objecttype name="A_Brick" />
   <objecttype name="Lucky_block">
-    <property name="SpriteInstanceTexture" type="Texture2D" />
+    <property name="SpriteInstanceTexture" type="Texture2D" default="luckyblocknormal" />
   </objecttype>
   <objecttype name="Mario">
     <property name="GroundMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Ground in PlatformerValuesStatic.csv" />

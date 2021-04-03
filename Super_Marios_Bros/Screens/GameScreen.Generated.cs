@@ -20,18 +20,12 @@ namespace Super_Marios_Bros.Screens
         protected FlatRedBall.TileCollisions.TileShapeCollection CloudCollision;
         private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.A_Brick> A_BrickList;
         private Super_Marios_Bros.Entities.Mario MarioInstance;
+        private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Lucky_block> Lucky_blockList;
+        private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Gumba> GumbaList;
         private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection> MarioInstanceVsSolidCollision;
         private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickList;
-        private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Lucky_block> Lucky_blockList;
-<<<<<<< Updated upstream
         private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockList;
-=======
-        private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.Lucky_block>> MarioInstanceVsLucky_blockList;
-        private FlatRedBall.Math.Collision.CollidableListVsTileShapeCollectionRelationship<Entities.Gumba> GumbaListVsSolidCollision;
-        private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Gumba> GumbaList;
-        private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.Gumba>> MarioInstanceVsGumbaList;
-        public event System.Action<Entities.Gumba, FlatRedBall.TileCollisions.TileShapeCollection> GumbaListVsSolidCollisionCollisionOccurred;
->>>>>>> Stashed changes
+        private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaList;
         public GameScreen () 
         	: base ("GameScreen")
         {
@@ -89,22 +83,12 @@ namespace Super_Marios_Bros.Screens
     }
     MarioInstanceVsLucky_blockList.Name = "MarioInstanceVsLucky_blockList";
 
-                GumbaListVsSolidCollision = FlatRedBall.Math.Collision.CollisionManagerTileShapeCollectionExtensions.CreateTileRelationship(FlatRedBall.Math.Collision.CollisionManager.Self, GumbaList, SolidCollision);
-    GumbaListVsSolidCollision.Name = "GumbaListVsSolidCollision";
-    GumbaListVsSolidCollision.SetMoveCollision(0f, 1f);
-
                 {
-        var temp = new FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.Math.PositionedObjectList<Entities.Gumba>>(MarioInstance, GumbaList);
+        var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba>(MarioInstance, GumbaList);
         var isCloud = false;
         temp.CollisionFunction = (first, second) =>
         {
-            var didCollide = false;
-            foreach (var collidableItem in second)
-            {
-                var collidedInternal = first.CollideAgainst(collidableItem.Collision, isCloud);
-                didCollide = didCollide || collidedInternal;
-            }
-            return didCollide;
+            return first.CollideAgainst(second, isCloud);
         }
         ;
         FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
@@ -228,8 +212,6 @@ namespace Super_Marios_Bros.Screens
         {
             bool oldShapeManagerSuppressAdd = FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue;
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = true;
-            GumbaListVsSolidCollision.CollisionOccurred += OnGumbaListVsSolidCollisionCollisionOccurred;
-            GumbaListVsSolidCollision.CollisionOccurred += OnGumbaListVsSolidCollisionCollisionOccurredTunnel;
             if (Map!= null)
             {
             }

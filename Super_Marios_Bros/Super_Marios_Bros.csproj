@@ -92,9 +92,6 @@
     <Compile Include="Screens\GameScreen.Generated.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\GameScreen.Generated.Event.cs">
-      <DependentUpon>GameScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\World1level1.cs" />
     <Compile Include="Screens\World1level1.Generated.cs">
       <DependentUpon>World1level1.cs</DependentUpon>

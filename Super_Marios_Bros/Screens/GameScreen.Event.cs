@@ -12,24 +12,7 @@ namespace Super_Marios_Bros.Screens
 {
     public partial class GameScreen
     {
-        //void OnMarioInstanceVsA_BrickListCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.A_Brick second) 
-        //{
-        //    if (PassonClass.mariobig == true && first.Y < second.Y)
-        //    {
-        //        second.Destroy();
-        //    }
-        //}
-        //void OnMarioInstanceVsSolidCollisionCollisionOccurred (Super_Marios_Bros.Entities.Mario first, FlatRedBall.TileCollisions.TileShapeCollection second) 
-        //{
-               
-        //}
-        void OnGumbaListVsSolidCollisionCollisionOccurred (Entities.Gumba first, FlatRedBall.TileCollisions.TileShapeCollection second) 
-        {
-            if (first.Y > second.Y)
-            {
 
-            }
-        }
 
     }
 }

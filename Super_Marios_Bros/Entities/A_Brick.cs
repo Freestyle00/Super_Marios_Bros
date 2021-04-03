@@ -20,7 +20,7 @@ namespace Super_Marios_Bros.Entities
         /// </summary>
         private void CustomInitialize()
         {
-
+            //this.Velocity.Y = 100;
 
         }
 

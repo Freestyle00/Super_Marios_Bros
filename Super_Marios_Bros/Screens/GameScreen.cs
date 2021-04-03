@@ -31,7 +31,7 @@ namespace Super_Marios_Bros.Screens
             {
                 Camera.Main.X = MarioInstance.X;
             }
-            FlatRedBall.Debugging.Debugger.Write("X" + MarioInstance.X + "\nY" + MarioInstance.Y); //(╯ ͠° ͟ʖ ͡°)╯┻━┻ 
+            FlatRedBall.Debugging.Debugger.Write("X" + MarioInstance.X + "\nY" + MarioInstance.Y + "\nGumba X Velocity " + PassonClass.GUMBATEST)  ; //(╯ ͠° ͟ʖ ͡°)╯┻━┻ 
             if (MarioInstance.Y <= -230) { RestartScreen(true, true); };
         }
 

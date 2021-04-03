@@ -56,6 +56,10 @@
     <Compile Include="Entities\A_Brick.Generated.cs">
       <DependentUpon>A_Brick.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Gumba.cs" />
+    <Compile Include="Entities\Gumba.Generated.cs">
+      <DependentUpon>Gumba.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Lucky_block.cs" />
     <Compile Include="Entities\Lucky_block.Generated.cs">
       <DependentUpon>Lucky_block.cs</DependentUpon>
@@ -65,6 +69,7 @@
       <DependentUpon>Mario.cs</DependentUpon>
     </Compile>
     <Compile Include="Factories\A_BrickFactory.Generated.cs" />
+    <Compile Include="Factories\GumbaFactory.Generated.cs" />
     <Compile Include="Factories\Lucky_blockFactory.Generated.cs" />
     <Compile Include="Factories\MarioFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
@@ -85,6 +90,9 @@
       <DependentUpon>GameScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\GameScreen.Generated.cs">
+      <DependentUpon>GameScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\GameScreen.Generated.Event.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\World1level1.cs" />
@@ -168,6 +176,14 @@
     <None Include="content\entities\a_brick\the_brick.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>The_BRICK</Name>
+    </None>
+    <None Include="content\entities\gumba\gumba_walking.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Gumba_walking</Name>
+    </None>
+    <None Include="content\entities\gumba\spritesheets for the enemies.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>SpriteSheets for the enemies</Name>
     </None>
     <None Include="content\entities\lucky_block\luckyblockhasbeentouched.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

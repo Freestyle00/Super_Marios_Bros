@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnimationChainArraySave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileRelativeTextures>true</FileRelativeTextures>
+  <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
+  <CoordinateType>Pixel</CoordinateType>
+  <AnimationChain>
+    <Name>Gumba_walking</Name>
+    <Frame>
+      <TextureName>SpriteSheets for the enemies.png</TextureName>
+      <FrameLength>0.3</FrameLength>
+      <LeftCoordinate>1</LeftCoordinate>
+      <RightCoordinate>17</RightCoordinate>
+      <TopCoordinate>28</TopCoordinate>
+      <BottomCoordinate>44</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>SpriteSheets for the enemies.png</TextureName>
+      <FrameLength>0.3</FrameLength>
+      <LeftCoordinate>18</LeftCoordinate>
+      <RightCoordinate>34</RightCoordinate>
+      <TopCoordinate>28</TopCoordinate>
+      <BottomCoordinate>44</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Gumba_died</Name>
+    <Frame>
+      <TextureName>spritesheets for the enemies.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>39</LeftCoordinate>
+      <RightCoordinate>55</RightCoordinate>
+      <TopCoordinate>36</TopCoordinate>
+      <BottomCoordinate>44</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <ProjectFile>../../../super_marios_bros.glux</ProjectFile>
+</AnimationChainArraySave>

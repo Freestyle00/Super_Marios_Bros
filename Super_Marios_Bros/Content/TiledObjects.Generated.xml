@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <objecttypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <objecttype name="A_Brick" />
+  <objecttype name="Gumba">
+    <property name="AxisAlignedRectangleInstanceHeight" type="float" default="16" />
+  </objecttype>
   <objecttype name="Lucky_block">
     <property name="SpriteInstanceTexture" type="Texture2D" default="luckyblocknormal" />
   </objecttype>

@@ -23,8 +23,6 @@ namespace Super_Marios_Bros.Screens
         private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Lucky_block> Lucky_blockList;
         private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Gumba> GumbaList;
         private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection> MarioInstanceVsSolidCollision;
-        private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickList;
-        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickListHitbox_from_down;
         private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockList;
         private FlatRedBall.Math.Collision.CollidableListVsTileShapeCollectionRelationship<Entities.Gumba> GumbaListAxisAlignedRectangleInstanceVsSolidCollision;
         private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.A_Brick_being_destroyed> A_Brick_being_destroyedList;
@@ -32,8 +30,9 @@ namespace Super_Marios_Bros.Screens
         private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListAxisAlignedRectangleInstance;
         private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListLeftMarioDead;
         private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListRightMarioDead;
+        private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickListAxisAlignedRectangleInstance;
+        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickListHitbox_from_down;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockListCollisionOccurred;
-        public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickListCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListget_dunkedCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListLeftMarioDeadCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListRightMarioDeadCollisionOccurred;
@@ -70,23 +69,6 @@ namespace Super_Marios_Bros.Screens
         MarioInstanceVsSolidCollision = temp;
     }
     MarioInstanceVsSolidCollision.Name = "MarioInstanceVsSolidCollision";
-
-                {
-        var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick>(MarioInstance, A_BrickList);
-        var isCloud = false;
-        temp.CollisionFunction = (first, second) =>
-        {
-            return first.CollideAgainst(second, isCloud);
-        }
-        ;
-        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
-        MarioInstanceVsA_BrickList = temp;
-    }
-    MarioInstanceVsA_BrickList.Name = "MarioInstanceVsA_BrickList";
-
-                MarioInstanceVsA_BrickListHitbox_from_down = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, A_BrickList);
-    MarioInstanceVsA_BrickListHitbox_from_down.SetSecondSubCollision(item => item.Hitbox_from_down);
-    MarioInstanceVsA_BrickListHitbox_from_down.Name = "MarioInstanceVsA_BrickListHitbox_from_down";
 
                 {
         var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block>(MarioInstance, Lucky_blockList);
@@ -130,6 +112,24 @@ namespace Super_Marios_Bros.Screens
                 MarioInstanceVsGumbaListRightMarioDead = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, GumbaList);
     MarioInstanceVsGumbaListRightMarioDead.SetSecondSubCollision(item => item.RightMarioDead);
     MarioInstanceVsGumbaListRightMarioDead.Name = "MarioInstanceVsGumbaListRightMarioDead";
+
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick>(MarioInstance, A_BrickList);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            return first.CollideAgainst(second, isCloud);
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        MarioInstanceVsA_BrickListAxisAlignedRectangleInstance = temp;
+    }
+    MarioInstanceVsA_BrickListAxisAlignedRectangleInstance.Name = "MarioInstanceVsA_BrickListAxisAlignedRectangleInstance";
+
+                MarioInstanceVsA_BrickListHitbox_from_down = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, A_BrickList);
+    MarioInstanceVsA_BrickListHitbox_from_down.SetSecondSubCollision(item => item.Hitbox_from_down);
+    MarioInstanceVsA_BrickListHitbox_from_down.Name = "MarioInstanceVsA_BrickListHitbox_from_down";
+    MarioInstanceVsA_BrickListHitbox_from_down.SetMoveCollision(1f, 1f);
 
             // normally we wait to set variables until after the object is created, but in this case if the
             // TileShapeCollection doesn't have its Visible set before creating the tiles, it can result in
@@ -266,8 +266,6 @@ namespace Super_Marios_Bros.Screens
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = true;
             MarioInstanceVsLucky_blockList.CollisionOccurred += OnMarioInstanceVsLucky_blockListCollisionOccurred;
             MarioInstanceVsLucky_blockList.CollisionOccurred += OnMarioInstanceVsLucky_blockListCollisionOccurredTunnel;
-            MarioInstanceVsA_BrickList.CollisionOccurred += OnMarioInstanceVsA_BrickListCollisionOccurred;
-            MarioInstanceVsA_BrickList.CollisionOccurred += OnMarioInstanceVsA_BrickListCollisionOccurredTunnel;
             MarioInstanceVsGumbaListget_dunked.CollisionOccurred += OnMarioInstanceVsGumbaListget_dunkedCollisionOccurred;
             MarioInstanceVsGumbaListget_dunked.CollisionOccurred += OnMarioInstanceVsGumbaListget_dunkedCollisionOccurredTunnel;
             MarioInstanceVsGumbaListLeftMarioDead.CollisionOccurred += OnMarioInstanceVsGumbaListLeftMarioDeadCollisionOccurred;

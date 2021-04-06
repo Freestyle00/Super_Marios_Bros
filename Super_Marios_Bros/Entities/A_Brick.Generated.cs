@@ -176,7 +176,7 @@ namespace Super_Marios_Bros.Entities
                 Hitbox_from_down.RelativeY = -8f;
             }
             Hitbox_from_down.Width = 15f;
-            Hitbox_from_down.Height = 1f;
+            Hitbox_from_down.Height = 3f;
             Hitbox_from_down.Color = Microsoft.Xna.Framework.Color.Tomato;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
@@ -231,7 +231,7 @@ namespace Super_Marios_Bros.Entities
                 Hitbox_from_down.RelativeY = -8f;
             }
             Hitbox_from_down.Width = 15f;
-            Hitbox_from_down.Height = 1f;
+            Hitbox_from_down.Height = 3f;
             Hitbox_from_down.Color = Microsoft.Xna.Framework.Color.Tomato;
             if (Parent == null)
             {

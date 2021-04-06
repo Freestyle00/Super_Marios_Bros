@@ -37,6 +37,17 @@ namespace Super_Marios_Bros.Screens
             {
                 this.RestartScreen(true, true);
             }
+            //foreach (Super_Marios_Bros.Entities.A_Brick Brick in A_BrickList)
+            //{
+            //    MarioInstance.CollideAgainstMove(Brick.AxisAlignedRectangleInstance, 0, 1);
+            //}
+            foreach (Entities.A_Brick brick in A_BrickList)
+            {
+                if (MarioInstance.CollideAgainst(brick.Hitbox_from_down) && PassonClass.mariobig == true)
+                {
+                    brick.Imdead();
+                }
+            }
         }
 
         void CustomDestroy()

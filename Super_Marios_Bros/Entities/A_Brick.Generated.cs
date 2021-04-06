@@ -151,8 +151,8 @@ namespace Super_Marios_Bros.Entities
                 mAxisAlignedRectangleInstance.CopyAbsoluteToRelative();
                 mAxisAlignedRectangleInstance.AttachTo(this, false);
             }
-            AxisAlignedRectangleInstance.Width = 15f;
-            AxisAlignedRectangleInstance.Height = 14.5f;
+            AxisAlignedRectangleInstance.Width = 16f;
+            AxisAlignedRectangleInstance.Height = 16f;
             AxisAlignedRectangleInstance.Color = Microsoft.Xna.Framework.Color.Violet;
             if (mHitbox_from_down.Parent == null)
             {
@@ -211,8 +211,8 @@ namespace Super_Marios_Bros.Entities
             }
             SpriteInstance.Texture = The_BRICK;
             SpriteInstance.TextureScale = 1f;
-            AxisAlignedRectangleInstance.Width = 15f;
-            AxisAlignedRectangleInstance.Height = 14.5f;
+            AxisAlignedRectangleInstance.Width = 16f;
+            AxisAlignedRectangleInstance.Height = 16f;
             AxisAlignedRectangleInstance.Color = Microsoft.Xna.Framework.Color.Violet;
             if (Hitbox_from_down.Parent == null)
             {

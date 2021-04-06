@@ -40,12 +40,5 @@ namespace Super_Marios_Bros.Screens
                 MarioInstanceVsGumbaListRightMarioDeadCollisionOccurred(first, second);
             }
         }
-        void OnMarioInstanceVsA_BrickListHitbox_from_downCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.A_Brick second) 
-        {
-            if (this.MarioInstanceVsA_BrickListHitbox_from_downCollisionOccurred != null)
-            {
-                MarioInstanceVsA_BrickListHitbox_from_downCollisionOccurred(first, second);
-            }
-        }
     }
 }

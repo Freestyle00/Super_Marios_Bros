@@ -18,7 +18,6 @@ namespace Super_Marios_Bros.Screens
             if (first.Y < second.Y - 6.5f)
             {
                 second.HandleHit();
-                
             }
         }       
         void OnMarioInstanceVsGumbaListget_dunkedCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
@@ -47,15 +46,6 @@ namespace Super_Marios_Bros.Screens
             else if (PassonClass.mariobig == false)
             {
                 this.RestartScreen(true, true);
-            }
-        }
-        void OnMarioInstanceVsA_BrickListHitbox_from_downCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.A_Brick second) 
-        {
-            Console.WriteLine("test");
-            if (PassonClass.mariobig == true)
-            {
-                second.Imdead();
-                Console.WriteLine("TRIGGERED");
             }
         }
     }

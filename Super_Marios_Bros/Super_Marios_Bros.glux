@@ -337,6 +337,222 @@
             </PropertySave>
             <PropertySave>
               <Name>SecondCollisionName</Name>
+              <ValueAsString>GumbaList</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionElasticity</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsCollisionActive</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionType</Name>
+              <ValueAsInt>3</ValueAsInt>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstSubCollisionSelectedItem</Name>
+              <ValueAsString>&lt;Entire Object&gt;</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondSubCollisionSelectedItem</Name>
+              <ValueAsString>AxisAlignedRectangleInstance</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile>Collision Relationship</SourceFile>
+          <SourceClassType>FlatRedBall.Math.Collision.DelegateSingleVsListRelationship&lt;Super_Marios_Bros.Entities.Mario, Entities.Gumba&gt;</SourceClassType>
+          <InstanceName>MarioInstanceVsGumbaListAxisAlignedRectangleInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>false</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>AssociateWithFactory</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsAutoNameEnabled</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionName</Name>
+              <ValueAsString>MarioInstance</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionName</Name>
+              <ValueAsString>GumbaList</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionElasticity</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsCollisionActive</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondSubCollisionSelectedItem</Name>
+              <ValueAsString>get_dunked</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionType</Name>
+              <ValueAsInt>0</ValueAsInt>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile>Collision Relationship</SourceFile>
+          <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;Super_Marios_Bros.Entities.Mario, Entities.Gumba&gt;</SourceClassType>
+          <InstanceName>MarioInstanceVsGumbaListget_dunked</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>false</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>AssociateWithFactory</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsAutoNameEnabled</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionName</Name>
+              <ValueAsString>MarioInstance</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionName</Name>
+              <ValueAsString>GumbaList</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionElasticity</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsCollisionActive</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondSubCollisionSelectedItem</Name>
+              <ValueAsString>LeftMarioDead</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile>Collision Relationship</SourceFile>
+          <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;Super_Marios_Bros.Entities.Mario, Entities.Gumba&gt;</SourceClassType>
+          <InstanceName>MarioInstanceVsGumbaListLeftMarioDead</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>false</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>AssociateWithFactory</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsAutoNameEnabled</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionName</Name>
+              <ValueAsString>MarioInstance</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionName</Name>
+              <ValueAsString>GumbaList</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionElasticity</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsCollisionActive</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondSubCollisionSelectedItem</Name>
+              <ValueAsString>RightMarioDead</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile>Collision Relationship</SourceFile>
+          <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;Super_Marios_Bros.Entities.Mario, Entities.Gumba&gt;</SourceClassType>
+          <InstanceName>MarioInstanceVsGumbaListRightMarioDead</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>false</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>AssociateWithFactory</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsAutoNameEnabled</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionName</Name>
+              <ValueAsString>MarioInstance</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionName</Name>
               <ValueAsString>SolidCollision</ValueAsString>
             </PropertySave>
             <PropertySave>
@@ -494,332 +710,6 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>false</IndependentOfCamera>
         </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>AssociateWithFactory</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsAutoNameEnabled</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionName</Name>
-              <ValueAsString>MarioInstance</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionName</Name>
-              <ValueAsString>GumbaList</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionElasticity</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsCollisionActive</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondSubCollisionSelectedItem</Name>
-              <ValueAsString>get_dunked</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionType</Name>
-              <ValueAsInt>0</ValueAsInt>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile>Collision Relationship</SourceFile>
-          <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;Super_Marios_Bros.Entities.Mario, Entities.Gumba&gt;</SourceClassType>
-          <InstanceName>MarioInstanceVsGumbaListget_dunked</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>false</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>AssociateWithFactory</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsAutoNameEnabled</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionName</Name>
-              <ValueAsString>MarioInstance</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionName</Name>
-              <ValueAsString>GumbaList</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionElasticity</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsCollisionActive</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionType</Name>
-              <ValueAsInt>3</ValueAsInt>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstSubCollisionSelectedItem</Name>
-              <ValueAsString>&lt;Entire Object&gt;</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondSubCollisionSelectedItem</Name>
-              <ValueAsString>AxisAlignedRectangleInstance</ValueAsString>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile>Collision Relationship</SourceFile>
-          <SourceClassType>FlatRedBall.Math.Collision.DelegateSingleVsListRelationship&lt;Super_Marios_Bros.Entities.Mario, Entities.Gumba&gt;</SourceClassType>
-          <InstanceName>MarioInstanceVsGumbaListAxisAlignedRectangleInstance</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>false</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>AssociateWithFactory</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsAutoNameEnabled</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionName</Name>
-              <ValueAsString>MarioInstance</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionName</Name>
-              <ValueAsString>GumbaList</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionElasticity</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsCollisionActive</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondSubCollisionSelectedItem</Name>
-              <ValueAsString>LeftMarioDead</ValueAsString>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile>Collision Relationship</SourceFile>
-          <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;Super_Marios_Bros.Entities.Mario, Entities.Gumba&gt;</SourceClassType>
-          <InstanceName>MarioInstanceVsGumbaListLeftMarioDead</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>false</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>AssociateWithFactory</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsAutoNameEnabled</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionName</Name>
-              <ValueAsString>MarioInstance</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionName</Name>
-              <ValueAsString>GumbaList</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionElasticity</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsCollisionActive</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondSubCollisionSelectedItem</Name>
-              <ValueAsString>RightMarioDead</ValueAsString>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile>Collision Relationship</SourceFile>
-          <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;Super_Marios_Bros.Entities.Mario, Entities.Gumba&gt;</SourceClassType>
-          <InstanceName>MarioInstanceVsGumbaListRightMarioDead</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>false</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>AssociateWithFactory</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsAutoNameEnabled</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionName</Name>
-              <ValueAsString>MarioInstance</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionName</Name>
-              <ValueAsString>A_BrickList</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionElasticity</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsCollisionActive</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionType</Name>
-              <ValueAsInt>3</ValueAsInt>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondSubCollisionSelectedItem</Name>
-              <ValueAsString>AxisAlignedRectangleInstance</ValueAsString>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile>Collision Relationship</SourceFile>
-          <SourceClassType>FlatRedBall.Math.Collision.DelegateSingleVsListRelationship&lt;Super_Marios_Bros.Entities.Mario, Entities.A_Brick&gt;</SourceClassType>
-          <InstanceName>MarioInstanceVsA_BrickListAxisAlignedRectangleInstance</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>false</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>AssociateWithFactory</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsAutoNameEnabled</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionName</Name>
-              <ValueAsString>MarioInstance</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionName</Name>
-              <ValueAsString>A_BrickList</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionElasticity</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsCollisionActive</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondSubCollisionSelectedItem</Name>
-              <ValueAsString>Hitbox_from_down</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionType</Name>
-              <ValueAsInt>1</ValueAsInt>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile>Collision Relationship</SourceFile>
-          <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;Super_Marios_Bros.Entities.Mario, Entities.A_Brick&gt;</SourceClassType>
-          <InstanceName>MarioInstanceVsA_BrickListHitbox_from_down</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>false</IndependentOfCamera>
-        </NamedObjectSave>
       </NamedObjects>
       <Name>Screens\GameScreen</Name>
       <Events>
@@ -847,13 +737,6 @@
         <EventResponseSave>
           <EventName>MarioInstanceVsGumbaListRightMarioDeadCollisionOccurred</EventName>
           <SourceObject>MarioInstanceVsGumbaListRightMarioDead</SourceObject>
-          <SourceObjectEvent>CollisionOccurred</SourceObjectEvent>
-          <BeforeOrAfter>Before</BeforeOrAfter>
-          <DelegateType />
-        </EventResponseSave>
-        <EventResponseSave>
-          <EventName>MarioInstanceVsA_BrickListHitbox_from_downCollisionOccurred</EventName>
-          <SourceObject>MarioInstanceVsA_BrickListHitbox_from_down</SourceObject>
           <SourceObjectEvent>CollisionOccurred</SourceObjectEvent>
           <BeforeOrAfter>Before</BeforeOrAfter>
           <DelegateType />
@@ -1135,12 +1018,12 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Height</Member>
-            <ValueAsFloat>14.5</ValueAsFloat>
+            <ValueAsFloat>16</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
             <Member>Width</Member>
-            <ValueAsFloat>15</ValueAsFloat>
+            <ValueAsFloat>16</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>

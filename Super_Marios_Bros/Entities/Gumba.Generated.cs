@@ -36,6 +36,42 @@ namespace Super_Marios_Bros.Entities
                 mAxisAlignedRectangleInstance = value;
             }
         }
+        private FlatRedBall.Math.Geometry.AxisAlignedRectangle mget_dunked;
+        public FlatRedBall.Math.Geometry.AxisAlignedRectangle get_dunked
+        {
+            get
+            {
+                return mget_dunked;
+            }
+            private set
+            {
+                mget_dunked = value;
+            }
+        }
+        private FlatRedBall.Math.Geometry.AxisAlignedRectangle mLeftMarioDead;
+        public FlatRedBall.Math.Geometry.AxisAlignedRectangle LeftMarioDead
+        {
+            get
+            {
+                return mLeftMarioDead;
+            }
+            private set
+            {
+                mLeftMarioDead = value;
+            }
+        }
+        private FlatRedBall.Math.Geometry.AxisAlignedRectangle mRightMarioDead;
+        public FlatRedBall.Math.Geometry.AxisAlignedRectangle RightMarioDead
+        {
+            get
+            {
+                return mRightMarioDead;
+            }
+            private set
+            {
+                mRightMarioDead = value;
+            }
+        }
         public float AxisAlignedRectangleInstanceHeight
         {
             get
@@ -45,6 +81,31 @@ namespace Super_Marios_Bros.Entities
             set
             {
                 AxisAlignedRectangleInstance.Height = value;
+            }
+        }
+        public float HeightOftheRectangle
+        {
+            get
+            {
+                if (AxisAlignedRectangleInstance.Parent == null)
+                {
+                    return AxisAlignedRectangleInstance.Y;
+                }
+                else
+                {
+                    return AxisAlignedRectangleInstance.RelativeY;
+                }
+            }
+            set
+            {
+                if (AxisAlignedRectangleInstance.Parent == null)
+                {
+                    AxisAlignedRectangleInstance.Y = value;
+                }
+                else
+                {
+                    AxisAlignedRectangleInstance.RelativeY = value;
+                }
             }
         }
         public int Index { get; set; }
@@ -79,6 +140,12 @@ namespace Super_Marios_Bros.Entities
             SpriteInstance.Name = "SpriteInstance";
             mAxisAlignedRectangleInstance = new FlatRedBall.Math.Geometry.AxisAlignedRectangle();
             mAxisAlignedRectangleInstance.Name = "mAxisAlignedRectangleInstance";
+            mget_dunked = new FlatRedBall.Math.Geometry.AxisAlignedRectangle();
+            mget_dunked.Name = "mget_dunked";
+            mLeftMarioDead = new FlatRedBall.Math.Geometry.AxisAlignedRectangle();
+            mLeftMarioDead.Name = "mLeftMarioDead";
+            mRightMarioDead = new FlatRedBall.Math.Geometry.AxisAlignedRectangle();
+            mRightMarioDead.Name = "mRightMarioDead";
             
             PostInitialize();
             if (addToManagers)
@@ -92,6 +159,9 @@ namespace Super_Marios_Bros.Entities
             FlatRedBall.SpriteManager.AddPositionedObject(this);
             FlatRedBall.SpriteManager.AddToLayer(SpriteInstance, LayerProvidedByContainer);
             FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mAxisAlignedRectangleInstance, LayerProvidedByContainer);
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mget_dunked, LayerProvidedByContainer);
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mLeftMarioDead, LayerProvidedByContainer);
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mRightMarioDead, LayerProvidedByContainer);
         }
         public virtual void AddToManagers (FlatRedBall.Graphics.Layer layerToAddTo) 
         {
@@ -99,6 +169,9 @@ namespace Super_Marios_Bros.Entities
             FlatRedBall.SpriteManager.AddPositionedObject(this);
             FlatRedBall.SpriteManager.AddToLayer(SpriteInstance, LayerProvidedByContainer);
             FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mAxisAlignedRectangleInstance, LayerProvidedByContainer);
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mget_dunked, LayerProvidedByContainer);
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mLeftMarioDead, LayerProvidedByContainer);
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mRightMarioDead, LayerProvidedByContainer);
             AddToManagersBottomUp(layerToAddTo);
             CustomInitialize();
         }
@@ -123,6 +196,18 @@ namespace Super_Marios_Bros.Entities
             {
                 FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(AxisAlignedRectangleInstance);
             }
+            if (get_dunked != null)
+            {
+                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(get_dunked);
+            }
+            if (LeftMarioDead != null)
+            {
+                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(LeftMarioDead);
+            }
+            if (RightMarioDead != null)
+            {
+                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(RightMarioDead);
+            }
             mGeneratedCollision.RemoveFromManagers(clearThis: false);
             CustomDestroy();
         }
@@ -137,7 +222,7 @@ namespace Super_Marios_Bros.Entities
             }
             SpriteInstance.TextureScale = 1f;
             SpriteInstance.AnimationChains = Gumba_walking;
-            SpriteInstance.CurrentChainName = "Gumba_walking";
+            SpriteInstance.CurrentChainName = "";
             if (mAxisAlignedRectangleInstance.Parent == null)
             {
                 mAxisAlignedRectangleInstance.CopyAbsoluteToRelative();
@@ -145,8 +230,60 @@ namespace Super_Marios_Bros.Entities
             }
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
+            if (mget_dunked.Parent == null)
+            {
+                mget_dunked.CopyAbsoluteToRelative();
+                mget_dunked.AttachTo(this, false);
+            }
+            if (get_dunked.Parent == null)
+            {
+                get_dunked.Y = 8.5f;
+            }
+            else
+            {
+                get_dunked.RelativeY = 8.5f;
+            }
+            get_dunked.Width = 14f;
+            get_dunked.Height = 2f;
+            get_dunked.Color = Microsoft.Xna.Framework.Color.Violet;
+            get_dunked.RepositionDirections = FlatRedBall.Math.Geometry.RepositionDirections.Up;
+            if (mLeftMarioDead.Parent == null)
+            {
+                mLeftMarioDead.CopyAbsoluteToRelative();
+                mLeftMarioDead.AttachTo(this, false);
+            }
+            if (LeftMarioDead.Parent == null)
+            {
+                LeftMarioDead.X = -8.5f;
+            }
+            else
+            {
+                LeftMarioDead.RelativeX = -8.5f;
+            }
+            LeftMarioDead.Width = 2f;
+            LeftMarioDead.Height = 16f;
+            LeftMarioDead.Color = Microsoft.Xna.Framework.Color.Violet;
+            if (mRightMarioDead.Parent == null)
+            {
+                mRightMarioDead.CopyAbsoluteToRelative();
+                mRightMarioDead.AttachTo(this, false);
+            }
+            if (RightMarioDead.Parent == null)
+            {
+                RightMarioDead.X = 8.5f;
+            }
+            else
+            {
+                RightMarioDead.RelativeX = 8.5f;
+            }
+            RightMarioDead.Width = 2f;
+            RightMarioDead.Height = 16f;
+            RightMarioDead.Color = Microsoft.Xna.Framework.Color.Violet;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
+            Collision.AxisAlignedRectangles.AddOneWay(mget_dunked);
+            Collision.AxisAlignedRectangles.AddOneWay(mLeftMarioDead);
+            Collision.AxisAlignedRectangles.AddOneWay(mRightMarioDead);
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = oldShapeManagerSuppressAdd;
         }
         public virtual void AddToManagersBottomUp (FlatRedBall.Graphics.Layer layerToAddTo) 
@@ -164,6 +301,18 @@ namespace Super_Marios_Bros.Entities
             {
                 FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(AxisAlignedRectangleInstance);
             }
+            if (get_dunked != null)
+            {
+                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(get_dunked);
+            }
+            if (LeftMarioDead != null)
+            {
+                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(LeftMarioDead);
+            }
+            if (RightMarioDead != null)
+            {
+                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(RightMarioDead);
+            }
             mGeneratedCollision.RemoveFromManagers(clearThis: false);
         }
         public virtual void AssignCustomVariables (bool callOnContainedElements) 
@@ -173,10 +322,45 @@ namespace Super_Marios_Bros.Entities
             }
             SpriteInstance.TextureScale = 1f;
             SpriteInstance.AnimationChains = Gumba_walking;
-            SpriteInstance.CurrentChainName = "Gumba_walking";
+            SpriteInstance.CurrentChainName = "";
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
+            if (get_dunked.Parent == null)
+            {
+                get_dunked.Y = 8.5f;
+            }
+            else
+            {
+                get_dunked.RelativeY = 8.5f;
+            }
+            get_dunked.Width = 14f;
+            get_dunked.Height = 2f;
+            get_dunked.Color = Microsoft.Xna.Framework.Color.Violet;
+            get_dunked.RepositionDirections = FlatRedBall.Math.Geometry.RepositionDirections.Up;
+            if (LeftMarioDead.Parent == null)
+            {
+                LeftMarioDead.X = -8.5f;
+            }
+            else
+            {
+                LeftMarioDead.RelativeX = -8.5f;
+            }
+            LeftMarioDead.Width = 2f;
+            LeftMarioDead.Height = 16f;
+            LeftMarioDead.Color = Microsoft.Xna.Framework.Color.Violet;
+            if (RightMarioDead.Parent == null)
+            {
+                RightMarioDead.X = 8.5f;
+            }
+            else
+            {
+                RightMarioDead.RelativeX = 8.5f;
+            }
+            RightMarioDead.Width = 2f;
+            RightMarioDead.Height = 16f;
+            RightMarioDead.Color = Microsoft.Xna.Framework.Color.Violet;
             AxisAlignedRectangleInstanceHeight = 16f;
+            HeightOftheRectangle = 0f;
         }
         public virtual void ConvertToManuallyUpdated () 
         {
@@ -286,6 +470,9 @@ namespace Super_Marios_Bros.Entities
             FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(this);
             FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(SpriteInstance);
             FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(AxisAlignedRectangleInstance);
+            FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(get_dunked);
+            FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(LeftMarioDead);
+            FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(RightMarioDead);
         }
         public virtual void MoveToLayer (FlatRedBall.Graphics.Layer layerToMoveTo) 
         {
@@ -303,6 +490,21 @@ namespace Super_Marios_Bros.Entities
                 layerToRemoveFrom.Remove(AxisAlignedRectangleInstance);
             }
             FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(AxisAlignedRectangleInstance, layerToMoveTo);
+            if (layerToRemoveFrom != null)
+            {
+                layerToRemoveFrom.Remove(get_dunked);
+            }
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(get_dunked, layerToMoveTo);
+            if (layerToRemoveFrom != null)
+            {
+                layerToRemoveFrom.Remove(LeftMarioDead);
+            }
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(LeftMarioDead, layerToMoveTo);
+            if (layerToRemoveFrom != null)
+            {
+                layerToRemoveFrom.Remove(RightMarioDead);
+            }
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(RightMarioDead, layerToMoveTo);
             LayerProvidedByContainer = layerToMoveTo;
         }
     }

@@ -1,0 +1,54 @@
+{
+  "EntityManagementValueList": [
+    {
+      "Name": "Entities\\A_Brick_being_destroyed",
+      "SelectedProperties": [],
+      "InstanceManagementValuesList": [
+        {
+          "SelectedProperties": [],
+          "Name": "SpriteInstance"
+        }
+      ]
+    },
+    {
+      "Name": "Entities\\A_Brick",
+      "SelectedProperties": [],
+      "InstanceManagementValuesList": [
+        {
+          "SelectedProperties": [],
+          "Name": "SpriteInstance"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "AxisAlignedRectangleInstance"
+        }
+      ]
+    },
+    {
+      "Name": "Entities\\Gumba",
+      "SelectedProperties": [],
+      "InstanceManagementValuesList": [
+        {
+          "SelectedProperties": [],
+          "Name": "SpriteInstance"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "AxisAlignedRectangleInstance"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "get_dunked"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "RightMarioDead"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "LeftMarioDead"
+        }
+      ]
+    }
+  ]
+}

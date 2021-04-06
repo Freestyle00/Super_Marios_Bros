@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Text;
 namespace Super_Marios_Bros.Entities
 {
-    public partial class A_Brick : FlatRedBall.PositionedObject, FlatRedBall.Graphics.IDestroyable, FlatRedBall.Performance.IPoolable, FlatRedBall.Math.Geometry.ICollidable
+    public partial class A_Brick_being_destroyed : FlatRedBall.PositionedObject, FlatRedBall.Graphics.IDestroyable, FlatRedBall.Performance.IPoolable
     {
         // This is made static so that static lazy-loaded content can access it.
         public static string ContentManagerName { get; set; }
@@ -22,52 +22,21 @@ namespace Super_Marios_Bros.Entities
         static System.Collections.Generic.List<string> mRegisteredUnloads = new System.Collections.Generic.List<string>();
         static System.Collections.Generic.List<string> LoadedContentManagers = new System.Collections.Generic.List<string>();
         protected static Microsoft.Xna.Framework.Graphics.Texture2D The_BRICK;
+        protected static FlatRedBall.Graphics.Animation.AnimationChainList Brick_getting_killed;
         
         private FlatRedBall.Sprite SpriteInstance;
-        private FlatRedBall.Math.Geometry.AxisAlignedRectangle mAxisAlignedRectangleInstance;
-        public FlatRedBall.Math.Geometry.AxisAlignedRectangle AxisAlignedRectangleInstance
-        {
-            get
-            {
-                return mAxisAlignedRectangleInstance;
-            }
-            private set
-            {
-                mAxisAlignedRectangleInstance = value;
-            }
-        }
-        private FlatRedBall.Math.Geometry.AxisAlignedRectangle mHitbox_from_down;
-        public FlatRedBall.Math.Geometry.AxisAlignedRectangle Hitbox_from_down
-        {
-            get
-            {
-                return mHitbox_from_down;
-            }
-            private set
-            {
-                mHitbox_from_down = value;
-            }
-        }
         public int Index { get; set; }
         public bool Used { get; set; }
-        private FlatRedBall.Math.Geometry.ShapeCollection mGeneratedCollision;
-        public FlatRedBall.Math.Geometry.ShapeCollection Collision
-        {
-            get
-            {
-                return mGeneratedCollision;
-            }
-        }
         protected FlatRedBall.Graphics.Layer LayerProvidedByContainer = null;
-        public A_Brick () 
+        public A_Brick_being_destroyed () 
         	: this(FlatRedBall.Screens.ScreenManager.CurrentScreen.ContentManagerName, true)
         {
         }
-        public A_Brick (string contentManagerName) 
+        public A_Brick_being_destroyed (string contentManagerName) 
         	: this(contentManagerName, true)
         {
         }
-        public A_Brick (string contentManagerName, bool addToManagers) 
+        public A_Brick_being_destroyed (string contentManagerName, bool addToManagers) 
         	: base()
         {
             ContentManagerName = contentManagerName;
@@ -78,10 +47,6 @@ namespace Super_Marios_Bros.Entities
             LoadStaticContent(ContentManagerName);
             SpriteInstance = new FlatRedBall.Sprite();
             SpriteInstance.Name = "SpriteInstance";
-            mAxisAlignedRectangleInstance = new FlatRedBall.Math.Geometry.AxisAlignedRectangle();
-            mAxisAlignedRectangleInstance.Name = "mAxisAlignedRectangleInstance";
-            mHitbox_from_down = new FlatRedBall.Math.Geometry.AxisAlignedRectangle();
-            mHitbox_from_down.Name = "mHitbox_from_down";
             
             PostInitialize();
             if (addToManagers)
@@ -94,16 +59,12 @@ namespace Super_Marios_Bros.Entities
             LayerProvidedByContainer = layerToAddTo;
             FlatRedBall.SpriteManager.AddPositionedObject(this);
             FlatRedBall.SpriteManager.AddToLayer(SpriteInstance, LayerProvidedByContainer);
-            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mAxisAlignedRectangleInstance, LayerProvidedByContainer);
-            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mHitbox_from_down, LayerProvidedByContainer);
         }
         public virtual void AddToManagers (FlatRedBall.Graphics.Layer layerToAddTo) 
         {
             LayerProvidedByContainer = layerToAddTo;
             FlatRedBall.SpriteManager.AddPositionedObject(this);
             FlatRedBall.SpriteManager.AddToLayer(SpriteInstance, LayerProvidedByContainer);
-            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mAxisAlignedRectangleInstance, LayerProvidedByContainer);
-            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mHitbox_from_down, LayerProvidedByContainer);
             AddToManagersBottomUp(layerToAddTo);
             CustomInitialize();
         }
@@ -116,7 +77,7 @@ namespace Super_Marios_Bros.Entities
         {
             if (Used)
             {
-                Factories.A_BrickFactory.MakeUnused(this, false);
+                Factories.A_Brick_being_destroyedFactory.MakeUnused(this, false);
             }
             FlatRedBall.SpriteManager.RemovePositionedObject(this);
             
@@ -124,15 +85,6 @@ namespace Super_Marios_Bros.Entities
             {
                 FlatRedBall.SpriteManager.RemoveSpriteOneWay(SpriteInstance);
             }
-            if (AxisAlignedRectangleInstance != null)
-            {
-                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(AxisAlignedRectangleInstance);
-            }
-            if (Hitbox_from_down != null)
-            {
-                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(Hitbox_from_down);
-            }
-            mGeneratedCollision.RemoveFromManagers(clearThis: false);
             CustomDestroy();
         }
         public virtual void PostInitialize () 
@@ -144,43 +96,9 @@ namespace Super_Marios_Bros.Entities
                 SpriteInstance.CopyAbsoluteToRelative();
                 SpriteInstance.AttachTo(this, false);
             }
-            SpriteInstance.Texture = The_BRICK;
             SpriteInstance.TextureScale = 1f;
-            if (mAxisAlignedRectangleInstance.Parent == null)
-            {
-                mAxisAlignedRectangleInstance.CopyAbsoluteToRelative();
-                mAxisAlignedRectangleInstance.AttachTo(this, false);
-            }
-            AxisAlignedRectangleInstance.Width = 15f;
-            AxisAlignedRectangleInstance.Height = 14.5f;
-            AxisAlignedRectangleInstance.Color = Microsoft.Xna.Framework.Color.Violet;
-            if (mHitbox_from_down.Parent == null)
-            {
-                mHitbox_from_down.CopyAbsoluteToRelative();
-                mHitbox_from_down.AttachTo(this, false);
-            }
-            if (Hitbox_from_down.Parent == null)
-            {
-                Hitbox_from_down.X = 0f;
-            }
-            else
-            {
-                Hitbox_from_down.RelativeX = 0f;
-            }
-            if (Hitbox_from_down.Parent == null)
-            {
-                Hitbox_from_down.Y = -8f;
-            }
-            else
-            {
-                Hitbox_from_down.RelativeY = -8f;
-            }
-            Hitbox_from_down.Width = 15f;
-            Hitbox_from_down.Height = 1f;
-            Hitbox_from_down.Color = Microsoft.Xna.Framework.Color.Tomato;
-            mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
-            Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
-            Collision.AxisAlignedRectangles.AddOneWay(mHitbox_from_down);
+            SpriteInstance.AnimationChains = Brick_getting_killed;
+            SpriteInstance.CurrentChainName = "The_brick_is_dead";
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = oldShapeManagerSuppressAdd;
         }
         public virtual void AddToManagersBottomUp (FlatRedBall.Graphics.Layer layerToAddTo) 
@@ -194,45 +112,15 @@ namespace Super_Marios_Bros.Entities
             {
                 FlatRedBall.SpriteManager.RemoveSpriteOneWay(SpriteInstance);
             }
-            if (AxisAlignedRectangleInstance != null)
-            {
-                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(AxisAlignedRectangleInstance);
-            }
-            if (Hitbox_from_down != null)
-            {
-                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(Hitbox_from_down);
-            }
-            mGeneratedCollision.RemoveFromManagers(clearThis: false);
         }
         public virtual void AssignCustomVariables (bool callOnContainedElements) 
         {
             if (callOnContainedElements)
             {
             }
-            SpriteInstance.Texture = The_BRICK;
             SpriteInstance.TextureScale = 1f;
-            AxisAlignedRectangleInstance.Width = 15f;
-            AxisAlignedRectangleInstance.Height = 14.5f;
-            AxisAlignedRectangleInstance.Color = Microsoft.Xna.Framework.Color.Violet;
-            if (Hitbox_from_down.Parent == null)
-            {
-                Hitbox_from_down.X = 0f;
-            }
-            else
-            {
-                Hitbox_from_down.RelativeX = 0f;
-            }
-            if (Hitbox_from_down.Parent == null)
-            {
-                Hitbox_from_down.Y = -8f;
-            }
-            else
-            {
-                Hitbox_from_down.RelativeY = -8f;
-            }
-            Hitbox_from_down.Width = 15f;
-            Hitbox_from_down.Height = 1f;
-            Hitbox_from_down.Color = Microsoft.Xna.Framework.Color.Tomato;
+            SpriteInstance.AnimationChains = Brick_getting_killed;
+            SpriteInstance.CurrentChainName = "The_brick_is_dead";
             if (Parent == null)
             {
                 Z = 1f;
@@ -277,7 +165,7 @@ namespace Super_Marios_Bros.Entities
                 {
                     if (!mRegisteredUnloads.Contains(ContentManagerName) && ContentManagerName != FlatRedBall.FlatRedBallServices.GlobalContentManager)
                     {
-                        FlatRedBall.FlatRedBallServices.GetContentManagerByName(ContentManagerName).AddUnloadMethod("A_BrickStaticUnload", UnloadStaticContent);
+                        FlatRedBall.FlatRedBallServices.GetContentManagerByName(ContentManagerName).AddUnloadMethod("A_Brick_being_destroyedStaticUnload", UnloadStaticContent);
                         mRegisteredUnloads.Add(ContentManagerName);
                     }
                 }
@@ -286,6 +174,11 @@ namespace Super_Marios_Bros.Entities
                     registerUnload = true;
                 }
                 The_BRICK = FlatRedBall.FlatRedBallServices.Load<Microsoft.Xna.Framework.Graphics.Texture2D>(@"content/entities/a_brick/the_brick.png", ContentManagerName);
+                if (!FlatRedBall.FlatRedBallServices.IsLoaded<FlatRedBall.Graphics.Animation.AnimationChainList>(@"content/entities/a_brick_being_destroyed/brick_getting_killed.achx", ContentManagerName))
+                {
+                    registerUnload = true;
+                }
+                Brick_getting_killed = FlatRedBall.FlatRedBallServices.Load<FlatRedBall.Graphics.Animation.AnimationChainList>(@"content/entities/a_brick_being_destroyed/brick_getting_killed.achx", ContentManagerName);
             }
             if (registerUnload && ContentManagerName != FlatRedBall.FlatRedBallServices.GlobalContentManager)
             {
@@ -293,7 +186,7 @@ namespace Super_Marios_Bros.Entities
                 {
                     if (!mRegisteredUnloads.Contains(ContentManagerName) && ContentManagerName != FlatRedBall.FlatRedBallServices.GlobalContentManager)
                     {
-                        FlatRedBall.FlatRedBallServices.GetContentManagerByName(ContentManagerName).AddUnloadMethod("A_BrickStaticUnload", UnloadStaticContent);
+                        FlatRedBall.FlatRedBallServices.GetContentManagerByName(ContentManagerName).AddUnloadMethod("A_Brick_being_destroyedStaticUnload", UnloadStaticContent);
                         mRegisteredUnloads.Add(ContentManagerName);
                     }
                 }
@@ -313,6 +206,10 @@ namespace Super_Marios_Bros.Entities
                 {
                     The_BRICK= null;
                 }
+                if (Brick_getting_killed != null)
+                {
+                    Brick_getting_killed= null;
+                }
             }
         }
         [System.Obsolete("Use GetFile instead")]
@@ -322,6 +219,8 @@ namespace Super_Marios_Bros.Entities
             {
                 case  "The_BRICK":
                     return The_BRICK;
+                case  "Brick_getting_killed":
+                    return Brick_getting_killed;
             }
             return null;
         }
@@ -331,6 +230,8 @@ namespace Super_Marios_Bros.Entities
             {
                 case  "The_BRICK":
                     return The_BRICK;
+                case  "Brick_getting_killed":
+                    return Brick_getting_killed;
             }
             return null;
         }
@@ -340,6 +241,8 @@ namespace Super_Marios_Bros.Entities
             {
                 case  "The_BRICK":
                     return The_BRICK;
+                case  "Brick_getting_killed":
+                    return Brick_getting_killed;
             }
             return null;
         }
@@ -353,8 +256,6 @@ namespace Super_Marios_Bros.Entities
         {
             FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(this);
             FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(SpriteInstance);
-            FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(AxisAlignedRectangleInstance);
-            FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(Hitbox_from_down);
         }
         public virtual void MoveToLayer (FlatRedBall.Graphics.Layer layerToMoveTo) 
         {
@@ -367,16 +268,6 @@ namespace Super_Marios_Bros.Entities
             {
                 FlatRedBall.SpriteManager.AddToLayer(SpriteInstance, layerToMoveTo);
             }
-            if (layerToRemoveFrom != null)
-            {
-                layerToRemoveFrom.Remove(AxisAlignedRectangleInstance);
-            }
-            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(AxisAlignedRectangleInstance, layerToMoveTo);
-            if (layerToRemoveFrom != null)
-            {
-                layerToRemoveFrom.Remove(Hitbox_from_down);
-            }
-            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(Hitbox_from_down, layerToMoveTo);
             LayerProvidedByContainer = layerToMoveTo;
         }
     }

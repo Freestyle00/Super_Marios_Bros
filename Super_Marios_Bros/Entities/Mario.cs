@@ -35,7 +35,6 @@ namespace Super_Marios_Bros.Entities
             Jumping();
             PassonClass.marioX = this.X;
             PassonClass.marioY = this.Y;
-
         }
         private void CustomDestroy()
         {
@@ -64,7 +63,7 @@ namespace Super_Marios_Bros.Entities
         {
             if (this.IsOnGround == true && InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space))
             {
-                //Mariojumpsound.Play();
+                //Mariojumpsound.Play(); //that gets annyoing after some time so i should not forget to decomment it
             }
         }
         void Debugthings()
@@ -78,7 +77,7 @@ namespace Super_Marios_Bros.Entities
                 PassonClass.mariobig = false;
             }
         }
-        void RUN()
+        void RUN() //den den den den den den den den den den den den den den
         {
             animationController.Activity();
             if (RunInput.IsDown)
@@ -106,6 +105,7 @@ namespace Super_Marios_Bros.Entities
                 return "Idle_small" + DirectionFacing;
             };
             animationController.Layers.Add(idleLayer);
+
             var walkLayer = new AnimationLayer();
             walkLayer.EveryFrameAction = () =>
             {
@@ -120,6 +120,7 @@ namespace Super_Marios_Bros.Entities
                 return null;
             };
             animationController.Layers.Add(walkLayer);
+
             var runLayer = new AnimationLayer();
             runLayer.EveryFrameAction = () =>
             {

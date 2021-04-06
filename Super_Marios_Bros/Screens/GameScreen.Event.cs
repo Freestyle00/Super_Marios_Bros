@@ -20,6 +20,47 @@ namespace Super_Marios_Bros.Screens
                 second.HandleHit();
                 
             }
+        }       
+        void OnMarioInstanceVsA_BrickListCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.A_Brick second) 
+        {
+
+        }
+        void OnMarioInstanceVsGumbaListget_dunkedCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
+        {
+            second.deadgumba();
+        }
+        void OnMarioInstanceVsGumbaListLeftMarioDeadCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
+        {
+            second.Destroy();
+            if (PassonClass.mariobig == true)
+            {
+                PassonClass.mariobig = false;
+            }
+            else if (PassonClass.mariobig == false)
+            {
+                this.RestartScreen(true, true);
+            }
+        }
+        void OnMarioInstanceVsGumbaListRightMarioDeadCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
+        {
+            second.Destroy();
+            if (PassonClass.mariobig == true)
+            {
+                PassonClass.mariobig = false;
+            }
+            else if (PassonClass.mariobig == false)
+            {
+                this.RestartScreen(true, true);
+            }
+        }
+        void OnMarioInstanceVsA_BrickListHitbox_from_downCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.A_Brick second) // i have to fix this after i am done with learing some music notes this doesnt trigger at all
+        {
+            Console.WriteLine("test");
+            if (PassonClass.mariobig == true)
+            {
+                second.Imdead();
+                Console.WriteLine("TRIGGERED");
+            }
         }
     }
 }

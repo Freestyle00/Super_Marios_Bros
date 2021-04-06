@@ -31,6 +31,7 @@
       <RightCoordinate>55</RightCoordinate>
       <TopCoordinate>36</TopCoordinate>
       <BottomCoordinate>44</BottomCoordinate>
+      <RelativeY>-8</RelativeY>
     </Frame>
   </AnimationChain>
   <ProjectFile>../../../super_marios_bros.glux</ProjectFile>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnimationChainArraySave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileRelativeTextures>true</FileRelativeTextures>
+  <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
+  <CoordinateType>Pixel</CoordinateType>
+  <AnimationChain>
+    <Name>The_brick_is_dead</Name>
+    <Frame>
+      <TextureName>the_brick1.png</TextureName>
+      <FrameLength>0.13333334</FrameLength>
+      <LeftCoordinate>3</LeftCoordinate>
+      <RightCoordinate>27</RightCoordinate>
+      <TopCoordinate>4</TopCoordinate>
+      <BottomCoordinate>26</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>the_brick2.png</TextureName>
+      <FrameLength>0.13333334</FrameLength>
+      <LeftCoordinate>2</LeftCoordinate>
+      <RightCoordinate>28</RightCoordinate>
+      <TopCoordinate>2</TopCoordinate>
+      <BottomCoordinate>26</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>the_brick3.png</TextureName>
+      <FrameLength>0.13333334</FrameLength>
+      <LeftCoordinate>0</LeftCoordinate>
+      <RightCoordinate>30</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>30</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <ProjectFile>../../../super_marios_bros.glux</ProjectFile>
+</AnimationChainArraySave>

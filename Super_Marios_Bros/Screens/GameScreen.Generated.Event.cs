@@ -19,5 +19,40 @@ namespace Super_Marios_Bros.Screens
                 MarioInstanceVsLucky_blockListCollisionOccurred(first, second);
             }
         }
+        void OnMarioInstanceVsA_BrickListCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.A_Brick second) 
+        {
+            if (this.MarioInstanceVsA_BrickListCollisionOccurred != null)
+            {
+                MarioInstanceVsA_BrickListCollisionOccurred(first, second);
+            }
+        }
+        void OnMarioInstanceVsGumbaListget_dunkedCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
+        {
+            if (this.MarioInstanceVsGumbaListget_dunkedCollisionOccurred != null)
+            {
+                MarioInstanceVsGumbaListget_dunkedCollisionOccurred(first, second);
+            }
+        }
+        void OnMarioInstanceVsGumbaListLeftMarioDeadCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
+        {
+            if (this.MarioInstanceVsGumbaListLeftMarioDeadCollisionOccurred != null)
+            {
+                MarioInstanceVsGumbaListLeftMarioDeadCollisionOccurred(first, second);
+            }
+        }
+        void OnMarioInstanceVsGumbaListRightMarioDeadCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
+        {
+            if (this.MarioInstanceVsGumbaListRightMarioDeadCollisionOccurred != null)
+            {
+                MarioInstanceVsGumbaListRightMarioDeadCollisionOccurred(first, second);
+            }
+        }
+        void OnMarioInstanceVsA_BrickListHitbox_from_downCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.A_Brick second) 
+        {
+            if (this.MarioInstanceVsA_BrickListHitbox_from_downCollisionOccurred != null)
+            {
+                MarioInstanceVsA_BrickListHitbox_from_downCollisionOccurred(first, second);
+            }
+        }
     }
 }

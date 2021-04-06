@@ -20,20 +20,21 @@ namespace Super_Marios_Bros.Entities
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
         /// added to managers will not have this method called.
         /// </summary>
-        /// 
-        float try_it = 0.5f;
+        float deadgumbawalking = 0.1f;
         AnimationController animationController;
+        bool gumbadead = false;
         private void CustomInitialize()
         {
-            this.Velocity.X = -100;
+            Animations();
+            this.Velocity.X = -50;
 
         }
 
         private void CustomActivity()
         {
+            animationController.Activity();
             PassonClass.GUMBATEST = this.Velocity.X;
-            Animations();
-            Bouncybouncy();
+            //Bouncybouncy();
         }
 
         private void CustomDestroy()
@@ -47,53 +48,65 @@ namespace Super_Marios_Bros.Entities
 
 
         }
-        void Bouncybouncy()
+        public void deadgumba()
         {
-            /*Side side = Side.None;
-
-            if t.CollideAgainstMove(rectangle2, 0, 1))
-            {
-                if (rectangle1.LastMoveCollisionReposition.X > 0)
-                    side = Side.Right;
-                else if (rectangle1.LastMoveCollisionReposition.X < 0)
-                    side = Side.Left;
-                else if (rectangle1.LastMoveCollisionReposition.Y > 0)
-                    side = Side.Top;
-                else if (rectangle1.LastMoveCollisionReposition.Y < 0)
-                    side = Side.Bottom;
-            }*/
-            if (Velocity.X == 0)
-            {
-                this.Velocity.X = 100;
-                Console.WriteLine("Right");
-                try_it -= TimeManager.SecondDifference;
-            }
-            if (Velocity.X <= 0 && try_it <= 0)
-            {
-                this.Velocity.X = -100;
-                Console.WriteLine("Left");
-                try_it = 0.5f;
-            }
+            gumbadead = true;
+            Console.WriteLine("Gumba dead true");
         }
         void Animations()
         {
             animationController = new AnimationController(SpriteInstance);
+
             var idleLayer = new AnimationLayer();
             idleLayer.EveryFrameAction = () =>
             { 
                 return "Gumba_walking";
             };
             animationController.Layers.Add(idleLayer);
-            //var DIELayer = new AnimationLayer();
-            //DIELayer.EveryFrameAction = () =>
+
+            var DieLayer = new AnimationLayer();
+            DieLayer.EveryFrameAction = () =>
+            {
+                //Console.WriteLine("This should come if you did it right if not well GOOD LUCK");
+                if (gumbadead == true) //why isnt this crap working
+                {
+                    this.Velocity.X = 0;
+                    Console.WriteLine("he cant walk");
+                    HeightOftheRectangle = -8;
+                    SpriteInstance.Y = -8;
+                    deadgumbawalking -= TimeManager.SecondDifference;
+                    this.Y -= 8;
+                    if (deadgumbawalking <= 0)
+                    {
+                        deadgumbawalking = 0.1f;
+                        Console.WriteLine("SNAP");
+                        this.Destroy();
+
+                    }
+                    Console.WriteLine("the anim should play now");
+                    return "Gumba_died";
+                }
+                return null;
+            };
+            animationController.Layers.Add(DieLayer);
+
+
+
+            //var walkLayer = new AnimationLayer();
+            //walkLayer.EveryFrameAction = () =>
             //{
             //    if (this.Velocity.X != 0)
             //    {
-            //        return "Gumba_died";
+            //        if (PassonClass.mariobig == true)
+            //        {
+            //            return "Walking_Big" + DirectionFacing;
+            //        }
+            //        return "Walking_small" + DirectionFacing;
             //    }
             //    return null;
             //};
-            //animationController.Layers.Add(DIELayer);
+            //animationController.Layers.Add(walkLayer);
+
         }
     }
 }

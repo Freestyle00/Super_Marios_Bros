@@ -89,11 +89,21 @@ namespace Super_Marios_Bros.Entities
                 return null;
             };
             animationController.Layers.Add(DieLayer);
-
-
-
             //var walkLayer = new AnimationLayer();
-            //walkLayer.EveryFrameAction = () =>
+            //walkLayer.EveryFrameAction = () 
+
+
+
+
+
+
+
+
+
+
+
+
+
             //{
             //    if (this.Velocity.X != 0)
             //    {

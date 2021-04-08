@@ -20,26 +20,19 @@ namespace Super_Marios_Bros.Entities
         /// </summary>
         private void CustomInitialize()
         {
-
-
         }
 
         private void CustomActivity()
         {
             Ewihavebeentouchedwithadebugger();
-
         }
 
         private void CustomDestroy()
         {
-
-
         }
 
         private static void CustomLoadStaticContent(string contentManagerName)
         {
-
-
         }
         void Ewihavebeentouchedwithadebugger()
         {

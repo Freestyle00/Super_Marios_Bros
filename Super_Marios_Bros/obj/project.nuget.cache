@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ufACpS2SvTe+jetu2/dXaKHZJ4HwNBaSF/au8s3UlNo5v327OOMfXitCGCWGQQyb4TJY1T87vOMiHIk0i3KsrQ==",
+  "dgSpecHash": "Tq/AALmfnED8Eb5zS+qG6NGtVHcok4Z89ftqevR6ELRkYWYPv06+aaoE3dHFu91dLkajvUttQCo7qFKbi7tosw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nick\\Documents\\GitHub\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj",
+  "projectFilePath": "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nick\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],

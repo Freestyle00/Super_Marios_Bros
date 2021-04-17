@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nick\\Documents\\GitHub\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj": {}
+    "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nick\\Documents\\GitHub\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj": {
+    "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nick\\Documents\\GitHub\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj",
+        "projectUniqueName": "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj",
         "projectName": "Super_Marios_Bros",
-        "projectPath": "C:\\Users\\Nick\\Documents\\GitHub\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj",
+        "projectPath": "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\Super_Marios_Bros.csproj",
         "packagesPath": "C:\\Users\\Nick\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nick\\Documents\\GitHub\\Super_Marios_Bros\\Super_Marios_Bros\\obj\\",
+        "outputPath": "C:\\Users\\Nick\\Documents\\FlatRedBallProjects\\Super_Marios_Bros\\Super_Marios_Bros\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Nick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

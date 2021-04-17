@@ -17,6 +17,8 @@ namespace Super_Marios_Bros.Screens
     {
         void CustomInitialize()
         {
+            CombinedShapeCollection.InsertCollidables(A_BrickList);
+            CombinedShapeCollection.InsertCollidables(Lucky_blockList);
             Camera.Main.Y = -120;
             Camera.Main.X = 140;
         }
@@ -33,17 +35,7 @@ namespace Super_Marios_Bros.Screens
             {
                 this.RestartScreen(true, true);
             }
-            //foreach (Super_Marios_Bros.Entities.A_Brick Brick in A_BrickList)
-            //{
-            //    MarioInstance.CollideAgainstMove(Brick.AxisAlignedRectangleInstance, 0, 1);
-            //}
-            foreach (Entities.A_Brick brick in A_BrickList)
-            {
-                if (MarioInstance.CollideAgainst(brick.Hitbox_from_down) && PassonClass.mariobig == true)
-                {
-                    brick.Imdead();
-                }
-            }
+            CheatCodes();
         }
         void CustomDestroy()
         {
@@ -54,6 +46,50 @@ namespace Super_Marios_Bros.Screens
         {
 
 
+        }
+        void CheatCodes() //yes i have played games that old
+        {
+            //KONAMI CODE UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT A B
+            if (true) //up
+            {
+
+            }
+            if (true) //up
+            {
+
+            }
+            if (true) //down
+            {
+
+            }
+            if (true) //down
+            {
+
+            }
+            if (true) //left
+            {
+
+            }
+            if (true) //right
+            {
+
+            }
+            if (true) //left
+            {
+
+            }
+            if (true) //right
+            {
+
+            }
+            if (true) //a
+            {
+
+            }
+            if (true) //b
+            {
+
+            }
         }
 
     }

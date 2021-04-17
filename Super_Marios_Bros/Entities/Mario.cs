@@ -52,11 +52,13 @@ namespace Super_Marios_Bros.Entities
             {
                 AxisAlignedRectangleInstanceY = 8;
                 AxisAlignedRectangleInstanceHeight = 32;
+                CollisionThing.RelativeY = 24;
             }
             else if (PassonClass.mariobig == false)
             {
                 AxisAlignedRectangleInstanceY = 0;
                 AxisAlignedRectangleInstanceHeight = 16;
+                CollisionThing.RelativeY = 8;
             }
         }
         void Jumping()

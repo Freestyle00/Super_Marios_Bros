@@ -40,6 +40,18 @@ namespace Super_Marios_Bros.Entities
                 mAxisAlignedRectangleInstance = value;
             }
         }
+        private FlatRedBall.Math.Geometry.AxisAlignedRectangle mCollisionThing;
+        public FlatRedBall.Math.Geometry.AxisAlignedRectangle CollisionThing
+        {
+            get
+            {
+                return mCollisionThing;
+            }
+            private set
+            {
+                mCollisionThing = value;
+            }
+        }
         public event Action<Super_Marios_Bros.DataTypes.PlatformerValues> BeforeGroundMovementSet;
         public event System.EventHandler AfterGroundMovementSet;
         private Super_Marios_Bros.DataTypes.PlatformerValues mGroundMovement;
@@ -395,6 +407,8 @@ namespace Super_Marios_Bros.Entities
             SpriteInstance.Name = "SpriteInstance";
             mAxisAlignedRectangleInstance = new FlatRedBall.Math.Geometry.AxisAlignedRectangle();
             mAxisAlignedRectangleInstance.Name = "mAxisAlignedRectangleInstance";
+            mCollisionThing = new FlatRedBall.Math.Geometry.AxisAlignedRectangle();
+            mCollisionThing.Name = "mCollisionThing";
             
             // this provides default controls for the platformer using either keyboad or 360. Can be overridden in custom code:
             this.InitializeInput();
@@ -440,6 +454,7 @@ namespace Super_Marios_Bros.Entities
             FlatRedBall.SpriteManager.AddPositionedObject(this);
             FlatRedBall.SpriteManager.AddToLayer(SpriteInstance, LayerProvidedByContainer);
             FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mAxisAlignedRectangleInstance, LayerProvidedByContainer);
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mCollisionThing, LayerProvidedByContainer);
         }
         public virtual void AddToManagers (FlatRedBall.Graphics.Layer layerToAddTo) 
         {
@@ -447,6 +462,7 @@ namespace Super_Marios_Bros.Entities
             FlatRedBall.SpriteManager.AddPositionedObject(this);
             FlatRedBall.SpriteManager.AddToLayer(SpriteInstance, LayerProvidedByContainer);
             FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mAxisAlignedRectangleInstance, LayerProvidedByContainer);
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(mCollisionThing, LayerProvidedByContainer);
             CurrentMovementType = MovementType.Ground;
             AddToManagersBottomUp(layerToAddTo);
             CustomInitialize();
@@ -477,6 +493,10 @@ namespace Super_Marios_Bros.Entities
             {
                 FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(AxisAlignedRectangleInstance);
             }
+            if (CollisionThing != null)
+            {
+                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(CollisionThing);
+            }
             mGeneratedCollision.RemoveFromManagers(clearThis: false);
             CustomDestroy();
         }
@@ -496,8 +516,15 @@ namespace Super_Marios_Bros.Entities
                 mAxisAlignedRectangleInstance.CopyAbsoluteToRelative();
                 mAxisAlignedRectangleInstance.AttachTo(this, false);
             }
-            AxisAlignedRectangleInstance.Width = 16.2f;
+            AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
+            if (mCollisionThing.Parent == null)
+            {
+                mCollisionThing.CopyAbsoluteToRelative();
+                mCollisionThing.AttachTo(this, false);
+            }
+            CollisionThing.Width = 1f;
+            CollisionThing.Height = 5f;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = oldShapeManagerSuppressAdd;
@@ -517,6 +544,10 @@ namespace Super_Marios_Bros.Entities
             {
                 FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(AxisAlignedRectangleInstance);
             }
+            if (CollisionThing != null)
+            {
+                FlatRedBall.Math.Geometry.ShapeManager.RemoveOneWay(CollisionThing);
+            }
             mGeneratedCollision.RemoveFromManagers(clearThis: false);
         }
         public virtual void AssignCustomVariables (bool callOnContainedElements) 
@@ -526,8 +557,10 @@ namespace Super_Marios_Bros.Entities
             }
             SpriteInstance.TextureScale = 1f;
             SpriteInstance.AnimationChains = Mario_walking;
-            AxisAlignedRectangleInstance.Width = 16.2f;
+            AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
+            CollisionThing.Width = 1f;
+            CollisionThing.Height = 5f;
             GroundMovement = Entities.Mario.PlatformerValuesStatic["Ground"];
             AirMovement = Entities.Mario.PlatformerValuesStatic["Air"];
             AfterDoubleJump = Entities.Mario.PlatformerValuesStatic["Air"];
@@ -674,6 +707,7 @@ namespace Super_Marios_Bros.Entities
             FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(this);
             FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(SpriteInstance);
             FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(AxisAlignedRectangleInstance);
+            FlatRedBall.Instructions.InstructionManager.IgnorePausingFor(CollisionThing);
         }
         
 
@@ -903,6 +937,14 @@ namespace Super_Marios_Bros.Entities
 
             double secondsSincePush = CurrentTime - mTimeJumpPushed;
 
+            // This needs to be done before checking if the user can continue to apply jump to hold
+            if (mValuesJumpedWith != null && mValuesJumpedWith.JumpApplyByButtonHold &&
+				(!JumpInput.IsDown || mHitHead)
+                )
+            {
+                mCanContinueToApplyJumpToHold = false;
+            }
+
             if (mValuesJumpedWith != null && 
                 mCanContinueToApplyJumpToHold &&
                 secondsSincePush < mValuesJumpedWith.JumpApplyLength &&
@@ -912,13 +954,6 @@ namespace Super_Marios_Bros.Entities
                 this.YVelocity = mValuesJumpedWith.JumpVelocity;
             }
             else
-            {
-                mCanContinueToApplyJumpToHold = false;
-            }
-
-            if (mValuesJumpedWith != null && mValuesJumpedWith.JumpApplyByButtonHold &&
-				(!JumpInput.IsDown || mHitHead)
-                )
             {
                 mCanContinueToApplyJumpToHold = false;
             }
@@ -1272,6 +1307,11 @@ namespace Super_Marios_Bros.Entities
                 layerToRemoveFrom.Remove(AxisAlignedRectangleInstance);
             }
             FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(AxisAlignedRectangleInstance, layerToMoveTo);
+            if (layerToRemoveFrom != null)
+            {
+                layerToRemoveFrom.Remove(CollisionThing);
+            }
+            FlatRedBall.Math.Geometry.ShapeManager.AddToLayer(CollisionThing, layerToMoveTo);
             LayerProvidedByContainer = layerToMoveTo;
         }
     }

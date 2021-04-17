@@ -188,3 +188,11 @@ C:\Users\Nick\Documents\GitHub\Super_Marios_Bros\Super_Marios_Bros\bin\x86\Debug
 C:\Users\Nick\Documents\GitHub\Super_Marios_Bros\Super_Marios_Bros\bin\x86\Debug\content\entities\a_brick_being_destroyed\the_brick1.png
 C:\Users\Nick\Documents\GitHub\Super_Marios_Bros\Super_Marios_Bros\bin\x86\Debug\content\entities\a_brick_being_destroyed\the_brick2.png
 C:\Users\Nick\Documents\GitHub\Super_Marios_Bros\Super_Marios_Bros\bin\x86\Debug\content\entities\a_brick_being_destroyed\the_brick3.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\entities\a_brick_being_destroyed\brick_getting_killed.achx
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\entities\a_brick_being_destroyed\the_brick1.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\entities\a_brick_being_destroyed\the_brick2.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\super_marios_bros\bin\x86\Debug\content\entities\a_brick_being_destroyed\the_brick3.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\a_brick_being_destroyed\brick_getting_killed.achx
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\a_brick_being_destroyed\the_brick1.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\a_brick_being_destroyed\the_brick2.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\a_brick_being_destroyed\the_brick3.png

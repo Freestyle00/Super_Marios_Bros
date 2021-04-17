@@ -1,0 +1,13 @@
+*.user
+*.aeproperties
+.vs/
+*.tmp
+*.Generated.cs
+*.cachefile
+*.csvSettings
+*.sln.metaproj
+super_marios_bros/super_marios_bros/bin/
+super_marios_bros/bin/
+super_marios_bros/super_marios_bros/obj/
+super_marios_bros/obj/
+super_marios_bros/super_marios_brosContent/obj/

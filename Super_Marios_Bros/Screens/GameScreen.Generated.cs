@@ -30,11 +30,13 @@ namespace Super_Marios_Bros.Screens
         private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockList;
         private FlatRedBall.Math.Collision.CollidableListVsTileShapeCollectionRelationship<Entities.Gumba> GumbaListAxisAlignedRectangleInstanceVsSolidCollision;
         private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.A_Brick_being_destroyed> A_Brick_being_destroyedList;
-        private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickListAxisAlignedRectangleInstance;
+        private FlatRedBall.TileCollisions.TileShapeCollection CombinedShapeCollection;
+        private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickList;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockListCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListget_dunkedCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListLeftMarioDeadCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListRightMarioDeadCollisionOccurred;
+        public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickListCollisionOccurred;
         public GameScreen () 
         	: base ("GameScreen")
         {
@@ -55,6 +57,7 @@ namespace Super_Marios_Bros.Screens
             GumbaList.Name = "GumbaList";
             A_Brick_being_destroyedList = new FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.A_Brick_being_destroyed>();
             A_Brick_being_destroyedList.Name = "A_Brick_being_destroyedList";
+            CombinedShapeCollection = new FlatRedBall.TileCollisions.TileShapeCollection();
                 {
         var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba>(MarioInstance, GumbaList);
         var isCloud = false;
@@ -120,9 +123,9 @@ namespace Super_Marios_Bros.Screens
         }
         ;
         FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
-        MarioInstanceVsA_BrickListAxisAlignedRectangleInstance = temp;
+        MarioInstanceVsA_BrickList = temp;
     }
-    MarioInstanceVsA_BrickListAxisAlignedRectangleInstance.Name = "MarioInstanceVsA_BrickListAxisAlignedRectangleInstance";
+    MarioInstanceVsA_BrickList.Name = "MarioInstanceVsA_BrickList";
 
             // normally we wait to set variables until after the object is created, but in this case if the
             // TileShapeCollection doesn't have its Visible set before creating the tiles, it can result in
@@ -140,6 +143,13 @@ namespace Super_Marios_Bros.Screens
                 CloudCollision.Visible = false;
             }
             FlatRedBall.TileCollisions.TileShapeCollectionLayeredTileMapExtensions.AddCollisionFromTilesWithType(CloudCollision, Map, "CloudCollision", false);
+            // normally we wait to set variables until after the object is created, but in this case if the
+            // TileShapeCollection doesn't have its Visible set before creating the tiles, it can result in
+            // really bad performance issues, as shapes will be made visible, then invisible. Really bad perf!
+            if (CombinedShapeCollection != null)
+            {
+                CombinedShapeCollection.Visible = false;
+            }
             
             
             PostInitialize();
@@ -246,6 +256,10 @@ namespace Super_Marios_Bros.Screens
             {
                 A_Brick_being_destroyedList[i].Destroy();
             }
+            if (CombinedShapeCollection != null)
+            {
+                CombinedShapeCollection.Visible = false;
+            }
             A_BrickList.MakeTwoWay();
             Lucky_blockList.MakeTwoWay();
             GumbaList.MakeTwoWay();
@@ -265,6 +279,8 @@ namespace Super_Marios_Bros.Screens
             MarioInstanceVsGumbaListLeftMarioDead.CollisionOccurred += OnMarioInstanceVsGumbaListLeftMarioDeadCollisionOccurredTunnel;
             MarioInstanceVsGumbaListRightMarioDead.CollisionOccurred += OnMarioInstanceVsGumbaListRightMarioDeadCollisionOccurred;
             MarioInstanceVsGumbaListRightMarioDead.CollisionOccurred += OnMarioInstanceVsGumbaListRightMarioDeadCollisionOccurredTunnel;
+            MarioInstanceVsA_BrickList.CollisionOccurred += OnMarioInstanceVsA_BrickListCollisionOccurred;
+            MarioInstanceVsA_BrickList.CollisionOccurred += OnMarioInstanceVsA_BrickListCollisionOccurredTunnel;
             if (Map!= null)
             {
             }
@@ -323,6 +339,10 @@ namespace Super_Marios_Bros.Screens
             for (int i = A_Brick_being_destroyedList.Count - 1; i > -1; i--)
             {
                 A_Brick_being_destroyedList[i].Destroy();
+            }
+            if (CombinedShapeCollection != null)
+            {
+                CombinedShapeCollection.Visible = false;
             }
         }
         public virtual void AssignCustomVariables (bool callOnContainedElements) 

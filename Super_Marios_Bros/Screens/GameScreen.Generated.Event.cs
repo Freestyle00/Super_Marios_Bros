@@ -40,5 +40,12 @@ namespace Super_Marios_Bros.Screens
                 MarioInstanceVsGumbaListRightMarioDeadCollisionOccurred(first, second);
             }
         }
+        void OnMarioInstanceVsA_BrickListCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.A_Brick second) 
+        {
+            if (this.MarioInstanceVsA_BrickListCollisionOccurred != null)
+            {
+                MarioInstanceVsA_BrickListCollisionOccurred(first, second);
+            }
+        }
     }
 }

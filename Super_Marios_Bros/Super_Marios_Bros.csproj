@@ -84,6 +84,7 @@
     </Compile>
     <Compile Include="GlobalContent.Generated.cs" />
     <Compile Include="GlueControl\GlueControlManager.Generated.cs" />
+    <Compile Include="KeyboordInput.cs" />
     <Compile Include="PassonClass.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
     <Compile Include="Performance\PoolList.Generated.cs" />

@@ -8,6 +8,7 @@ using FlatRedBall.AI.Pathfinding;
 using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
+using Microsoft.Xna.Framework.Input;
 
 namespace Super_Marios_Bros.Entities
 {
@@ -20,11 +21,16 @@ namespace Super_Marios_Bros.Entities
         /// </summary>
         ///   AnimationController animationController;
         public IPressableInput RunInput { get; set; }
+        Xbox360GamePad gamePad = InputManager.Xbox360GamePads[0];
         AnimationController animationController;
         private void CustomInitialize()
         {
+            //var input = new Super_Marios_Bros.Input.KeyboordInput(); //TODO fix this shit cuased by you using a controller more also add the konami code and DO YOUR HOMEWORK AND IF YOU SEE THIS FUTURE ME DO ONE TASK FROM YOU MATHBOOK PLEASE 
+            //InitializePlatformerInput(input);
             Animations();
+            
             RunInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.LeftShift);
+            
         }
         private void CustomActivity()
         {
@@ -63,7 +69,8 @@ namespace Super_Marios_Bros.Entities
         }
         void Jumping()
         {
-            if (this.IsOnGround == true && InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space))
+            //Xbox360GamePad gamePad = InputManager.Xbox360GamePads[0];
+            if (this.IsOnGround == true && InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space) || gamePad.ButtonPushed(Xbox360GamePad.Button.A))
             {
                 //Mariojumpsound.Play(); //that gets annyoing after some time so i should not forget to decomment it
             }
@@ -82,7 +89,7 @@ namespace Super_Marios_Bros.Entities
         void RUN() //den den den den den den den den den den den den den den
         {
             animationController.Activity();
-            if (RunInput.IsDown)
+            if (RunInput.IsDown || gamePad.ButtonDown(Xbox360GamePad.Button.X))
             {
                 this.GroundMovement = PlatformerValuesStatic["Running"];
                 this.AirMovement = PlatformerValuesStatic["RunningAir"];
@@ -126,7 +133,7 @@ namespace Super_Marios_Bros.Entities
             var runLayer = new AnimationLayer();
             runLayer.EveryFrameAction = () =>
             {
-                if (this.XVelocity != 0 && RunInput.IsDown)
+                if (this.XVelocity != 0 && this.GroundMovement == PlatformerValuesStatic["Running"])
                 {
                     if (PassonClass.mariobig == true)
                     {

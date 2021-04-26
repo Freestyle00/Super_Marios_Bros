@@ -8,13 +8,25 @@ namespace Super_Marios_Bros.Input
 {
     class KeyboordInput : FlatRedBall.Input.InputDeviceBase
     {
+        float HorizontalInput = 0; //that a public value i overworked it
+
+        float VerticalInput = 0;
+
+        public void HorinzontalInputa(float inputa) //the a is intentional
+        {
+            HorizontalInput = inputa;
+        }
+        public void VerticalInputb(float inputb)
+        {
+            VerticalInput = inputb;
+        }
         protected override float GetHorizontalValue()
         {
-            // Horizontal value is a value between 
-            // -1 (left) and +1 (right)
-            // By returning 1, the input device will
-            // tell the Enemy to always walk to the right
-            return 1;
+            return HorizontalInput;
+        }
+        protected override float GetVerticalValue()
+        {
+            return VerticalInput;
         }
     }
 }

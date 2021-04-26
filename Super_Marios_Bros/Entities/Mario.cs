@@ -23,14 +23,28 @@ namespace Super_Marios_Bros.Entities
         public IPressableInput RunInput { get; set; }
         Xbox360GamePad gamePad = InputManager.Xbox360GamePads[0];
         AnimationController animationController;
+        Super_Marios_Bros.Input.KeyboordInput input = new Super_Marios_Bros.Input.KeyboordInput();
+        //IPressableInput jumpinput = InputManager.Keyboard.GetKey(Keys.Space);
+        //IPressableInput jumpinputgamepad = InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.A);
         private void CustomInitialize()
         {
-            //var input = new Super_Marios_Bros.Input.KeyboordInput(); //TODO fix this shit cuased by you using a controller more also add the konami code and DO YOUR HOMEWORK AND IF YOU SEE THIS FUTURE ME DO ONE TASK FROM YOU MATHBOOK PLEASE 
+             //TODO fix this shit cuased by you using a controller more also add the konami code
             //InitializePlatformerInput(input);
             Animations();
+            this.RunInput = InputManager.Keyboard.GetKey(Keys.LeftShift);
             
-            RunInput = InputManager.Keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.LeftShift);
-            
+            InitializePlatformerInput(input);
+        }
+        partial void CustomInitializePlatformerInput()
+        {
+            if (InputDevice is FlatRedBall.Input.Keyboard keyboard)
+            {
+                this.JumpInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Space);
+            }
+            else if (InputDevice is Xbox360GamePad gamepad)
+            {
+                this.JumpInput = gamepad.GetButton(Xbox360GamePad.Button.A);
+            }
         }
         private void CustomActivity()
         {
@@ -39,8 +53,7 @@ namespace Super_Marios_Bros.Entities
             Marioisbignowheneedssomebiggershoes(); 
             Debugthings();
             Jumping();
-            PassonClass.marioX = this.X;
-            PassonClass.marioY = this.Y;
+            MyOwnInput();
         }
         private void CustomDestroy()
         {
@@ -51,6 +64,32 @@ namespace Super_Marios_Bros.Entities
         {
 
 
+        }
+        void MyOwnInput() //better than vics it support brace for impact having TWO INPUT DEVICES simultaneously BETTEREVEN TAHN fo4
+        {
+
+            if (InputManager.Keyboard.KeyDown(Keys.D) || InputManager.Keyboard.KeyDown(Keys.Left))
+            {
+                input.HorinzontalInputa(1);
+            }
+            else if (InputManager.Keyboard.KeyDown(Keys.A) || InputManager.Keyboard.KeyDown(Keys.Right))
+            {
+                input.HorinzontalInputa(-1);
+            }
+            else if (InputManager.Keyboard.KeyDown(Keys.W) || InputManager.Keyboard.KeyDown(Keys.Up))
+            {
+                input.VerticalInputb(1);
+            }
+            else if (InputManager.Keyboard.KeyDown(Keys.S) || InputManager.Keyboard.KeyDown(Keys.Down))
+            {
+                input.VerticalInputb(-1);
+            }
+            else
+            {
+                input.HorinzontalInputa(0);
+                input.VerticalInputb(0);
+            }
+            InitializePlatformerInput(input);
         }
         void Marioisbignowheneedssomebiggershoes()
         {
@@ -70,21 +109,27 @@ namespace Super_Marios_Bros.Entities
         void Jumping()
         {
             //Xbox360GamePad gamePad = InputManager.Xbox360GamePads[0];
-            if (this.IsOnGround == true && InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space) || gamePad.ButtonPushed(Xbox360GamePad.Button.A))
+            if (this.IsOnGround == true && JumpInput.WasJustReleased)
             {
-                //Mariojumpsound.Play(); //that gets annyoing after some time so i should not forget to decomment it
+                Mariojumpsound.Play(); //that gets annyoing after some time so i should not forget to decomment it
             }
         }
         void Debugthings()
         {
-            if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.G))
+            if (JumpInput.WasJustPressed)
+            {
+                Console.WriteLine("JUMP SOUND");
+            }
+            if (InputManager.Keyboard.KeyPushed(Keys.G))
             {
                 PassonClass.mariobig = true;
             }
-            if  (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.H))
+            if  (InputManager.Keyboard.KeyPushed(Keys.H))
             {
                 PassonClass.mariobig = false;
             }
+            PassonClass.marioX = this.X;
+            PassonClass.marioY = this.Y;
         }
         void RUN() //den den den den den den den den den den den den den den
         {

@@ -1279,15 +1279,6 @@ namespace Super_Marios_Bros.Entities
         protected virtual void InitializeInput()
         {
         
-                if (FlatRedBall.Input.InputManager.Xbox360GamePads[0].IsConnected)
-                {
-                    InitializePlatformerInput(FlatRedBall.Input.InputManager.Xbox360GamePads[0]);
-                }
-                else
-                {
-                    InitializePlatformerInput(FlatRedBall.Input.InputManager.Keyboard);
-                }
-    
         
         }
 

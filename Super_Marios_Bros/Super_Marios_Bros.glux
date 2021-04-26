@@ -1852,7 +1852,7 @@
       <Properties>
         <PropertySave>
           <Name>InputDevice</Name>
-          <ValueAsInt>0</ValueAsInt>
+          <ValueAsInt>1</ValueAsInt>
         </PropertySave>
         <PropertySave>
           <Name>ImplementsICollidable</Name>

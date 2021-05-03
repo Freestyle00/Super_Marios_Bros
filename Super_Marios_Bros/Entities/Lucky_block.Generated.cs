@@ -48,6 +48,7 @@ namespace Super_Marios_Bros.Entities
                 SpriteInstance.Texture = value;
             }
         }
+        public bool ThisBlockTouched;
         public int Index { get; set; }
         public bool Used { get; set; }
         private FlatRedBall.Math.Geometry.ShapeCollection mGeneratedCollision;
@@ -145,7 +146,7 @@ namespace Super_Marios_Bros.Entities
                 mAxisAlignedRectangleInstance.AttachTo(this, false);
             }
             AxisAlignedRectangleInstance.Width = 16f;
-            AxisAlignedRectangleInstance.Height = 16f;
+            AxisAlignedRectangleInstance.Height = 15.9f;
             AxisAlignedRectangleInstance.RepositionDirections = FlatRedBall.Math.Geometry.RepositionDirections.All;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
@@ -177,7 +178,7 @@ namespace Super_Marios_Bros.Entities
             SpriteInstance.TextureAddressMode = Microsoft.Xna.Framework.Graphics.TextureAddressMode.Clamp;
             SpriteInstance.TextureScale = 1f;
             AxisAlignedRectangleInstance.Width = 16f;
-            AxisAlignedRectangleInstance.Height = 16f;
+            AxisAlignedRectangleInstance.Height = 15.9f;
             AxisAlignedRectangleInstance.RepositionDirections = FlatRedBall.Math.Geometry.RepositionDirections.All;
         }
         public virtual void ConvertToManuallyUpdated () 

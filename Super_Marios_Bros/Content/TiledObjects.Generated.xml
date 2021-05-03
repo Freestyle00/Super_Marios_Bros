@@ -5,9 +5,13 @@
   <objecttype name="Gumba">
     <property name="AxisAlignedRectangleInstanceHeight" type="float" default="16" />
     <property name="HeightOftheRectangle" type="float" default="0" />
+    <property name="GroundMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Ground in PlatformerValuesStatic.csv" />
+    <property name="AirMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Air in PlatformerValuesStatic.csv" />
+    <property name="AfterDoubleJump" type="Super_Marios_Bros.DataTypes.PlatformerValues" />
   </objecttype>
   <objecttype name="Lucky_block">
     <property name="SpriteInstanceTexture" type="Texture2D" default="" />
+    <property name="ThisBlockTouched" type="bool" />
   </objecttype>
   <objecttype name="Mario">
     <property name="GroundMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Ground in PlatformerValuesStatic.csv" />
@@ -17,5 +21,16 @@
     <property name="SpriteInstanceCurrentChainName" type="string" />
     <property name="AxisAlignedRectangleInstanceY" type="float" default="0" />
     <property name="AxisAlignedRectangleInstanceHeight" type="float" default="16" />
+    <property name="DieThingY" type="float" default="-8" />
+  </objecttype>
+  <objecttype name="Mushroom">
+    <property name="GroundMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Ground in PlatformerValuesStatic.csv" />
+    <property name="AirMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Air in PlatformerValuesStatic.csv" />
+    <property name="AfterDoubleJump" type="Super_Marios_Bros.DataTypes.PlatformerValues" />
+  </objecttype>
+  <objecttype name="Turtle">
+    <property name="GroundMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Ground in PlatformerValuesStatic.csv" />
+    <property name="AirMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Air in PlatformerValuesStatic.csv" />
+    <property name="AfterDoubleJump" type="Super_Marios_Bros.DataTypes.PlatformerValues" />
   </objecttype>
 </objecttypes>

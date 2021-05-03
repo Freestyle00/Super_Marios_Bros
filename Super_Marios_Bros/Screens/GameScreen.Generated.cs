@@ -22,21 +22,33 @@ namespace Super_Marios_Bros.Screens
         private Super_Marios_Bros.Entities.Mario MarioInstance;
         private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Lucky_block> Lucky_blockList;
         private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Gumba> GumbaList;
-        private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListAxisAlignedRectangleInstance;
-        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListget_dunked;
-        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListLeftMarioDead;
-        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListRightMarioDead;
+        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListAxisAlignedRectangleInstance;
         private FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection> MarioInstanceVsSolidCollision;
         private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockList;
         private FlatRedBall.Math.Collision.CollidableListVsTileShapeCollectionRelationship<Entities.Gumba> GumbaListAxisAlignedRectangleInstanceVsSolidCollision;
         private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.A_Brick_being_destroyed> A_Brick_being_destroyedList;
         private FlatRedBall.TileCollisions.TileShapeCollection CombinedShapeCollection;
         private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickList;
+        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceAxisAlignedRectangleInstanceVsGumbaListLeftMarioDead;
+        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceAxisAlignedRectangleInstanceVsGumbaListRightMarioDead;
+        private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Mushroom> MushroomList;
+        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Mushroom> MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstance;
+        private FlatRedBall.Math.Collision.DelegateListVsSingleRelationship<Entities.Mushroom, FlatRedBall.TileCollisions.TileShapeCollection> MushroomListVsSolidCollision;
+        private FlatRedBall.Math.Collision.DelegateListVsListRelationship<Entities.Mushroom, Entities.A_Brick> MushroomListVsA_BrickList;
+        private FlatRedBall.Math.Collision.DelegateListVsListRelationship<Entities.Mushroom, Entities.Lucky_block> MushroomListVsLucky_blockList;
+        private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Turtle> TurtleList;
+        private FlatRedBall.Math.Collision.DelegateListVsSingleRelationship<Entities.Turtle, FlatRedBall.TileCollisions.TileShapeCollection> TurtleListVsSolidCollision;
+        private FlatRedBall.Math.Collision.DelegateListVsListRelationship<Entities.Turtle, Entities.A_Brick> TurtleListVsA_BrickList;
+        private FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Turtle> MarioInstanceVsTurtleList;
+        private FlatRedBall.Math.Collision.ListVsListRelationship<Entities.Lucky_block, Entities.Turtle> Lucky_blockListVsTurtleList;
+        private FlatRedBall.Math.Collision.DelegateListVsListRelationship<Entities.Gumba, Entities.Turtle> GumbaListVsTurtleList;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockListCollisionOccurred;
-        public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListget_dunkedCollisionOccurred;
-        public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListLeftMarioDeadCollisionOccurred;
-        public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListRightMarioDeadCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickListCollisionOccurred;
+        public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListAxisAlignedRectangleInstanceCollisionOccurred;
+        public event System.Action<Entities.Gumba, FlatRedBall.TileCollisions.TileShapeCollection> GumbaListAxisAlignedRectangleInstanceVsSolidCollisionCollisionOccurred;
+        public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Mushroom> MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstanceCollisionOccurred;
+        public event System.Action<Entities.Mushroom, FlatRedBall.TileCollisions.TileShapeCollection> MushroomListVsSolidCollisionCollisionOccurred;
+        public event System.Action<Entities.Turtle, FlatRedBall.TileCollisions.TileShapeCollection> TurtleListVsSolidCollisionCollisionOccurred;
         public GameScreen () 
         	: base ("GameScreen")
         {
@@ -58,30 +70,14 @@ namespace Super_Marios_Bros.Screens
             A_Brick_being_destroyedList = new FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.A_Brick_being_destroyed>();
             A_Brick_being_destroyedList.Name = "A_Brick_being_destroyedList";
             CombinedShapeCollection = new FlatRedBall.TileCollisions.TileShapeCollection();
-                {
-        var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Gumba>(MarioInstance, GumbaList);
-        var isCloud = false;
-        temp.CollisionFunction = (first, second) =>
-        {
-            return first.CollideAgainst(second, isCloud);
-        }
-        ;
-        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
-        MarioInstanceVsGumbaListAxisAlignedRectangleInstance = temp;
-    }
+            MushroomList = new FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Mushroom>();
+            MushroomList.Name = "MushroomList";
+            TurtleList = new FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Turtle>();
+            TurtleList.Name = "TurtleList";
+                MarioInstanceVsGumbaListAxisAlignedRectangleInstance = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, GumbaList);
+    MarioInstanceVsGumbaListAxisAlignedRectangleInstance.SetSecondSubCollision(item => item.AxisAlignedRectangleInstance);
     MarioInstanceVsGumbaListAxisAlignedRectangleInstance.Name = "MarioInstanceVsGumbaListAxisAlignedRectangleInstance";
-
-                MarioInstanceVsGumbaListget_dunked = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, GumbaList);
-    MarioInstanceVsGumbaListget_dunked.SetSecondSubCollision(item => item.get_dunked);
-    MarioInstanceVsGumbaListget_dunked.Name = "MarioInstanceVsGumbaListget_dunked";
-
-                MarioInstanceVsGumbaListLeftMarioDead = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, GumbaList);
-    MarioInstanceVsGumbaListLeftMarioDead.SetSecondSubCollision(item => item.LeftMarioDead);
-    MarioInstanceVsGumbaListLeftMarioDead.Name = "MarioInstanceVsGumbaListLeftMarioDead";
-
-                MarioInstanceVsGumbaListRightMarioDead = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, GumbaList);
-    MarioInstanceVsGumbaListRightMarioDead.SetSecondSubCollision(item => item.RightMarioDead);
-    MarioInstanceVsGumbaListRightMarioDead.Name = "MarioInstanceVsGumbaListRightMarioDead";
+    MarioInstanceVsGumbaListAxisAlignedRectangleInstance.SetMoveCollision(1f, 1f);
 
                 {
         var temp = new FlatRedBall.Math.Collision.DelegateCollisionRelationship<Super_Marios_Bros.Entities.Mario, FlatRedBall.TileCollisions.TileShapeCollection>(MarioInstance, SolidCollision);
@@ -127,6 +123,123 @@ namespace Super_Marios_Bros.Screens
     }
     MarioInstanceVsA_BrickList.Name = "MarioInstanceVsA_BrickList";
 
+                MarioInstanceAxisAlignedRectangleInstanceVsGumbaListLeftMarioDead = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, GumbaList);
+    MarioInstanceAxisAlignedRectangleInstanceVsGumbaListLeftMarioDead.SetFirstSubCollision(item => item.AxisAlignedRectangleInstance);
+    MarioInstanceAxisAlignedRectangleInstanceVsGumbaListLeftMarioDead.SetSecondSubCollision(item => item.LeftMarioDead);
+    MarioInstanceAxisAlignedRectangleInstanceVsGumbaListLeftMarioDead.Name = "MarioInstanceAxisAlignedRectangleInstanceVsGumbaListLeftMarioDead";
+
+                MarioInstanceAxisAlignedRectangleInstanceVsGumbaListRightMarioDead = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, GumbaList);
+    MarioInstanceAxisAlignedRectangleInstanceVsGumbaListRightMarioDead.SetFirstSubCollision(item => item.AxisAlignedRectangleInstance);
+    MarioInstanceAxisAlignedRectangleInstanceVsGumbaListRightMarioDead.SetSecondSubCollision(item => item.RightMarioDead);
+    MarioInstanceAxisAlignedRectangleInstanceVsGumbaListRightMarioDead.Name = "MarioInstanceAxisAlignedRectangleInstanceVsGumbaListRightMarioDead";
+
+                MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstance = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, MushroomList);
+    MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstance.SetFirstSubCollision(item => item.AxisAlignedRectangleInstance);
+    MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstance.SetSecondSubCollision(item => item.AxisAlignedRectangleInstance);
+    MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstance.Name = "MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstance";
+    MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstance.SetMoveCollision(1f, 1f);
+
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateListVsSingleRelationship<Entities.Mushroom, FlatRedBall.TileCollisions.TileShapeCollection>(MushroomList, SolidCollision);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            return first.CollideAgainst(second, isCloud);
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        MushroomListVsSolidCollision = temp;
+    }
+    MushroomListVsSolidCollision.Name = "MushroomListVsSolidCollision";
+
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateListVsListRelationship<Entities.Mushroom, Entities.A_Brick>(MushroomList, A_BrickList);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            return first.CollideAgainst(second, isCloud);
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        MushroomListVsA_BrickList = temp;
+    }
+    MushroomListVsA_BrickList.CollisionLimit = FlatRedBall.Math.Collision.CollisionLimit.All;
+    MushroomListVsA_BrickList.Name = "MushroomListVsA_BrickList";
+
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateListVsListRelationship<Entities.Mushroom, Entities.Lucky_block>(MushroomList, Lucky_blockList);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            return first.CollideAgainst(second, isCloud);
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        MushroomListVsLucky_blockList = temp;
+    }
+    MushroomListVsLucky_blockList.CollisionLimit = FlatRedBall.Math.Collision.CollisionLimit.All;
+    MushroomListVsLucky_blockList.Name = "MushroomListVsLucky_blockList";
+
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateListVsSingleRelationship<Entities.Turtle, FlatRedBall.TileCollisions.TileShapeCollection>(TurtleList, SolidCollision);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            return first.CollideAgainst(second, isCloud);
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        TurtleListVsSolidCollision = temp;
+    }
+    TurtleListVsSolidCollision.Name = "TurtleListVsSolidCollision";
+
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateListVsListRelationship<Entities.Turtle, Entities.A_Brick>(TurtleList, A_BrickList);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            return first.CollideAgainst(second, isCloud);
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        TurtleListVsA_BrickList = temp;
+    }
+    TurtleListVsA_BrickList.CollisionLimit = FlatRedBall.Math.Collision.CollisionLimit.All;
+    TurtleListVsA_BrickList.Name = "TurtleListVsA_BrickList";
+
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Turtle>(MarioInstance, TurtleList);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            return first.CollideAgainst(second, isCloud);
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        MarioInstanceVsTurtleList = temp;
+    }
+    MarioInstanceVsTurtleList.Name = "MarioInstanceVsTurtleList";
+
+                Lucky_blockListVsTurtleList = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(Lucky_blockList, TurtleList);
+    Lucky_blockListVsTurtleList.CollisionLimit = FlatRedBall.Math.Collision.CollisionLimit.All;
+    Lucky_blockListVsTurtleList.ListVsListLoopingMode = FlatRedBall.Math.Collision.ListVsListLoopingMode.PreventDoubleChecksPerFrame;
+    Lucky_blockListVsTurtleList.Name = "Lucky_blockListVsTurtleList";
+    Lucky_blockListVsTurtleList.SetMoveCollision(1f, 1f);
+
+                {
+        var temp = new FlatRedBall.Math.Collision.DelegateListVsListRelationship<Entities.Gumba, Entities.Turtle>(GumbaList, TurtleList);
+        var isCloud = false;
+        temp.CollisionFunction = (first, second) =>
+        {
+            return first.CollideAgainst(second, isCloud);
+        }
+        ;
+        FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Add(temp);
+        GumbaListVsTurtleList = temp;
+    }
+    GumbaListVsTurtleList.CollisionLimit = FlatRedBall.Math.Collision.CollisionLimit.All;
+    GumbaListVsTurtleList.Name = "GumbaListVsTurtleList";
+
             // normally we wait to set variables until after the object is created, but in this case if the
             // TileShapeCollection doesn't have its Visible set before creating the tiles, it can result in
             // really bad performance issues, as shapes will be made visible, then invisible. Really bad perf!
@@ -165,10 +278,14 @@ namespace Super_Marios_Bros.Screens
             Factories.Lucky_blockFactory.Initialize(ContentManagerName);
             Factories.GumbaFactory.Initialize(ContentManagerName);
             Factories.A_Brick_being_destroyedFactory.Initialize(ContentManagerName);
+            Factories.MushroomFactory.Initialize(ContentManagerName);
+            Factories.TurtleFactory.Initialize(ContentManagerName);
             Factories.A_BrickFactory.AddList(A_BrickList);
             Factories.Lucky_blockFactory.AddList(Lucky_blockList);
             Factories.GumbaFactory.AddList(GumbaList);
             Factories.A_Brick_being_destroyedFactory.AddList(A_Brick_being_destroyedList);
+            Factories.MushroomFactory.AddList(MushroomList);
+            Factories.TurtleFactory.AddList(TurtleList);
             MarioInstance.AddToManagers(mLayer);
             FlatRedBall.TileEntities.TileEntityInstantiator.CreateEntitiesFrom(Map);
             base.AddToManagers();
@@ -213,6 +330,22 @@ namespace Super_Marios_Bros.Screens
                         A_Brick_being_destroyedList[i].Activity();
                     }
                 }
+                for (int i = MushroomList.Count - 1; i > -1; i--)
+                {
+                    if (i < MushroomList.Count)
+                    {
+                        // We do the extra if-check because activity could destroy any number of entities
+                        MushroomList[i].Activity();
+                    }
+                }
+                for (int i = TurtleList.Count - 1; i > -1; i--)
+                {
+                    if (i < TurtleList.Count)
+                    {
+                        // We do the extra if-check because activity could destroy any number of entities
+                        TurtleList[i].Activity();
+                    }
+                }
             }
             else
             {
@@ -230,11 +363,15 @@ namespace Super_Marios_Bros.Screens
             Factories.Lucky_blockFactory.Destroy();
             Factories.GumbaFactory.Destroy();
             Factories.A_Brick_being_destroyedFactory.Destroy();
+            Factories.MushroomFactory.Destroy();
+            Factories.TurtleFactory.Destroy();
             
             A_BrickList.MakeOneWay();
             Lucky_blockList.MakeOneWay();
             GumbaList.MakeOneWay();
             A_Brick_being_destroyedList.MakeOneWay();
+            MushroomList.MakeOneWay();
+            TurtleList.MakeOneWay();
             for (int i = A_BrickList.Count - 1; i > -1; i--)
             {
                 A_BrickList[i].Destroy();
@@ -260,10 +397,20 @@ namespace Super_Marios_Bros.Screens
             {
                 CombinedShapeCollection.Visible = false;
             }
+            for (int i = MushroomList.Count - 1; i > -1; i--)
+            {
+                MushroomList[i].Destroy();
+            }
+            for (int i = TurtleList.Count - 1; i > -1; i--)
+            {
+                TurtleList[i].Destroy();
+            }
             A_BrickList.MakeTwoWay();
             Lucky_blockList.MakeTwoWay();
             GumbaList.MakeTwoWay();
             A_Brick_being_destroyedList.MakeTwoWay();
+            MushroomList.MakeTwoWay();
+            TurtleList.MakeTwoWay();
             FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Clear();
             CustomDestroy();
         }
@@ -273,14 +420,18 @@ namespace Super_Marios_Bros.Screens
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = true;
             MarioInstanceVsLucky_blockList.CollisionOccurred += OnMarioInstanceVsLucky_blockListCollisionOccurred;
             MarioInstanceVsLucky_blockList.CollisionOccurred += OnMarioInstanceVsLucky_blockListCollisionOccurredTunnel;
-            MarioInstanceVsGumbaListget_dunked.CollisionOccurred += OnMarioInstanceVsGumbaListget_dunkedCollisionOccurred;
-            MarioInstanceVsGumbaListget_dunked.CollisionOccurred += OnMarioInstanceVsGumbaListget_dunkedCollisionOccurredTunnel;
-            MarioInstanceVsGumbaListLeftMarioDead.CollisionOccurred += OnMarioInstanceVsGumbaListLeftMarioDeadCollisionOccurred;
-            MarioInstanceVsGumbaListLeftMarioDead.CollisionOccurred += OnMarioInstanceVsGumbaListLeftMarioDeadCollisionOccurredTunnel;
-            MarioInstanceVsGumbaListRightMarioDead.CollisionOccurred += OnMarioInstanceVsGumbaListRightMarioDeadCollisionOccurred;
-            MarioInstanceVsGumbaListRightMarioDead.CollisionOccurred += OnMarioInstanceVsGumbaListRightMarioDeadCollisionOccurredTunnel;
             MarioInstanceVsA_BrickList.CollisionOccurred += OnMarioInstanceVsA_BrickListCollisionOccurred;
             MarioInstanceVsA_BrickList.CollisionOccurred += OnMarioInstanceVsA_BrickListCollisionOccurredTunnel;
+            MarioInstanceVsGumbaListAxisAlignedRectangleInstance.CollisionOccurred += OnMarioInstanceVsGumbaListAxisAlignedRectangleInstanceCollisionOccurred;
+            MarioInstanceVsGumbaListAxisAlignedRectangleInstance.CollisionOccurred += OnMarioInstanceVsGumbaListAxisAlignedRectangleInstanceCollisionOccurredTunnel;
+            GumbaListAxisAlignedRectangleInstanceVsSolidCollision.CollisionOccurred += OnGumbaListAxisAlignedRectangleInstanceVsSolidCollisionCollisionOccurred;
+            GumbaListAxisAlignedRectangleInstanceVsSolidCollision.CollisionOccurred += OnGumbaListAxisAlignedRectangleInstanceVsSolidCollisionCollisionOccurredTunnel;
+            MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstance.CollisionOccurred += OnMarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstanceCollisionOccurred;
+            MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstance.CollisionOccurred += OnMarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstanceCollisionOccurredTunnel;
+            MushroomListVsSolidCollision.CollisionOccurred += OnMushroomListVsSolidCollisionCollisionOccurred;
+            MushroomListVsSolidCollision.CollisionOccurred += OnMushroomListVsSolidCollisionCollisionOccurredTunnel;
+            TurtleListVsSolidCollision.CollisionOccurred += OnTurtleListVsSolidCollisionCollisionOccurred;
+            TurtleListVsSolidCollision.CollisionOccurred += OnTurtleListVsSolidCollisionCollisionOccurredTunnel;
             if (Map!= null)
             {
             }
@@ -343,6 +494,14 @@ namespace Super_Marios_Bros.Screens
             if (CombinedShapeCollection != null)
             {
                 CombinedShapeCollection.Visible = false;
+            }
+            for (int i = MushroomList.Count - 1; i > -1; i--)
+            {
+                MushroomList[i].Destroy();
+            }
+            for (int i = TurtleList.Count - 1; i > -1; i--)
+            {
+                TurtleList[i].Destroy();
             }
         }
         public virtual void AssignCustomVariables (bool callOnContainedElements) 
@@ -412,6 +571,14 @@ namespace Super_Marios_Bros.Screens
             for (int i = 0; i < A_Brick_being_destroyedList.Count; i++)
             {
                 A_Brick_being_destroyedList[i].ConvertToManuallyUpdated();
+            }
+            for (int i = 0; i < MushroomList.Count; i++)
+            {
+                MushroomList[i].ConvertToManuallyUpdated();
+            }
+            for (int i = 0; i < TurtleList.Count; i++)
+            {
+                TurtleList[i].ConvertToManuallyUpdated();
             }
         }
         public static void LoadStaticContent (string contentManagerName) 

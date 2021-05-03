@@ -16,6 +16,7 @@
   <tile id="67" type="Gumba"/>
   <tile id="96" type="Ladder"/>
   <tile id="163" type="Lucky_block"/>
+  <tile id="194" type="Turtle"/>
  </tileset>
  <layer id="1" name="layer" width="211" height="15">
   <data>
@@ -5760,7 +5761,7 @@
    <tile/>
    <tile/>
    <tile/>
-   <tile/>
+   <tile gid="258"/>
    <tile/>
    <tile/>
    <tile/>

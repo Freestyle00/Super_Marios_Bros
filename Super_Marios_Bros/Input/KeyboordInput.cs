@@ -8,11 +8,10 @@ namespace Super_Marios_Bros.Input
 {
     class KeyboordInput : FlatRedBall.Input.InputDeviceBase
     {
-        
-        float HorizontalInput = 0; //that a public value i overworked it
+        float HorizontalInput = 0; 
 
         float VerticalInput = 0;
-        
+
         public void HorinzontalInputa(float inputa) //the a is intentional
         {
             HorizontalInput = inputa;

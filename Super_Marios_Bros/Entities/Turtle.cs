@@ -11,40 +11,38 @@ using FlatRedBall.Math.Geometry;
 
 namespace Super_Marios_Bros.Entities
 {
-    public partial class Lucky_block
+    public partial class Turtle
     {
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
         /// added to managers will not have this method called.
         /// </summary>
-        public bool Used3 = false;
-        public bool HasPilzInIt = false;
+        public float horin = 1;
+        Super_Marios_Bros.Input.KeyboordInput input = new Super_Marios_Bros.Input.KeyboordInput();
         private void CustomInitialize()
         {
-            ThisBlockTouched = false;
+            InitializePlatformerInput(input);
+
         }
 
         private void CustomActivity()
         {
-            if (this.X >= 375 && this.X <= 390)
-            {
-                HasPilzInIt = true;
-            }
+            input.HorinzontalInputa(horin);
+            InitializePlatformerInput(input);
+
         }
 
         private void CustomDestroy()
         {
+
+
         }
 
         private static void CustomLoadStaticContent(string contentManagerName)
         {
 
-        }
-        public void HandleHit()
-        {
-            SpriteInstanceTexture = luckyblockhasbeentouched;
-            Used3 = true;
+
         }
     }
 }

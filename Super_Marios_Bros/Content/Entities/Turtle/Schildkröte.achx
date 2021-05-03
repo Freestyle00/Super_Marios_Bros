@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnimationChainArraySave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileRelativeTextures>true</FileRelativeTextures>
+  <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
+  <CoordinateType>Pixel</CoordinateType>
+  <AnimationChain>
+    <Name>Turtle_Walking</Name>
+    <Frame>
+      <TextureName>turtle.png</TextureName>
+      <FrameLength>0.2</FrameLength>
+      <LeftCoordinate>0</LeftCoordinate>
+      <RightCoordinate>16</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>32</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>turtle.png</TextureName>
+      <FrameLength>0.2</FrameLength>
+      <LeftCoordinate>17</LeftCoordinate>
+      <RightCoordinate>33</RightCoordinate>
+      <TopCoordinate>8</TopCoordinate>
+      <BottomCoordinate>32</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Turtle_Hidden</Name>
+    <Frame>
+      <TextureName>turtle.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>76</LeftCoordinate>
+      <RightCoordinate>92</RightCoordinate>
+      <TopCoordinate>17</TopCoordinate>
+      <BottomCoordinate>31</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <ProjectFile>../../../super_marios_bros.glux</ProjectFile>
+</AnimationChainArraySave>

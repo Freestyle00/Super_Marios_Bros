@@ -20,21 +20,22 @@ namespace Super_Marios_Bros.Entities
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
         /// added to managers will not have this method called.
         /// </summary>
+        public float horin = -1;
         float deadgumbawalking = 0.1f;
         AnimationController animationController;
-        bool gumbadead = false;
+        public bool gumbadead = false;
+        Super_Marios_Bros.Input.KeyboordInput input = new Super_Marios_Bros.Input.KeyboordInput();
         private void CustomInitialize()
         {
             Animations();
-            this.Velocity.X = -50;
-
+            InitializePlatformerInput(input);
         }
 
         private void CustomActivity()
         {
             animationController.Activity();
             PassonClass.GUMBATEST = this.Velocity.X;
-            //Bouncybouncy();
+            Walking();
         }
 
         private void CustomDestroy()
@@ -48,10 +49,15 @@ namespace Super_Marios_Bros.Entities
 
 
         }
-        public void deadgumba()
+        public void Deadgumba()
         {
             gumbadead = true;
             Console.WriteLine("Gumba dead true");
+        }
+        void Walking()
+        {
+            input.HorinzontalInputa(horin);
+            InitializePlatformerInput(input);
         }
         void Animations()
         {

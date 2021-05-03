@@ -72,11 +72,21 @@
     <Compile Include="Entities\Mario.Generated.cs">
       <DependentUpon>Mario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Mushroom.cs" />
+    <Compile Include="Entities\Mushroom.Generated.cs">
+      <DependentUpon>Mushroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Turtle.cs" />
+    <Compile Include="Entities\Turtle.Generated.cs">
+      <DependentUpon>Turtle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Factories\A_BrickFactory.Generated.cs" />
     <Compile Include="Factories\A_Brick_being_destroyedFactory.Generated.cs" />
     <Compile Include="Factories\GumbaFactory.Generated.cs" />
     <Compile Include="Factories\Lucky_blockFactory.Generated.cs" />
     <Compile Include="Factories\MarioFactory.Generated.cs" />
+    <Compile Include="Factories\MushroomFactory.Generated.cs" />
+    <Compile Include="Factories\TurtleFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Game1.Generated.cs">
@@ -203,6 +213,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Gumba_walking</Name>
     </None>
+    <None Include="content\entities\gumba\platformervaluesstatic.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PlatformerValuesStatic</Name>
+    </None>
     <None Include="content\entities\gumba\spritesheets for the enemies.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>SpriteSheets for the enemies</Name>
@@ -226,6 +240,26 @@
     <None Include="content\entities\mario\platformervaluesstatic.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PlatformerValuesStatic</Name>
+    </None>
+    <None Include="content\entities\mushroom\pilz.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Pilz</Name>
+    </None>
+    <None Include="content\entities\mushroom\platformervaluesstatic.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PlatformerValuesStatic</Name>
+    </None>
+    <None Include="content\entities\turtle\platformervaluesstatic.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PlatformerValuesStatic</Name>
+    </None>
+    <None Include="content\entities\turtle\schildkröte.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Schildkröte</Name>
+    </None>
+    <None Include="content\entities\turtle\turtle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>turtle</Name>
     </None>
     <None Include="content\flatredballprojects\platformers\platformers\content\standardtileset.tsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

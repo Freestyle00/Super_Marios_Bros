@@ -1,14 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using FlatRedBall;
-using FlatRedBall.Input;
-using FlatRedBall.Instructions;
-using FlatRedBall.AI.Pathfinding;
 using FlatRedBall.Graphics.Animation;
-using FlatRedBall.Graphics.Particle;
-using FlatRedBall.Math.Geometry;
+using FlatRedBall.Input;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Super_Marios_Bros.Entities
 {
@@ -22,6 +15,7 @@ namespace Super_Marios_Bros.Entities
         ///   AnimationController animationController;
         public IPressableInput RunInput { get; set; }
         Xbox360GamePad gamePad = InputManager.Xbox360GamePads[0];
+        
         AnimationController animationController;
         Super_Marios_Bros.Input.KeyboordInput input = new Super_Marios_Bros.Input.KeyboordInput();
         //IPressableInput jumpinput = InputManager.Keyboard.GetKey(Keys.Space);
@@ -37,14 +31,7 @@ namespace Super_Marios_Bros.Entities
         }
         partial void CustomInitializePlatformerInput()
         {
-            if (InputDevice is FlatRedBall.Input.Keyboard keyboard)
-            {
-                this.JumpInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Space);
-            }
-            else if (InputDevice is Xbox360GamePad gamepad)
-            {
-                this.JumpInput = gamepad.GetButton(Xbox360GamePad.Button.A);
-            }
+                this.JumpInput = InputManager.Keyboard.GetKey(Keys.Space).Or(gamePad.GetButton(Xbox360GamePad.Button.A));
         }
         private void CustomActivity()
         {
@@ -67,23 +54,23 @@ namespace Super_Marios_Bros.Entities
         }
         void MyOwnInput() //better than vics it support brace for impact having TWO INPUT DEVICES simultaneously BETTEREVEN TAHN fo4
         {
-
-            if (InputManager.Keyboard.KeyDown(Keys.D) || InputManager.Keyboard.KeyDown(Keys.Left))
+            AnalogStick leftAnalogStick = gamePad.LeftStick;
+            if (InputManager.Keyboard.KeyDown(Keys.D) || InputManager.Keyboard.KeyDown(Keys.Right) || gamePad.ButtonDown(Xbox360GamePad.Button.DPadRight) || leftAnalogStick.AsDPadDown(Xbox360GamePad.DPadDirection.Right))
             {
                 input.HorinzontalInputa(1);
             }
-            else if (InputManager.Keyboard.KeyDown(Keys.A) || InputManager.Keyboard.KeyDown(Keys.Right))
+            else if (InputManager.Keyboard.KeyDown(Keys.A) || InputManager.Keyboard.KeyDown(Keys.Left) || gamePad.ButtonDown(Xbox360GamePad.Button.DPadLeft) || leftAnalogStick.AsDPadDown(Xbox360GamePad.DPadDirection.Left))
             {
                 input.HorinzontalInputa(-1);
             }
-            else if (InputManager.Keyboard.KeyDown(Keys.W) || InputManager.Keyboard.KeyDown(Keys.Up))
+            else if (InputManager.Keyboard.KeyDown(Keys.W) || InputManager.Keyboard.KeyDown(Keys.Up) || gamePad.ButtonDown(Xbox360GamePad.Button.DPadUp) || leftAnalogStick.AsDPadDown(Xbox360GamePad.DPadDirection.Up))
             {
                 input.VerticalInputb(1);
             }
-            else if (InputManager.Keyboard.KeyDown(Keys.S) || InputManager.Keyboard.KeyDown(Keys.Down))
-            {
-                input.VerticalInputb(-1);
-            }
+            //else if (InputManager.Keyboard.KeyDown(Keys.S) || InputManager.Keyboard.KeyDown(Keys.Down) || gamePad.ButtonDown(Xbox360GamePad.Button.DPadDown) || leftAnalogStick.AsDPadDown(Xbox360GamePad.DPadDirection.Down))
+            //{
+            //    input.VerticalInputb(-1);
+            //}
             else
             {
                 input.HorinzontalInputa(0);
@@ -109,9 +96,9 @@ namespace Super_Marios_Bros.Entities
         void Jumping()
         {
             //Xbox360GamePad gamePad = InputManager.Xbox360GamePads[0];
-            if (this.IsOnGround == true && JumpInput.WasJustReleased)
+            if (this.IsOnGround == true && JumpInput.WasJustPressed)
             {
-                Mariojumpsound.Play(); //that gets annyoing after some time so i should not forget to decomment it
+                Mariojumpsound.Play(0.5f, 0, 0); //that gets annyoing after some time so i should not forget to decomment it
             }
         }
         void Debugthings()

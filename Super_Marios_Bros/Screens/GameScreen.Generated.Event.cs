@@ -19,32 +19,46 @@ namespace Super_Marios_Bros.Screens
                 MarioInstanceVsLucky_blockListCollisionOccurred(first, second);
             }
         }
-        void OnMarioInstanceVsGumbaListget_dunkedCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
-        {
-            if (this.MarioInstanceVsGumbaListget_dunkedCollisionOccurred != null)
-            {
-                MarioInstanceVsGumbaListget_dunkedCollisionOccurred(first, second);
-            }
-        }
-        void OnMarioInstanceVsGumbaListLeftMarioDeadCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
-        {
-            if (this.MarioInstanceVsGumbaListLeftMarioDeadCollisionOccurred != null)
-            {
-                MarioInstanceVsGumbaListLeftMarioDeadCollisionOccurred(first, second);
-            }
-        }
-        void OnMarioInstanceVsGumbaListRightMarioDeadCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
-        {
-            if (this.MarioInstanceVsGumbaListRightMarioDeadCollisionOccurred != null)
-            {
-                MarioInstanceVsGumbaListRightMarioDeadCollisionOccurred(first, second);
-            }
-        }
         void OnMarioInstanceVsA_BrickListCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.A_Brick second) 
         {
             if (this.MarioInstanceVsA_BrickListCollisionOccurred != null)
             {
                 MarioInstanceVsA_BrickListCollisionOccurred(first, second);
+            }
+        }
+        void OnMarioInstanceVsGumbaListAxisAlignedRectangleInstanceCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Gumba second) 
+        {
+            if (this.MarioInstanceVsGumbaListAxisAlignedRectangleInstanceCollisionOccurred != null)
+            {
+                MarioInstanceVsGumbaListAxisAlignedRectangleInstanceCollisionOccurred(first, second);
+            }
+        }
+        void OnGumbaListAxisAlignedRectangleInstanceVsSolidCollisionCollisionOccurredTunnel (Entities.Gumba first, FlatRedBall.TileCollisions.TileShapeCollection second) 
+        {
+            if (this.GumbaListAxisAlignedRectangleInstanceVsSolidCollisionCollisionOccurred != null)
+            {
+                GumbaListAxisAlignedRectangleInstanceVsSolidCollisionCollisionOccurred(first, second);
+            }
+        }
+        void OnMarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstanceCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Mushroom second) 
+        {
+            if (this.MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstanceCollisionOccurred != null)
+            {
+                MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstanceCollisionOccurred(first, second);
+            }
+        }
+        void OnMushroomListVsSolidCollisionCollisionOccurredTunnel (Entities.Mushroom first, FlatRedBall.TileCollisions.TileShapeCollection second) 
+        {
+            if (this.MushroomListVsSolidCollisionCollisionOccurred != null)
+            {
+                MushroomListVsSolidCollisionCollisionOccurred(first, second);
+            }
+        }
+        void OnTurtleListVsSolidCollisionCollisionOccurredTunnel (Entities.Turtle first, FlatRedBall.TileCollisions.TileShapeCollection second) 
+        {
+            if (this.TurtleListVsSolidCollisionCollisionOccurred != null)
+            {
+                TurtleListVsSolidCollisionCollisionOccurred(first, second);
             }
         }
     }

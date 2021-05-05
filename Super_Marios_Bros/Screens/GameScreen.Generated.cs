@@ -49,6 +49,7 @@ namespace Super_Marios_Bros.Screens
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Mushroom> MarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstanceCollisionOccurred;
         public event System.Action<Entities.Mushroom, FlatRedBall.TileCollisions.TileShapeCollection> MushroomListVsSolidCollisionCollisionOccurred;
         public event System.Action<Entities.Turtle, FlatRedBall.TileCollisions.TileShapeCollection> TurtleListVsSolidCollisionCollisionOccurred;
+        public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Turtle> MarioInstanceVsTurtleListCollisionOccurred;
         public GameScreen () 
         	: base ("GameScreen")
         {
@@ -432,6 +433,8 @@ namespace Super_Marios_Bros.Screens
             MushroomListVsSolidCollision.CollisionOccurred += OnMushroomListVsSolidCollisionCollisionOccurredTunnel;
             TurtleListVsSolidCollision.CollisionOccurred += OnTurtleListVsSolidCollisionCollisionOccurred;
             TurtleListVsSolidCollision.CollisionOccurred += OnTurtleListVsSolidCollisionCollisionOccurredTunnel;
+            MarioInstanceVsTurtleList.CollisionOccurred += OnMarioInstanceVsTurtleListCollisionOccurred;
+            MarioInstanceVsTurtleList.CollisionOccurred += OnMarioInstanceVsTurtleListCollisionOccurredTunnel;
             if (Map!= null)
             {
             }

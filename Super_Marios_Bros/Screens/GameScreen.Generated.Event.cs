@@ -61,5 +61,12 @@ namespace Super_Marios_Bros.Screens
                 TurtleListVsSolidCollisionCollisionOccurred(first, second);
             }
         }
+        void OnMarioInstanceVsTurtleListCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Turtle second) 
+        {
+            if (this.MarioInstanceVsTurtleListCollisionOccurred != null)
+            {
+                MarioInstanceVsTurtleListCollisionOccurred(first, second);
+            }
+        }
     }
 }

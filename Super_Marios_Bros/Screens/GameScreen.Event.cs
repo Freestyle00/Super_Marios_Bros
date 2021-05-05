@@ -10,9 +10,6 @@ namespace Super_Marios_Bros.Screens
             if (wasPushedDown)
             {
                 Console.WriteLine("was pushed down true");
-                bool hasDestroyedBlock = false;
-                // First see if the player (first) BlockCollision has collided with any 
-                // of the blocks
                 for (int i = 0; i < Lucky_blockList.Count; i++)
                 {
                     //Console.WriteLine("New Brick");
@@ -21,7 +18,6 @@ namespace Super_Marios_Bros.Screens
                         // New code:
                         Console.WriteLine("Collided");
                         Lucky_blockList[i].HandleHit();
-                        hasDestroyedBlock = true;
                         if (Lucky_blockList[i].HasPilzInIt == true)
                         {
                             var mushroom = Factories.MushroomFactory.CreateNew();
@@ -41,8 +37,6 @@ namespace Super_Marios_Bros.Screens
             {
                 Console.WriteLine("was pushed down true");
                 bool hasDestroyedBlock = false;
-                // First see if the player (first) BlockCollision has collided with any 
-                // of the blocks
                 for (int i = 0; i < A_BrickList.Count; i++)
                 {
                     //Console.WriteLine("New Brick");
@@ -56,8 +50,6 @@ namespace Super_Marios_Bros.Screens
                         break;
                     }
                 }
-                // the BlockCollision doesn't collide with any of the blocks, so just destroy whichever block
-                // we collided with
                 if (!hasDestroyedBlock)
                 {
                     // New code:
@@ -110,49 +102,8 @@ namespace Super_Marios_Bros.Screens
                     RestartScreen(true, true);
                 }
             }
-        }       
-        void OnGumbaListAxisAlignedRectangleInstanceVsSolidCollisionCollisionOccurred (Entities.Gumba first, FlatRedBall.TileCollisions.TileShapeCollection second) 
-        {
-            var collisionReposition = first.AxisAlignedRectangleInstance.LastMoveCollisionReposition;
-            var hasCollidedWithWall = collisionReposition.X != 0;
-            if (hasCollidedWithWall)
-            {
-                var isWallToTheRight = collisionReposition.X < 0;
-
-                if (isWallToTheRight && first.horin == 1)
-                {
-                    first.horin = -1; //LEFT
-                }
-                else if (!isWallToTheRight && first.horin == -1)
-                {
-                    first.horin = 1; //RIGHT
-                }
-            }
-        }       
-        void OnMarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstanceCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.Mushroom second) 
-        {
-            second.Destroy();
-            PassonClass.mariobig = true;
-        }        
-        void OnMushroomListVsSolidCollisionCollisionOccurred (Entities.Mushroom first, FlatRedBall.TileCollisions.TileShapeCollection second) 
-        {
-            var collisionReposition = first.AxisAlignedRectangleInstance.LastMoveCollisionReposition;
-            var hasCollidedWithWall = collisionReposition.X != 0;
-            if (hasCollidedWithWall)
-            {
-                var isWallToTheRight = collisionReposition.X < 0;
-
-                if (isWallToTheRight && first.horin == 1)
-                {
-                    first.horin = -1; //LEFT
-                }
-                else if (!isWallToTheRight && first.horin == -1)
-                {
-                    first.horin = 1; //RIGHT
-                }
-            }
-        }        
-        void OnTurtleListVsSolidCollisionCollisionOccurred (Entities.Turtle first, FlatRedBall.TileCollisions.TileShapeCollection second) 
+        }
+        void OnGumbaListAxisAlignedRectangleInstanceVsSolidCollisionCollisionOccurred(Entities.Gumba first, FlatRedBall.TileCollisions.TileShapeCollection second)
         {
             var collisionReposition = first.AxisAlignedRectangleInstance.LastMoveCollisionReposition;
             var hasCollidedWithWall = collisionReposition.X != 0;
@@ -170,6 +121,90 @@ namespace Super_Marios_Bros.Screens
                 }
             }
         }
+        void OnMarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstanceCollisionOccurred(Super_Marios_Bros.Entities.Mario first, Entities.Mushroom second)
+        {
+            second.Destroy();
+            PassonClass.mariobig = true;
+        }
+        void OnMushroomListVsSolidCollisionCollisionOccurred(Entities.Mushroom first, FlatRedBall.TileCollisions.TileShapeCollection second)
+        {
+            var collisionReposition = first.AxisAlignedRectangleInstance.LastMoveCollisionReposition;
+            var hasCollidedWithWall = collisionReposition.X != 0;
+            if (hasCollidedWithWall)
+            {
+                var isWallToTheRight = collisionReposition.X < 0;
 
+                if (isWallToTheRight && first.horin == 1)
+                {
+                    first.horin = -1; //LEFT
+                }
+                else if (!isWallToTheRight && first.horin == -1)
+                {
+                    first.horin = 1; //RIGHT
+                }
+            }
+        }
+        void OnTurtleListVsSolidCollisionCollisionOccurred(Entities.Turtle first, FlatRedBall.TileCollisions.TileShapeCollection second)
+        {
+            var collisionReposition = first.AxisAlignedRectangleInstance.LastMoveCollisionReposition;
+            var hasCollidedWithWall = collisionReposition.X != 0;
+            if (hasCollidedWithWall)
+            {
+                var isWallToTheRight = collisionReposition.X < 0;
+
+                if (isWallToTheRight && first.horin == 1)
+                {
+                    first.horin = -1; //LEFT
+                }
+                else if (!isWallToTheRight && first.horin == -1)
+                {
+                    first.horin = 1; //RIGHT
+                }
+            }
+        }
+        void OnMarioInstanceVsTurtleListCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.Turtle second) 
+        {
+            Console.WriteLine("Collsion occured");
+            bool wasPushedDown = first.AxisAlignedRectangleInstance.LastMoveCollisionReposition.Y > 0;
+            if (wasPushedDown)
+            {
+                Console.WriteLine("was pushed down true");
+                bool hasDestroyedBlock = false;
+                for (int i = 0; i < TurtleList.Count; i++)
+                {
+                    if (TurtleList[i].AxisAlignedRectangleInstance.CollideAgainst(first.CollisionThing))
+                    {
+                        Console.WriteLine("Collided");
+                        if (TurtleList[i].GotHit == true)
+                        {
+                            if (first.X > TurtleList[i].X)
+                            {
+                                TurtleList[i].TurtleKickStart("R");
+                            }
+                            else if (first.X < TurtleList[i].X)
+                            {
+                                TurtleList[i].TurtleKickStart("L");
+                            }
+                        }
+                        else { TurtleList[i].GotHit = true; }
+                        hasDestroyedBlock = true;
+                        break;
+                    }
+                }
+                if (!hasDestroyedBlock)
+                {
+                    Console.WriteLine("The other way");
+                    if (first.X > second.X)
+                    {
+                        second.TurtleKickStart("R");
+                    }
+                    else if (first.X < second.X)
+                    {
+                        second.TurtleKickStart("L");
+                    }
+                    else { second.GotHit = true; }
+                }
+            }
+        }
     }
 }

@@ -52,7 +52,7 @@ namespace Super_Marios_Bros.Entities
 
 
         }
-        void MyOwnInput() //better than vics it support brace for impact having TWO INPUT DEVICES simultaneously BETTEREVEN TAHN fo4
+        void MyOwnInput() //better than vics it support brace for impact having TWO INPUT DEVICES simultaneously BETTEREVEN TAHN fo4 in the future even more Wanna play with your ms2020 flightstick well not yet you can but in the future
         {
             AnalogStick leftAnalogStick = gamePad.LeftStick;
             if (InputManager.Keyboard.KeyDown(Keys.D) || InputManager.Keyboard.KeyDown(Keys.Right) || gamePad.ButtonDown(Xbox360GamePad.Button.DPadRight) || leftAnalogStick.AsDPadDown(Xbox360GamePad.DPadDirection.Right))

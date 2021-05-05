@@ -4,7 +4,7 @@
   <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
   <CoordinateType>Pixel</CoordinateType>
   <AnimationChain>
-    <Name>Turtle_Walking</Name>
+    <Name>Turtle_WalkingLeft</Name>
     <Frame>
       <TextureName>turtle.png</TextureName>
       <FrameLength>0.2</FrameLength>
@@ -14,6 +14,27 @@
       <BottomCoordinate>32</BottomCoordinate>
     </Frame>
     <Frame>
+      <TextureName>turtle.png</TextureName>
+      <FrameLength>0.2</FrameLength>
+      <LeftCoordinate>17</LeftCoordinate>
+      <RightCoordinate>33</RightCoordinate>
+      <TopCoordinate>8</TopCoordinate>
+      <BottomCoordinate>32</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Turtle_WalkingRight</Name>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
+      <TextureName>turtle.png</TextureName>
+      <FrameLength>0.2</FrameLength>
+      <LeftCoordinate>0</LeftCoordinate>
+      <RightCoordinate>16</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>32</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <FlipHorizontal>true</FlipHorizontal>
       <TextureName>turtle.png</TextureName>
       <FrameLength>0.2</FrameLength>
       <LeftCoordinate>17</LeftCoordinate>

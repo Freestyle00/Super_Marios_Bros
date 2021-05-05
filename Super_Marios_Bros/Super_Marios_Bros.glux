@@ -1368,6 +1368,13 @@
           <BeforeOrAfter>Before</BeforeOrAfter>
           <DelegateType />
         </EventResponseSave>
+        <EventResponseSave>
+          <EventName>MarioInstanceVsTurtleListCollisionOccurred</EventName>
+          <SourceObject>MarioInstanceVsTurtleList</SourceObject>
+          <SourceObjectEvent>CollisionOccurred</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
       </Events>
     </ScreenSave>
     <ScreenSave>
@@ -2815,7 +2822,7 @@
           <CustomProperty>
             <Type>string</Type>
             <Member>CurrentChainName</Member>
-            <ValueAsString>Turtle_Walking</ValueAsString>
+            <ValueAsString>Turtle_WalkingLeft</ValueAsString>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
@@ -2823,18 +2830,14 @@
             <ValueAsFloat>16</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
-            <Type>float</Type>
-            <Member>Width</Member>
-            <ValueAsFloat>16</ValueAsFloat>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>Microsoft.Xna.Framework.Graphics.Texture2D</Type>
-            <Member>Texture</Member>
-          </CustomProperty>
-          <CustomProperty>
             <Type>bool</Type>
             <Member>IgnoreAnimationChainTextureFlip</Member>
             <ValueAsBool>false</ValueAsBool>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Width</Member>
+            <ValueAsFloat>16</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>

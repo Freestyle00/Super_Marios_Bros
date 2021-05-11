@@ -27,7 +27,6 @@ namespace Super_Marios_Bros.DataTypes
         public const string Air = "Air";
         public const string Running = "Running";
         public const string RunningAir = "RunningAir";
-        public const string InShell = "InShell";
         public static System.Collections.Generic.List<System.String> OrderedList = new System.Collections.Generic.List<System.String>
         {
         Ground

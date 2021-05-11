@@ -61,11 +61,11 @@ namespace Super_Marios_Bros.Screens
                 TurtleListVsSolidCollisionCollisionOccurred(first, second);
             }
         }
-        void OnMarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstanceCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Turtle second) 
+        void OnMarioInstanceVsTurtleListCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Turtle second) 
         {
-            if (this.MarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstanceCollisionOccurred != null)
+            if (this.MarioInstanceVsTurtleListCollisionOccurred != null)
             {
-                MarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstanceCollisionOccurred(first, second);
+                MarioInstanceVsTurtleListCollisionOccurred(first, second);
             }
         }
     }

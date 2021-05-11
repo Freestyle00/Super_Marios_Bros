@@ -1045,7 +1045,7 @@ namespace Super_Marios_Bros.Entities
         /// <summary>
         /// Performs a standard solid collision against an ICollidable.
         /// </summary>
-        public bool CollideAgainst(FlatRedBall.Math.Geometry.ICollidable collidable, FlatRedBall.Math.Geometry.AxisAlignedRectangle axisAlignedRectangleInstance, bool isCloudCollision = false)
+        public bool CollideAgainst(FlatRedBall.Math.Geometry.ICollidable collidable, bool isCloudCollision = false)
         {
             return CollideAgainst(collidable.Collision, isCloudCollision);
         }

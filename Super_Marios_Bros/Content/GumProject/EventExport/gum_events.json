@@ -1,0 +1,62 @@
+{
+  "UserEvents": {
+    "Nick": [
+      {
+        "NewName": "Mario_Main_Gui",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 0,
+        "TimestampUtc": "2021-05-13T16:26:28.2485194Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Mario_Main_Gui",
+        "ElementType": "Screens",
+        "EventType": 1,
+        "TimestampUtc": "2021-05-13T16:26:51.9449776Z"
+      },
+      {
+        "NewName": "Mario_Main_GUI",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 0,
+        "TimestampUtc": "2021-05-13T16:27:03.3814688Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-13T16:27:08.8034692Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-13T16:36:07.2424633Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.Score",
+        "OldName": " Mario_Main_GUI.TextInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2021-05-13T16:38:34.1870531Z"
+      },
+      {
+        "NewName": "jöorjterjüjreütpkojert",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 0,
+        "TimestampUtc": "2021-05-13T16:55:17.9491901Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "jöorjterjüjreütpkojert",
+        "ElementType": "Screens",
+        "EventType": 1,
+        "TimestampUtc": "2021-05-13T16:55:28.0994397Z"
+      }
+    ]
+  }
+}

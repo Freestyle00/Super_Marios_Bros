@@ -17,6 +17,7 @@ namespace Super_Marios_Bros.Screens
         protected static FlatRedBall.TileGraphics.LayeredTileMap tiled;
         protected static Microsoft.Xna.Framework.Graphics.Texture2D tiles;
         
+        FlatRedBall.Gum.GumIdb gumIdb;
         public World1level1 () 
         	: base ()
         {
@@ -27,6 +28,7 @@ namespace Super_Marios_Bros.Screens
             Map = tiled;
             SolidCollision = new FlatRedBall.TileCollisions.TileShapeCollection();
             CloudCollision = new FlatRedBall.TileCollisions.TileShapeCollection();
+            gumIdb = new FlatRedBall.Gum.GumIdb();
             
             
             base.Initialize(addToManagers);
@@ -34,6 +36,7 @@ namespace Super_Marios_Bros.Screens
         public override void AddToManagers () 
         {
             tiled.AddToManagers(mLayer);
+            FlatRedBall.SpriteManager.AddDrawableBatch(gumIdb);
             base.AddToManagers();
             CustomInitialize();
         }
@@ -55,6 +58,7 @@ namespace Super_Marios_Bros.Screens
         }
         public override void Destroy () 
         {
+            FlatRedBall.SpriteManager.RemoveDrawableBatch(gumIdb);
             base.Destroy();
             tiled.Destroy();
             tiled = null;
@@ -121,6 +125,12 @@ namespace Super_Marios_Bros.Screens
                 throw new System.ArgumentException("contentManagerName cannot be empty or null");
             }
             Super_Marios_Bros.Screens.GameScreen.LoadStaticContent(contentManagerName);
+            // Set the content manager for Gum
+            var contentManagerWrapper = new FlatRedBall.Gum.ContentManagerWrapper();
+            contentManagerWrapper.ContentManagerName = contentManagerName;
+            RenderingLibrary.Content.LoaderManager.Self.ContentLoader = contentManagerWrapper;
+            // Access the GumProject just in case it's async loaded
+            var throwaway = GlobalContent.GumProject;
             #if DEBUG
             if (contentManagerName == FlatRedBall.FlatRedBallServices.GlobalContentManager)
             {

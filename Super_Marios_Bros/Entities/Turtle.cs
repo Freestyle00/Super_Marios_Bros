@@ -50,25 +50,11 @@ namespace Super_Marios_Bros.Entities
         }
         void TurtleHiddenDoingThings()
         {
-            if (GotHit2nd)
-            {
-               //Ita juat here that that thing down it doesnt happen
-            }
-            else if (GotHit)
-            {
-                horin = 0;
-            }
-        }
-        public void TurtleKickStart(string Dir)
-        {
-            if (Dir == "R")
-            {
-                this.Velocity.X = 80;
-            }
-            else if (Dir == "L")
-            {
-                this.Velocity.X = -80;
-            }
+			if (GotHit == true)
+			{
+                this.GroundMovement = PlatformerValuesStatic["InShell"];
+                this.AirMovement = PlatformerValuesStatic["InShell"];
+			}
         }
         void Animations()
         {

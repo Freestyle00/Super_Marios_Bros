@@ -17,9 +17,9 @@
       <UseGlobalContent>false</UseGlobalContent>
       <ReferencedFiles>
         <ReferencedFileSave>
-          <Name>GumProject/Screens/Mario_Main_GUI.gusx</Name>
+          <Name>gumproject/Screens/Mario_Main_GUI.gusx</Name>
           <IsSharedStatic>true</IsSharedStatic>
-          <RuntimeType>Gum.Wireframe.GraphicalUiElement</RuntimeType>
+          <RuntimeType>Super_Marios_Bros.GumRuntimes.Mario_Main_GUIRuntime</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
       </ReferencedFiles>
@@ -3046,6 +3046,11 @@
       <PluginRequirement>
         <Name>Tiled Plugin</Name>
         <Version>2.16.0.0</Version>
+        <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
+      </PluginRequirement>
+      <PluginRequirement>
+        <Name>Gum Plugin</Name>
+        <Version>2.4.1</Version>
         <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
       </PluginRequirement>
     </RequiredPlugins>

@@ -14,7 +14,7 @@ namespace Super_Marios_Bros.Screens
         #if DEBUG
         static bool HasBeenLoadedWithGlobalContentManager = false;
         #endif
-        protected static Gum.Wireframe.GraphicalUiElement Mario_Main_GUI;
+        protected static Super_Marios_Bros.GumRuntimes.Mario_Main_GUIRuntime Mario_Main_GUI;
         
         protected FlatRedBall.TileGraphics.LayeredTileMap Map;
         protected FlatRedBall.TileCollisions.TileShapeCollection SolidCollision;
@@ -50,6 +50,7 @@ namespace Super_Marios_Bros.Screens
         public event System.Action<Entities.Mushroom, FlatRedBall.TileCollisions.TileShapeCollection> MushroomListVsSolidCollisionCollisionOccurred;
         public event System.Action<Entities.Turtle, FlatRedBall.TileCollisions.TileShapeCollection> TurtleListVsSolidCollisionCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Turtle> MarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstanceCollisionOccurred;
+        Super_Marios_Bros.FormsControls.Screens.Mario_Main_GUIForms Forms;
         public GameScreen () 
         	: base ("GameScreen")
         {
@@ -227,6 +228,7 @@ namespace Super_Marios_Bros.Screens
     }
     TurtleListAxisAlignedRectangleInstanceVsCombinedShapeCollection.Name = "TurtleListAxisAlignedRectangleInstanceVsCombinedShapeCollection";
 
+            Forms = new Super_Marios_Bros.FormsControls.Screens.Mario_Main_GUIForms(Mario_Main_GUI);
             // normally we wait to set variables until after the object is created, but in this case if the
             // TileShapeCollection doesn't have its Visible set before creating the tiles, it can result in
             // really bad performance issues, as shapes will be made visible, then invisible. Really bad perf!
@@ -261,7 +263,7 @@ namespace Super_Marios_Bros.Screens
         }
         public override void AddToManagers () 
         {
-            Mario_Main_GUI.AddToManagers();
+            Mario_Main_GUI.AddToManagers();FlatRedBall.FlatRedBallServices.GraphicsOptions.SizeOrOrientationChanged += RefreshLayoutInternal;
             Factories.A_BrickFactory.Initialize(ContentManagerName);
             Factories.Lucky_blockFactory.Initialize(ContentManagerName);
             Factories.GumbaFactory.Initialize(ContentManagerName);
@@ -353,7 +355,7 @@ namespace Super_Marios_Bros.Screens
             Factories.A_Brick_being_destroyedFactory.Destroy();
             Factories.MushroomFactory.Destroy();
             Factories.TurtleFactory.Destroy();
-            Mario_Main_GUI.RemoveFromManagers();
+            Mario_Main_GUI.RemoveFromManagers();FlatRedBall.FlatRedBallServices.GraphicsOptions.SizeOrOrientationChanged -= RefreshLayoutInternal;
             Mario_Main_GUI = null;
             
             A_BrickList.MakeOneWay();
@@ -466,7 +468,7 @@ namespace Super_Marios_Bros.Screens
         }
         public virtual void RemoveFromManagers () 
         {
-            Mario_Main_GUI.RemoveFromManagers();
+            Mario_Main_GUI.RemoveFromManagers();FlatRedBall.FlatRedBallServices.GraphicsOptions.SizeOrOrientationChanged -= RefreshLayoutInternal;
             for (int i = A_BrickList.Count - 1; i > -1; i--)
             {
                 A_BrickList[i].Destroy();
@@ -580,6 +582,12 @@ namespace Super_Marios_Bros.Screens
             {
                 throw new System.ArgumentException("contentManagerName cannot be empty or null");
             }
+            // Set the content manager for Gum
+            var contentManagerWrapper = new FlatRedBall.Gum.ContentManagerWrapper();
+            contentManagerWrapper.ContentManagerName = contentManagerName;
+            RenderingLibrary.Content.LoaderManager.Self.ContentLoader = contentManagerWrapper;
+            // Access the GumProject just in case it's async loaded
+            var throwaway = GlobalContent.GumProject;
             #if DEBUG
             if (contentManagerName == FlatRedBall.FlatRedBallServices.GlobalContentManager)
             {
@@ -590,7 +598,7 @@ namespace Super_Marios_Bros.Screens
                 throw new System.Exception("This type has been loaded with a Global content manager, then loaded with a non-global.  This can lead to a lot of bugs");
             }
             #endif
-            if(Mario_Main_GUI == null) Mario_Main_GUI = GumRuntime.ElementSaveExtensions.CreateGueForElement(Gum.Managers.ObjectFinder.Self.GetScreen("Mario_Main_GUI"), true);
+            if(Mario_Main_GUI == null) Mario_Main_GUI = (Super_Marios_Bros.GumRuntimes.Mario_Main_GUIRuntime)GumRuntime.ElementSaveExtensions.CreateGueForElement(Gum.Managers.ObjectFinder.Self.GetScreen("Mario_Main_GUI"), true);
             Super_Marios_Bros.Entities.Mario.LoadStaticContent(contentManagerName);
             CustomLoadStaticContent(contentManagerName);
         }
@@ -631,6 +639,10 @@ namespace Super_Marios_Bros.Screens
                     return Mario_Main_GUI;
             }
             return null;
+        }
+        private void RefreshLayoutInternal (object sender, EventArgs e) 
+        {
+            Mario_Main_GUI.UpdateLayout();
         }
     }
 }

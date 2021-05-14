@@ -89,11 +89,28 @@
     <Compile Include="Factories\TurtleFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Forms\Screens\Mario_Main_GUIForms.cs" />
-    <Compile Include="Forms\Screens\Mario_Main_GUIForms.Generated.cs" />
+    <Compile Include="Forms\Screens\Mario_Main_GUIForms.Generated.cs">
+      <DependentUpon>Mario_Main_GUIForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Game1.cs" />
     <Compile Include="Game1.Generated.cs">
       <DependentUpon>Game1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameScriptingCore\AfterThatDecision.cs" />
+    <Compile Include="GameScriptingCore\DecisionAndList.cs" />
+    <Compile Include="GameScriptingCore\DecisionOrList.cs" />
+    <Compile Include="GameScriptingCore\DelegateDecision.cs" />
+    <Compile Include="GameScriptingCore\GeneralAction.cs" />
+    <Compile Include="GameScriptingCore\GeneralDecision.cs" />
+    <Compile Include="GameScriptingCore\IDecisionList.cs" />
+    <Compile Include="GameScriptingCore\IDoScriptEngine.cs" />
+    <Compile Include="GameScriptingCore\IIfScriptEngine.cs" />
+    <Compile Include="GameScriptingCore\IScriptAction.cs" />
+    <Compile Include="GameScriptingCore\IScriptDecision.cs" />
+    <Compile Include="GameScriptingCore\ScreenScript.cs" />
+    <Compile Include="GameScriptingCore\Script.cs" />
+    <Compile Include="GameScriptingCore\ScriptEngine.cs" />
+    <Compile Include="GameScriptingCore\WaitAction.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
     <Compile Include="GlueControl\GlueControlManager.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\I.Generated.cs" />
@@ -120,51 +137,97 @@
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ButtonRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ButtonRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ButtonRuntime.Generated.cs">
+      <DependentUpon>ButtonRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\CheckBoxRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\CheckBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\CheckBoxRuntime.Generated.cs">
+      <DependentUpon>CheckBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ColoredFrameRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ColoredFrameRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ColoredFrameRuntime.Generated.cs">
+      <DependentUpon>ColoredFrameRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ComboBoxRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ComboBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ComboBoxRuntime.Generated.cs">
+      <DependentUpon>ComboBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\DialogBoxRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\DialogBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\DialogBoxRuntime.Generated.cs">
+      <DependentUpon>DialogBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\KeyboardKeyRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\KeyboardKeyRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\KeyboardKeyRuntime.Generated.cs">
+      <DependentUpon>KeyboardKeyRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\KeyboardRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\KeyboardRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\KeyboardRuntime.Generated.cs">
+      <DependentUpon>KeyboardRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\LabelRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\LabelRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\LabelRuntime.Generated.cs">
+      <DependentUpon>LabelRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ListBoxItemRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ListBoxItemRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ListBoxItemRuntime.Generated.cs">
+      <DependentUpon>ListBoxItemRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ListBoxRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ListBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ListBoxRuntime.Generated.cs">
+      <DependentUpon>ListBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\PasswordBoxRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\PasswordBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\PasswordBoxRuntime.Generated.cs">
+      <DependentUpon>PasswordBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\RadioButtonRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\RadioButtonRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\RadioButtonRuntime.Generated.cs">
+      <DependentUpon>RadioButtonRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ScrollBarRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ScrollBarRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ScrollBarRuntime.Generated.cs">
+      <DependentUpon>ScrollBarRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ScrollBarThumbRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ScrollBarThumbRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ScrollBarThumbRuntime.Generated.cs">
+      <DependentUpon>ScrollBarThumbRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ScrollViewerRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ScrollViewerRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ScrollViewerRuntime.Generated.cs">
+      <DependentUpon>ScrollViewerRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\SliderRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\SliderRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\SliderRuntime.Generated.cs">
+      <DependentUpon>SliderRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\TextBoxRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\TextBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\TextBoxRuntime.Generated.cs">
+      <DependentUpon>TextBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ToastRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ToastRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ToastRuntime.Generated.cs">
+      <DependentUpon>ToastRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ToggleButtonRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ToggleButtonRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ToggleButtonRuntime.Generated.cs">
+      <DependentUpon>ToggleButtonRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\TreeViewItemRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\TreeViewItemRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\TreeViewItemRuntime.Generated.cs">
+      <DependentUpon>TreeViewItemRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\TreeViewRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\TreeViewRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\TreeViewRuntime.Generated.cs">
+      <DependentUpon>TreeViewRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\TreeViewToggleButtonRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\TreeViewToggleButtonRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\TreeViewToggleButtonRuntime.Generated.cs">
+      <DependentUpon>TreeViewToggleButtonRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\UserControlRuntime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\UserControlRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\UserControlRuntime.Generated.cs">
+      <DependentUpon>UserControlRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
     <Compile Include="GumRuntimes\Mario_Main_GUIRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
@@ -447,6 +510,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Verdana_noSmooth_0</Name>
     </None>
+    <None Include="content\gumproject\gui_animations.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>gui_animations</Name>
+    </None>
     <None Include="content\gumproject\gumproject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumProject</Name>
@@ -454,6 +521,10 @@
     <None Include="content\gumproject\screens\mario_main_gui.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>mario_main_gui</Name>
+    </None>
+    <None Include="content\gumproject\sprite-0003.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>sprite-0003</Name>
     </None>
     <None Include="content\gumproject\standards\circle.gutx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

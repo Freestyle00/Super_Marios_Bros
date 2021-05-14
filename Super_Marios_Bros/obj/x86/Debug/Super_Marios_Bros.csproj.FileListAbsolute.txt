@@ -253,7 +253,6 @@ C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\uispritesheet.png
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\fontcache\font18verdana_nosmooth.fnt
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\fontcache\font18verdana_nosmooth_0.png
-C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\screens\mario_main_gui.gusx
 c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\components\defaultforms\button.gucx
 c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\components\defaultforms\checkbox.gucx
 c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\components\defaultforms\coloredframe.gucx
@@ -300,3 +299,8 @@ c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\
 c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\standards\standardgraphics\red_topright.png
 c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\standards\text.gutx
 c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\uispritesheet.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\screens\mario_main_gui.gusx
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\gui_animations.achx
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\sprite-0003.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\gui_animations.achx
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\sprite-0003.png

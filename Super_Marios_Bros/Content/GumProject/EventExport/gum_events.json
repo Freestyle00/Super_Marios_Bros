@@ -56,6 +56,139 @@
         "ElementType": "Screens",
         "EventType": 1,
         "TimestampUtc": "2021-05-13T16:55:28.0994397Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-13T21:07:11.4134431Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " Mario_Main_GUI.Sprite SpriteInstance in  Mario_Main_GUI",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-13T21:26:11.9114692Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-13T21:53:49.8304684Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " Mario_Main_GUI.Sprite SpriteInstance in  Mario_Main_GUI",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-13T22:00:13.8441491Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-13T22:00:37.8134733Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " Mario_Main_GUI.Sprite SpriteInstance in  Mario_Main_GUI",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-13T22:01:50.5034692Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-13T22:02:19.8094669Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " Mario_Main_GUI.Sprite SpriteInstance in  Mario_Main_GUI",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-14T11:21:58.7674702Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T11:22:21.3284681Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " Mario_Main_GUI.Sprite SpriteInstance in  Mario_Main_GUI",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-14T11:23:18.2489478Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T11:23:22.468223Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " Mario_Main_GUI.Sprite SpriteInstance in  Mario_Main_GUI",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-14T11:23:45.3274527Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T11:25:12.3108477Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " Mario_Main_GUI.Sprite SpriteInstance in  Mario_Main_GUI",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-14T13:06:27.2588514Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T13:06:29.9364189Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " Mario_Main_GUI.Sprite SpriteInstance in  Mario_Main_GUI",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-14T13:06:43.1504665Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T13:07:29.1922032Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " Mario_Main_GUI.Sprite SpriteInstance in  Mario_Main_GUI",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-14T13:09:29.135496Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T13:09:34.4622779Z"
       }
     ]
   }

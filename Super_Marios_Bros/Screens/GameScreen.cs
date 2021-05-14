@@ -38,7 +38,7 @@ namespace Super_Marios_Bros.Screens
         void CustomDestroy()
         {
 
-
+			
         }
         static void CustomLoadStaticContent(string contentManagerName)
         {

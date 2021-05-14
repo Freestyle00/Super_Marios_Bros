@@ -276,13 +276,17 @@ namespace Super_Marios_Bros.Entities
             }
         }
         /// <summary>
-        /// Which direction the character is facing.
+        /// Which direction the character is facing. This can be explicity set in code, but may get overridden by the current InputDevice.
         /// </summary>
         public HorizontalDirection DirectionFacing
         {
             get
             {
                 return mDirectionFacing;
+            }
+            set
+            {
+                mDirectionFacing = value;
             }
         }
         /// <summary>
@@ -352,6 +356,8 @@ namespace Super_Marios_Bros.Entities
         /// the character.
         /// </summary>
         public bool InputEnabled { get; set; }
+        float groundHorizontalVelocity = 0;
+        public float GroundHorizontalVelocity => groundHorizontalVelocity;
         
 
             /// <summary>
@@ -360,6 +366,9 @@ namespace Super_Marios_Bros.Entities
             /// cloud (by pressing down direction + jump), then this value is set. 
             /// </summary>
             private float? cloudCollisionFallThroughY = null;
+
+            public float? TopOfLadderY { get; set; }
+
 
         #endregion
         
@@ -793,7 +802,14 @@ namespace Super_Marios_Bros.Entities
 
             if(CurrentMovement != null)
             {
-                this.YAcceleration = -CurrentMovement.Gravity;
+                if(CurrentMovement.CanClimb)
+                {
+                    this.YAcceleration = 0;
+                }
+                else
+                {
+                    this.YAcceleration = -CurrentMovement.Gravity;
+                }
             }
         }
 
@@ -830,6 +846,8 @@ namespace Super_Marios_Bros.Entities
 #endif
 
             ApplyHorizontalInput();
+
+            ApplyClimbingInput();
 
             ApplyJumpInput();
         }
@@ -883,14 +901,16 @@ namespace Super_Marios_Bros.Entities
 
             if ((this.CurrentMovement.AccelerationTimeX <= 0 && this.CurrentMovement.IsUsingCustomDeceleration == false)|| this.CurrentMovement.UsesAcceleration == false)
             {
-                this.XVelocity = horizontalRatio * maxSpeed;
+                this.XVelocity = groundHorizontalVelocity + horizontalRatio * maxSpeed;
             }
             else
             {
-                var desiredSpeed = horizontalRatio * maxSpeed;
-                
+                var desiredSpeed = groundHorizontalVelocity + horizontalRatio * maxSpeed;
+
+                const float epsilon = .001f;
+
                 var isSpeedingUp = 
-                    XVelocity == 0 && desiredSpeed != 0 ||
+                    (Math.Abs(XVelocity - groundHorizontalVelocity) < epsilon && Math.Abs(desiredSpeed - groundHorizontalVelocity) > epsilon) ||
                     ((desiredSpeed > 0 && XVelocity < desiredSpeed && XVelocity > 0) ||
                     (desiredSpeed < 0 && XVelocity > desiredSpeed && XVelocity < 0));
                 
@@ -898,7 +918,7 @@ namespace Super_Marios_Bros.Entities
                 
                 float accelerationMagnitude = 0;
                 
-                if(isSpeedingUp)
+                if(isSpeedingUp && CurrentMovement.AccelerationTimeX != 0)
                 {
                     accelerationMagnitude = maxSpeed / CurrentMovement.AccelerationTimeX;
                 }
@@ -932,6 +952,27 @@ namespace Super_Marios_Bros.Entities
             }
         }
 
+        private void ApplyClimbingInput()
+        {
+            if(CurrentMovement.CanClimb)
+            {
+                var verticalInputValue = VerticalInput?.Value ?? 0;
+                this.YVelocity = verticalInputValue * CurrentMovement.MaxClimbingSpeed;
+
+                if(this.Y > TopOfLadderY)
+                {
+                    this.Y = TopOfLadderY.Value;
+                    if(this.YVelocity > 0)
+                    {
+                        this.YVelocity = 0;
+                    }
+                }
+
+            }
+
+        }
+
+
         /// <summary>
         /// Applies the jump input to control vertical velocity and state.
         /// </summary>
@@ -950,6 +991,7 @@ namespace Super_Marios_Bros.Entities
                 CurrentMovement.JumpVelocity > 0 &&
                 (
                     mIsOnGround || 
+                    CurrentMovement.CanClimb ||
                     AfterDoubleJump == null || 
 				    (AfterDoubleJump != null && mHasDoubleJumped == false) ||
 				    (AfterDoubleJump != null && AfterDoubleJump.JumpVelocity > 0)
@@ -979,6 +1021,11 @@ namespace Super_Marios_Bros.Entities
                             "but the AfterDoubleJump variable is not set. If you are using glue, select this entity and change the After Double Jump variable.");
                     }
                     mHasDoubleJumped = true ;
+                }
+                if(CurrentMovementType == MovementType.Ground && CurrentMovement.CanClimb)
+                {
+                    // the user jumped off a vine. Force the user into air mode:
+                    CurrentMovementType = MovementType.Air;
                 }
             }
 
@@ -1028,7 +1075,7 @@ namespace Super_Marios_Bros.Entities
             }
             else
             {
-                if (CurrentMovementType == MovementType.Ground)
+                if (CurrentMovementType == MovementType.Ground && !CurrentMovement.CanClimb)
                 {
                     CurrentMovementType = MovementType.Air;
                 }
@@ -1067,7 +1114,11 @@ namespace Super_Marios_Bros.Entities
 
         public bool CollideAgainst(FlatRedBall.Math.Geometry.AxisAlignedRectangle rectangle, bool isCloudCollision = false)
         {
-            return CollideAgainst(() => rectangle.CollideAgainstBounce(this.Collision, 1, 0, 0), isCloudCollision);
+            return CollideAgainst(() =>
+            {
+                var collided = rectangle.CollideAgainstBounce(this.Collision, 1, 0, 0);
+                return (collided, rectangle);
+            }, isCloudCollision);
         }
 
         /// <summary>
@@ -1077,7 +1128,16 @@ namespace Super_Marios_Bros.Entities
         /// <param name="isCloudCollision">Whether to perform solid or cloud collisions.</param>
         public bool CollideAgainst(FlatRedBall.Math.Geometry.ShapeCollection shapeCollection, bool isCloudCollision)
         {
-            return CollideAgainst(() => shapeCollection.CollideAgainstBounce(this.Collision, 1, 0, 0), isCloudCollision);
+            return CollideAgainst(() =>
+            {
+                var collided = shapeCollection.CollideAgainstBounce(this.Collision, 1, 0, 0);
+                PositionedObject lastCollided = null;
+                if (shapeCollection.LastCollisionAxisAlignedRectangles.Count > 0) lastCollided = shapeCollection.LastCollisionAxisAlignedRectangles[0];
+                if (shapeCollection.LastCollisionCircles.Count > 0) lastCollided = shapeCollection.LastCollisionCircles[0];
+                if (shapeCollection.LastCollisionPolygons.Count > 0) lastCollided = shapeCollection.LastCollisionPolygons[0];
+                // do we care about other shapes?
+                return (collided, lastCollided);
+            }, isCloudCollision);
         }
 
         /// <summary>
@@ -1088,7 +1148,7 @@ namespace Super_Marios_Bros.Entities
         /// </summary>
         /// <param name="collisionFunction">The collision function to execute.</param>
         /// <param name="isCloudCollision">Whether to perform cloud collision (only check when moving down)</param>
-        public bool CollideAgainst(System.Func<bool> collisionFunction, bool isCloudCollision)
+        public bool CollideAgainst(System.Func<(bool, PositionedObject)> collisionFunction, bool isCloudCollision)
         {
             Microsoft.Xna.Framework.Vector3 positionBeforeCollision = this.Position;
             Microsoft.Xna.Framework.Vector3 velocityBeforeCollision = this.Velocity;
@@ -1099,6 +1159,7 @@ namespace Super_Marios_Bros.Entities
 
             if (isFirstCollisionOfTheFrame)
             {
+                groundHorizontalVelocity = 0;
                 wasOnGroundLastFrame = mIsOnGround;
                 mLastCollisionTime = FlatRedBall.TimeManager.CurrentTime;
                 PositionBeforeLastPlatformerCollision = this.Position;
@@ -1135,7 +1196,8 @@ namespace Super_Marios_Bros.Entities
             if (canCheckCollision)
             {
 
-                if (collisionFunction())
+                (bool didCollide, PositionedObject objectCollidedAgainst) = collisionFunction();
+                if (didCollide)
                 {
                     toReturn = true;
 
@@ -1159,6 +1221,8 @@ namespace Super_Marios_Bros.Entities
                                 LandedAction();
                             }
                             mIsOnGround = true;
+
+                            groundHorizontalVelocity = objectCollidedAgainst?.TopParent.XVelocity ?? 0;
                         }
                         if (this.Y < lastY)
                         {
@@ -1191,7 +1255,11 @@ namespace Super_Marios_Bros.Entities
             var velocityBefore = this.Velocity;
 
 
-            var collided = CollideAgainst(() => shapeCollection.CollideAgainstSolid(this), isCloudCollision);
+            var collided = CollideAgainst(() =>
+            {
+                var didCollideInternal = shapeCollection.CollideAgainstSolid(this);
+                return (didCollideInternal, null);
+            }, isCloudCollision);
 
             if(collided)
             {
@@ -1314,7 +1382,11 @@ namespace Super_Marios_Bros.Entities
 
         public bool CollideAgainst(FlatRedBall.TileCollisions.TileShapeCollection shapeCollection, FlatRedBall.Math.Geometry.AxisAlignedRectangle thisCollision, bool isCloudCollision = false)
         {
-            return CollideAgainst(() => shapeCollection.CollideAgainstSolid(thisCollision), isCloudCollision);
+            return CollideAgainst(() =>
+            {
+                var didCollide = shapeCollection.CollideAgainstSolid(thisCollision);
+                return (didCollide, null);
+            }, isCloudCollision);
         }
 
 

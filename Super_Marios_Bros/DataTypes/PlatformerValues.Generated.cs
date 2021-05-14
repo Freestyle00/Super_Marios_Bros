@@ -23,6 +23,8 @@ namespace Super_Marios_Bros.DataTypes
         public System.Decimal DownhillFullSpeedSlope;
         public System.Decimal DownhillMaxSpeedSlope;
         public System.Decimal DownhillMaxSpeedBoostPercentage;
+        public bool CanClimb;
+        public float MaxClimbingSpeed;
         public const string Ground = "Ground";
         public const string Air = "Air";
         public const string Running = "Running";

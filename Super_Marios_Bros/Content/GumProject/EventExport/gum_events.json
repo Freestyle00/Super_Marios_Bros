@@ -189,6 +189,20 @@
         "ElementType": "Screens",
         "EventType": 5,
         "TimestampUtc": "2021-05-14T13:09:34.4622779Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " Mario_Main_GUI.Sprite SpriteInstance in  Mario_Main_GUI",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-14T18:19:10.8814661Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T18:19:18.8284701Z"
       }
     ]
   }

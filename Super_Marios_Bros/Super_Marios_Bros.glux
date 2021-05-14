@@ -1349,6 +1349,7 @@
           <DelegateType />
         </EventResponseSave>
       </Events>
+      <CustomClassesForExport />
     </ScreenSave>
     <ScreenSave>
       <Tags>
@@ -1527,6 +1528,7 @@
         </NamedObjectSave>
       </NamedObjects>
       <Name>Screens\World1level1</Name>
+      <CustomClassesForExport />
       <BaseScreen>Screens\GameScreen</BaseScreen>
     </ScreenSave>
   </Screens>
@@ -1663,6 +1665,7 @@
         </NamedObjectSave>
       </NamedObjects>
       <Name>Entities\A_Brick</Name>
+      <CustomClassesForExport />
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
       <Is2D>true</Is2D>
@@ -1761,6 +1764,7 @@
         </NamedObjectSave>
       </NamedObjects>
       <Name>Entities\A_Brick_being_destroyed</Name>
+      <CustomClassesForExport />
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
       <Is2D>true</Is2D>
@@ -2046,6 +2050,7 @@
         </NamedObjectSave>
       </NamedObjects>
       <Name>Entities\Gumba</Name>
+      <CustomClassesForExport />
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
       <Is2D>true</Is2D>
@@ -2206,6 +2211,7 @@
         </NamedObjectSave>
       </NamedObjects>
       <Name>Entities\Lucky_block</Name>
+      <CustomClassesForExport />
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
       <Is2D>true</Is2D>
@@ -2510,6 +2516,7 @@
         </NamedObjectSave>
       </NamedObjects>
       <Name>Entities\Mario</Name>
+      <CustomClassesForExport />
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
       <Is2D>true</Is2D>
@@ -2681,6 +2688,7 @@
         </NamedObjectSave>
       </NamedObjects>
       <Name>Entities\Mushroom</Name>
+      <CustomClassesForExport />
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
       <Is2D>true</Is2D>
@@ -2952,6 +2960,7 @@
         </NamedObjectSave>
       </NamedObjects>
       <Name>Entities\Turtle</Name>
+      <CustomClassesForExport />
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
       <Is2D>true</Is2D>

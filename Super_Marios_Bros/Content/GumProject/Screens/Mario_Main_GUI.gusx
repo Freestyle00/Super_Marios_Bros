@@ -79,7 +79,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SpriteInstance.Height</Name>
-      <Value xsi:type="xsd:float">12.812499</Value>
+      <Value xsi:type="xsd:float">15.16927</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -90,9 +90,15 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>Gum.Managers.TextureAddress</Type>
+      <Name>SpriteInstance.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>SpriteInstance.Width</Name>
-      <Value xsi:type="xsd:float">14.537035</Value>
+      <Value xsi:type="xsd:float">18.0338554</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -152,6 +158,13 @@
     <VariableList xsi:type="VariableListSaveOfString">
       <Type>string</Type>
       <Name>AnimationFrames</Name>
+      <IsFile>false</IsFile>
+      <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
+      <Value />
+    </VariableList>
+    <VariableList xsi:type="VariableListSaveOfString">
+      <Type>string</Type>
+      <Name>SpriteInstance.AnimationFrames</Name>
       <IsFile>false</IsFile>
       <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
       <Value />

@@ -11,40 +11,43 @@ using FlatRedBall.Math.Geometry;
 
 namespace Super_Marios_Bros.Entities
 {
-	public partial class Lucky_block
+	public partial class DeadMario
 	{
 		/// <summary>
 		/// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
 		/// This method is called when the Entity is added to managers. Entities which are instantiated but not
 		/// added to managers will not have this method called.
 		/// </summary>
-		public bool Used3 = false;
-		public bool HasPilzInIt = false;
+		public bool Dead = false;
+
 		private void CustomInitialize()
 		{
-			ThisBlockTouched = false;
+
 		}
 
 		private void CustomActivity()
 		{
-			if (this.X >= 375 && this.X <= 390)
+			if(SpriteInstance.JustCycled)
 			{
-				HasPilzInIt = true;
+				Console.WriteLine("TEST");
 			}
 		}
 
 		private void CustomDestroy()
 		{
+
+
 		}
 
 		private static void CustomLoadStaticContent(string contentManagerName)
 		{
 
+
 		}
-		public void HandleHit()
-		{
-			SpriteInstanceTexture = luckyblockhasbeentouched;
-			Used3 = true;
+		public void DEAD(){
+			this.SpriteInstance.CurrentChainName = "MarioDeadUpDown";
+			Console.WriteLine("kwpokweoktweoprkw");
 		}
+
 	}
 }

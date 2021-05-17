@@ -304,3 +304,7 @@ c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\
 c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\sprite-0003.png
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\gui_animations.achx
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\sprite-0003.png
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\screens\gameoverscreengum.gusx
+C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\deadmario\platformervaluesstatic.csv
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\entities\deadmario\platformervaluesstatic.csv
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\screens\gameoverscreengum.gusx

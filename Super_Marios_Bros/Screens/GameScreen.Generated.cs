@@ -42,6 +42,7 @@ namespace Super_Marios_Bros.Screens
         private FlatRedBall.Math.Collision.DelegateListVsListRelationship<Entities.Gumba, Entities.Turtle> GumbaListVsTurtleList;
         private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Turtle> MarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstance;
         private FlatRedBall.Math.Collision.DelegateListVsSingleRelationship<Entities.Turtle, FlatRedBall.TileCollisions.TileShapeCollection> TurtleListAxisAlignedRectangleInstanceVsCombinedShapeCollection;
+        private Super_Marios_Bros.Entities.DeadMario DeadMarioInstance;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockListCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickListCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListAxisAlignedRectangleInstanceCollisionOccurred;
@@ -76,6 +77,8 @@ namespace Super_Marios_Bros.Screens
             MushroomList.Name = "MushroomList";
             TurtleList = new FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Turtle>();
             TurtleList.Name = "TurtleList";
+            DeadMarioInstance = new Super_Marios_Bros.Entities.DeadMario(ContentManagerName, false);
+            DeadMarioInstance.Name = "DeadMarioInstance";
                 MarioInstanceVsGumbaListAxisAlignedRectangleInstance = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, GumbaList);
     MarioInstanceVsGumbaListAxisAlignedRectangleInstance.SetSecondSubCollision(item => item.AxisAlignedRectangleInstance);
     MarioInstanceVsGumbaListAxisAlignedRectangleInstance.Name = "MarioInstanceVsGumbaListAxisAlignedRectangleInstance";
@@ -277,6 +280,7 @@ namespace Super_Marios_Bros.Screens
             Factories.MushroomFactory.AddList(MushroomList);
             Factories.TurtleFactory.AddList(TurtleList);
             MarioInstance.AddToManagers(mLayer);
+            DeadMarioInstance.AddToManagers(mLayer);
             FlatRedBall.TileEntities.TileEntityInstantiator.CreateEntitiesFrom(Map);
             base.AddToManagers();
             AddToManagersBottomUp();
@@ -336,6 +340,7 @@ namespace Super_Marios_Bros.Screens
                         TurtleList[i].Activity();
                     }
                 }
+                DeadMarioInstance.Activity();
             }
             else
             {
@@ -396,6 +401,11 @@ namespace Super_Marios_Bros.Screens
             for (int i = TurtleList.Count - 1; i > -1; i--)
             {
                 TurtleList[i].Destroy();
+            }
+            if (DeadMarioInstance != null)
+            {
+                DeadMarioInstance.Destroy();
+                DeadMarioInstance.Detach();
             }
             A_BrickList.MakeTwoWay();
             Lucky_blockList.MakeTwoWay();
@@ -459,6 +469,22 @@ namespace Super_Marios_Bros.Screens
             {
                 MarioInstance.RelativeZ = 1f;
             }
+            if (DeadMarioInstance.Parent == null)
+            {
+                DeadMarioInstance.X = -5000f;
+            }
+            else
+            {
+                DeadMarioInstance.RelativeX = -5000f;
+            }
+            if (DeadMarioInstance.Parent == null)
+            {
+                DeadMarioInstance.Y = -5000f;
+            }
+            else
+            {
+                DeadMarioInstance.RelativeY = -5000f;
+            }
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = oldShapeManagerSuppressAdd;
         }
         public virtual void AddToManagersBottomUp () 
@@ -498,12 +524,14 @@ namespace Super_Marios_Bros.Screens
             {
                 TurtleList[i].Destroy();
             }
+            DeadMarioInstance.RemoveFromManagers();
         }
         public virtual void AssignCustomVariables (bool callOnContainedElements) 
         {
             if (callOnContainedElements)
             {
                 MarioInstance.AssignCustomVariables(true);
+                DeadMarioInstance.AssignCustomVariables(true);
             }
             if (Map != null)
             {
@@ -537,6 +565,22 @@ namespace Super_Marios_Bros.Screens
             else
             {
                 MarioInstance.RelativeZ = 1f;
+            }
+            if (DeadMarioInstance.Parent == null)
+            {
+                DeadMarioInstance.X = -5000f;
+            }
+            else
+            {
+                DeadMarioInstance.RelativeX = -5000f;
+            }
+            if (DeadMarioInstance.Parent == null)
+            {
+                DeadMarioInstance.Y = -5000f;
+            }
+            else
+            {
+                DeadMarioInstance.RelativeY = -5000f;
             }
         }
         public virtual void ConvertToManuallyUpdated () 
@@ -575,6 +619,7 @@ namespace Super_Marios_Bros.Screens
             {
                 TurtleList[i].ConvertToManuallyUpdated();
             }
+            DeadMarioInstance.ConvertToManuallyUpdated();
         }
         public static void LoadStaticContent (string contentManagerName) 
         {
@@ -600,6 +645,7 @@ namespace Super_Marios_Bros.Screens
             #endif
             if(Mario_Main_GUI == null) Mario_Main_GUI = (Super_Marios_Bros.GumRuntimes.Mario_Main_GUIRuntime)GumRuntime.ElementSaveExtensions.CreateGueForElement(Gum.Managers.ObjectFinder.Self.GetScreen("Mario_Main_GUI"), true);
             Super_Marios_Bros.Entities.Mario.LoadStaticContent(contentManagerName);
+            Super_Marios_Bros.Entities.DeadMario.LoadStaticContent(contentManagerName);
             CustomLoadStaticContent(contentManagerName);
         }
         public override void PauseThisScreen () 

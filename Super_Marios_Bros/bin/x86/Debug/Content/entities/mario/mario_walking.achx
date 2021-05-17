@@ -448,5 +448,16 @@
       <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
+  <AnimationChain>
+    <Name>MarioDead</Name>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
   <ProjectFile>../../../super_marios_bros.glux</ProjectFile>
 </AnimationChainArraySave>

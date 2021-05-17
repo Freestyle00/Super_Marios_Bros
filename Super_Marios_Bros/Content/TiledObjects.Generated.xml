@@ -2,6 +2,11 @@
 <objecttypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <objecttype name="A_Brick" />
   <objecttype name="A_Brick_being_destroyed" />
+  <objecttype name="DeadMario">
+    <property name="GroundMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Ground in PlatformerValuesStatic.csv" />
+    <property name="AirMovement" type="Super_Marios_Bros.DataTypes.PlatformerValues" default="Air in PlatformerValuesStatic.csv" />
+    <property name="AfterDoubleJump" type="Super_Marios_Bros.DataTypes.PlatformerValues" />
+  </objecttype>
   <objecttype name="Gumba">
     <property name="AxisAlignedRectangleInstanceHeight" type="float" default="16" />
     <property name="HeightOftheRectangle" type="float" default="0" />

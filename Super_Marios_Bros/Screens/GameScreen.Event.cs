@@ -11,11 +11,10 @@ namespace Super_Marios_Bros.Screens
 			{
 				Console.WriteLine("was pushed down true");
 				for (int i = 0; i < Lucky_blockList.Count; i++)
-				{
-					//Console.WriteLine("New Brick");
-					if (Lucky_blockList[i].AxisAlignedRectangleInstance.CollideAgainst(first.CollisionThing) && Lucky_blockList[i].Used3 == false)
+				{	
+				if (Lucky_blockList[i].AxisAlignedRectangleInstance.CollideAgainst(first.CollisionThing) && Lucky_blockList[i].Used3 == false)
 					{
-						// New code:
+						
 						Console.WriteLine("Collided");
 						Lucky_blockList[i].HandleHit();
 						if (Lucky_blockList[i].HasPilzInIt == true)
@@ -76,6 +75,7 @@ namespace Super_Marios_Bros.Screens
 						MarioInstance.Velocity.Y = 160;
 						CombinedShapeCollection.RemoveRectangle(A_BrickList[i].AxisAlignedRectangleInstance);
 						GumbaList[i].Deadgumba();
+						PassonClass.Score += 100;
 						hasDestroyedBlock = true;
 						break;
 					}
@@ -86,6 +86,7 @@ namespace Super_Marios_Bros.Screens
 					Console.WriteLine("The other way");
 					MarioInstance.Velocity.Y = 160;
 					second.Deadgumba();
+					PassonClass.Score += 100;
 				}
 			}
 			else if (MarioInstance.AxisAlignedRectangleInstance.CollideAgainst(second.RightMarioDead) || MarioInstance.AxisAlignedRectangleInstance.CollideAgainst(second.LeftMarioDead))
@@ -97,7 +98,7 @@ namespace Super_Marios_Bros.Screens
 				}
 				else if (PassonClass.mariobig == false)
 				{
-					RestartScreen(true, true);
+					HandleMarioDead();
 				}
 			}
 		}
@@ -161,8 +162,8 @@ namespace Super_Marios_Bros.Screens
 			}
 		}
 		void OnMarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstanceCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.Turtle second) 
-        {
-            Console.WriteLine("Collsion occured");
+		{
+			Console.WriteLine("Collsion occured");
 			bool wasPushedDown = first.AxisAlignedRectangleInstance.LastMoveCollisionReposition.Y > 0;
 			if (wasPushedDown)
 			{
@@ -194,7 +195,7 @@ namespace Super_Marios_Bros.Screens
 				}
 				else if (PassonClass.mariobig == false)
 				{
-					RestartScreen(true, true);
+					HandleMarioDead();
 				}
 			}
 		}

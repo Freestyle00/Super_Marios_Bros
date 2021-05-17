@@ -448,5 +448,557 @@
       <RelativeY>8</RelativeY>
     </Frame>
   </AnimationChain>
+  <AnimationChain>
+    <Name>MarioDeadStart</Name>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>MarioDeadUpDown</Name>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>1</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>2</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>3</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>4</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>5</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>6</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>7</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>8</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>9</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>10</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>11</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>12</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>13</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>14</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>15</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>16</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>17</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>18</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>19</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>20</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>21</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>22</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>23</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>24</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>25</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>26</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>27</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>28</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>29</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>30</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>29</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>28</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>27</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>26</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>25</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>24</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>23</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>22</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>21</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>20</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>19</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>18</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>17</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>16</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>15</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>14</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>13</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>11</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>10</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>9</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>8</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>7</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>6</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>5</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>4</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>3</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>2</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+      <RelativeY>1</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>nes - super mario bros - mario &amp; luigi.png</TextureName>
+      <FrameLength>0.0333333351</FrameLength>
+      <LeftCoordinate>22</LeftCoordinate>
+      <RightCoordinate>38</RightCoordinate>
+      <TopCoordinate>9</TopCoordinate>
+      <BottomCoordinate>25</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
   <ProjectFile>../../../super_marios_bros.glux</ProjectFile>
 </AnimationChainArraySave>

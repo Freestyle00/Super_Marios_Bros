@@ -17,7 +17,6 @@ namespace Super_Marios_Bros.Screens
         protected static FlatRedBall.TileGraphics.LayeredTileMap tiled;
         protected static Microsoft.Xna.Framework.Graphics.Texture2D tiles;
         
-        FlatRedBall.Gum.GumIdb gumIdb;
         public World1level1 () 
         	: base ()
         {
@@ -28,7 +27,6 @@ namespace Super_Marios_Bros.Screens
             Map = tiled;
             SolidCollision = new FlatRedBall.TileCollisions.TileShapeCollection();
             CloudCollision = new FlatRedBall.TileCollisions.TileShapeCollection();
-            gumIdb = new FlatRedBall.Gum.GumIdb();
             
             
             base.Initialize(addToManagers);
@@ -36,7 +34,6 @@ namespace Super_Marios_Bros.Screens
         public override void AddToManagers () 
         {
             tiled.AddToManagers(mLayer);
-            FlatRedBall.SpriteManager.AddDrawableBatch(gumIdb);
             base.AddToManagers();
             CustomInitialize();
         }
@@ -58,7 +55,6 @@ namespace Super_Marios_Bros.Screens
         }
         public override void Destroy () 
         {
-            FlatRedBall.SpriteManager.RemoveDrawableBatch(gumIdb);
             base.Destroy();
             tiled.Destroy();
             tiled = null;

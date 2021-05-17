@@ -203,6 +203,48 @@
         "ElementType": "Screens",
         "EventType": 5,
         "TimestampUtc": "2021-05-14T18:19:18.8284701Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T22:07:39.0728861Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.Score1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T22:08:53.0558797Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.TextInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T22:10:50.2528826Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.TextInstance3",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-14T22:11:31.0458782Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.TextInstance4",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-15T19:25:59.2930315Z"
+      },
+      {
+        "NewName": " Mario_Main_GUI.TextInstance5",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-15T19:26:36.2786984Z"
       }
     ]
   }

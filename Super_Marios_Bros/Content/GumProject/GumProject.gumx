@@ -9,6 +9,12 @@
   <RestrictToUnitValues>true</RestrictToUnitValues>
   <RestrictFileNamesForAndroid>false</RestrictFileNamesForAndroid>
   <Guides />
+  <ParentProjectRoot>../../</ParentProjectRoot>
+  <ScreenReference>
+    <Name>GameoverScreenGum</Name>
+    <ElementType>Screen</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ScreenReference>
   <ScreenReference>
     <Name>Mario_Main_GUI</Name>
     <ElementType>Screen</ElementType>

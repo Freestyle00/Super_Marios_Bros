@@ -60,6 +60,10 @@
     <Compile Include="Entities\A_Brick_being_destroyed.Generated.cs">
       <DependentUpon>A_Brick_being_destroyed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\DeadMario.cs" />
+    <Compile Include="Entities\DeadMario.Generated.cs">
+      <DependentUpon>DeadMario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Gumba.cs" />
     <Compile Include="Entities\Gumba.Generated.cs">
       <DependentUpon>Gumba.cs</DependentUpon>
@@ -82,12 +86,17 @@
     </Compile>
     <Compile Include="Factories\A_BrickFactory.Generated.cs" />
     <Compile Include="Factories\A_Brick_being_destroyedFactory.Generated.cs" />
+    <Compile Include="Factories\DeadMarioFactory.Generated.cs" />
     <Compile Include="Factories\GumbaFactory.Generated.cs" />
     <Compile Include="Factories\Lucky_blockFactory.Generated.cs" />
     <Compile Include="Factories\MarioFactory.Generated.cs" />
     <Compile Include="Factories\MushroomFactory.Generated.cs" />
     <Compile Include="Factories\TurtleFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
+    <Compile Include="Forms\Screens\GameoverScreenGumForms.cs" />
+    <Compile Include="Forms\Screens\GameoverScreenGumForms.Generated.cs">
+      <DependentUpon>GameoverScreenGumForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Screens\Mario_Main_GUIForms.cs" />
     <Compile Include="Forms\Screens\Mario_Main_GUIForms.Generated.cs">
       <DependentUpon>Mario_Main_GUIForms.cs</DependentUpon>
@@ -228,6 +237,10 @@
     <Compile Include="GumRuntimes\DefaultForms\UserControlRuntime.Generated.cs">
       <DependentUpon>UserControlRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\GameoverScreenGumRuntime.cs" />
+    <Compile Include="GumRuntimes\GameoverScreenGumRuntime.Generated.cs">
+      <DependentUpon>GameoverScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
     <Compile Include="GumRuntimes\Mario_Main_GUIRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
@@ -242,6 +255,10 @@
     <Compile Include="Platformer\Enums.Generated.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\GameoverScreen.cs" />
+    <Compile Include="Screens\GameoverScreen.Generated.cs">
+      <DependentUpon>GameoverScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\GameScreen.Event.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
@@ -349,6 +366,10 @@
     <None Include="content\entities\a_brick_being_destroyed\the_brick3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>the_brick3</Name>
+    </None>
+    <None Include="content\entities\deadmario\platformervaluesstatic.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PlatformerValuesStatic</Name>
     </None>
     <None Include="content\entities\gumba\gumba_walking.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -517,6 +538,10 @@
     <None Include="content\gumproject\gumproject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumProject</Name>
+    </None>
+    <None Include="content\gumproject\screens\gameoverscreengum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GameoverScreenGum</Name>
     </None>
     <None Include="content\gumproject\screens\mario_main_gui.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

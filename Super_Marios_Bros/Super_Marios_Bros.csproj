@@ -539,6 +539,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumProject</Name>
     </None>
+    <None Include="content\gumproject\mariostandalone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>mariostandalone</Name>
+    </None>
     <None Include="content\gumproject\screens\gameoverscreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GameoverScreenGum</Name>

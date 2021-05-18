@@ -105,10 +105,6 @@ namespace Super_Marios_Bros.Entities
 
 		void Debugthings()
 		{
-			if (JumpInput.WasJustPressed)
-			{
-				Console.WriteLine("JUMP SOUND");
-			}
 			if (InputManager.Keyboard.KeyPushed(Keys.G))
 			{
 				PassonClass.mariobig = true;
@@ -117,8 +113,6 @@ namespace Super_Marios_Bros.Entities
 			{
 				PassonClass.mariobig = false;
 			}
-			PassonClass.marioX = this.X;
-			PassonClass.marioY = this.Y;
 		}
 		void RUN() //den den den den den den den den den den den den den den
 		{

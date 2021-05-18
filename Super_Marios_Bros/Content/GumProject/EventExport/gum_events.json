@@ -245,6 +245,111 @@
         "ElementType": "Screens",
         "EventType": 5,
         "TimestampUtc": "2021-05-15T19:26:36.2786984Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:37:33.7175528Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.TextInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:37:33.7205516Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.TextInstance3",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:37:33.7245517Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.Score",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:37:33.7275523Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:37:33.7385511Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.Score1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:37:33.7435514Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:37:33.749554Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.TextInstance4",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:37:33.7555969Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.TextInstance5",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:37:33.7635546Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " GameoverScreenGum.Text TextInstance5 in  GameoverScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-18T13:37:39.5219863Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.TextInstance5",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:38:12.2251286Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.TextInstance6",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:38:55.4710983Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.SpriteInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:39:11.9223494Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.TextInstance7",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:42:28.7778051Z"
+      },
+      {
+        "NewName": " GameoverScreenGum.TextInstance8",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-18T13:42:30.5244872Z"
       }
     ]
   }

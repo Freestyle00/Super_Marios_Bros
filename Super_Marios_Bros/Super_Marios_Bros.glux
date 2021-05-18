@@ -1929,7 +1929,7 @@
           <CustomProperty>
             <Type>bool</Type>
             <Member>Animate</Member>
-            <ValueAsBool>false</ValueAsBool>
+            <ValueAsBool>true</ValueAsBool>
           </CustomProperty>
           <CustomProperty>
             <Type>Microsoft.Xna.Framework.Graphics.Texture2D</Type>

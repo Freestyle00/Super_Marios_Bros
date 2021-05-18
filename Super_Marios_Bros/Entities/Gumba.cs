@@ -34,7 +34,6 @@ namespace Super_Marios_Bros.Entities
 		private void CustomActivity()
 		{
 			animationController.Activity();
-			PassonClass.GUMBATEST = this.Velocity.X;
 			Walking();
 		}
 

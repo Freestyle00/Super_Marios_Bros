@@ -29,7 +29,8 @@ namespace Super_Marios_Bros.Entities
 		{
 			if(SpriteInstance.JustCycled)
 			{
-				Console.WriteLine("TEST");
+				PassonClass.TimeToGo = true;
+				PassonClass.Restart();
 			}
 		}
 
@@ -44,9 +45,9 @@ namespace Super_Marios_Bros.Entities
 
 
 		}
-		public void DEAD(){
+		public void DEAD()
+		{
 			this.SpriteInstance.CurrentChainName = "MarioDeadUpDown";
-			Console.WriteLine("kwpokweoktweoprkw");
 		}
 
 	}

@@ -123,6 +123,7 @@ namespace Super_Marios_Bros.Screens
 		void OnMarioInstanceAxisAlignedRectangleInstanceVsMushroomListAxisAlignedRectangleInstanceCollisionOccurred(Super_Marios_Bros.Entities.Mario first, Entities.Mushroom second)
 		{
 			second.Destroy();
+			PassonClass.Score += 100;
 			PassonClass.mariobig = true;
 		}
 		void OnMushroomListVsSolidCollisionCollisionOccurred(Entities.Mushroom first, FlatRedBall.TileCollisions.TileShapeCollection second)

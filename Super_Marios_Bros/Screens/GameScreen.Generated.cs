@@ -43,6 +43,8 @@ namespace Super_Marios_Bros.Screens
         private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Turtle> MarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstance;
         private FlatRedBall.Math.Collision.DelegateListVsSingleRelationship<Entities.Turtle, FlatRedBall.TileCollisions.TileShapeCollection> TurtleListAxisAlignedRectangleInstanceVsCombinedShapeCollection;
         private Super_Marios_Bros.Entities.DeadMario DeadMarioInstance;
+        private FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Coin> CoinList;
+        private FlatRedBall.Math.Collision.PositionedObjectVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.Coin> MarioInstanceVsCoinList;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Lucky_block> MarioInstanceVsLucky_blockListCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.A_Brick> MarioInstanceVsA_BrickListCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Gumba> MarioInstanceVsGumbaListAxisAlignedRectangleInstanceCollisionOccurred;
@@ -51,6 +53,7 @@ namespace Super_Marios_Bros.Screens
         public event System.Action<Entities.Mushroom, FlatRedBall.TileCollisions.TileShapeCollection> MushroomListVsSolidCollisionCollisionOccurred;
         public event System.Action<Entities.Turtle, FlatRedBall.TileCollisions.TileShapeCollection> TurtleListVsSolidCollisionCollisionOccurred;
         public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Turtle> MarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstanceCollisionOccurred;
+        public event System.Action<Super_Marios_Bros.Entities.Mario, Entities.Coin> MarioInstanceVsCoinListCollisionOccurred;
         Super_Marios_Bros.FormsControls.Screens.Mario_Main_GUIForms Forms;
         public GameScreen () 
         	: base ("GameScreen")
@@ -79,6 +82,8 @@ namespace Super_Marios_Bros.Screens
             TurtleList.Name = "TurtleList";
             DeadMarioInstance = new Super_Marios_Bros.Entities.DeadMario(ContentManagerName, false);
             DeadMarioInstance.Name = "DeadMarioInstance";
+            CoinList = new FlatRedBall.Math.PositionedObjectList<Super_Marios_Bros.Entities.Coin>();
+            CoinList.Name = "CoinList";
                 MarioInstanceVsGumbaListAxisAlignedRectangleInstance = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, GumbaList);
     MarioInstanceVsGumbaListAxisAlignedRectangleInstance.SetSecondSubCollision(item => item.AxisAlignedRectangleInstance);
     MarioInstanceVsGumbaListAxisAlignedRectangleInstance.Name = "MarioInstanceVsGumbaListAxisAlignedRectangleInstance";
@@ -113,7 +118,7 @@ namespace Super_Marios_Bros.Screens
                 GumbaListAxisAlignedRectangleInstanceVsSolidCollision = FlatRedBall.Math.Collision.CollisionManagerTileShapeCollectionExtensions.CreateTileRelationship(FlatRedBall.Math.Collision.CollisionManager.Self, GumbaList, SolidCollision);
     GumbaListAxisAlignedRectangleInstanceVsSolidCollision.SetFirstSubCollision(item => item.AxisAlignedRectangleInstance);
     GumbaListAxisAlignedRectangleInstanceVsSolidCollision.Name = "GumbaListAxisAlignedRectangleInstanceVsSolidCollision";
-    GumbaListAxisAlignedRectangleInstanceVsSolidCollision.SetBounceCollision(0f, 1f, 1f);
+    GumbaListAxisAlignedRectangleInstanceVsSolidCollision.SetMoveCollision(0f, 1f);
 
                 {
         var temp = new FlatRedBall.Math.Collision.DelegateSingleVsListRelationship<Super_Marios_Bros.Entities.Mario, Entities.A_Brick>(MarioInstance, A_BrickList);
@@ -231,6 +236,9 @@ namespace Super_Marios_Bros.Screens
     }
     TurtleListAxisAlignedRectangleInstanceVsCombinedShapeCollection.Name = "TurtleListAxisAlignedRectangleInstanceVsCombinedShapeCollection";
 
+                MarioInstanceVsCoinList = FlatRedBall.Math.Collision.CollisionManager.Self.CreateRelationship(MarioInstance, CoinList);
+    MarioInstanceVsCoinList.Name = "MarioInstanceVsCoinList";
+
             Forms = new Super_Marios_Bros.FormsControls.Screens.Mario_Main_GUIForms(Mario_Main_GUI);
             // normally we wait to set variables until after the object is created, but in this case if the
             // TileShapeCollection doesn't have its Visible set before creating the tiles, it can result in
@@ -273,12 +281,14 @@ namespace Super_Marios_Bros.Screens
             Factories.A_Brick_being_destroyedFactory.Initialize(ContentManagerName);
             Factories.MushroomFactory.Initialize(ContentManagerName);
             Factories.TurtleFactory.Initialize(ContentManagerName);
+            Factories.CoinFactory.Initialize(ContentManagerName);
             Factories.A_BrickFactory.AddList(A_BrickList);
             Factories.Lucky_blockFactory.AddList(Lucky_blockList);
             Factories.GumbaFactory.AddList(GumbaList);
             Factories.A_Brick_being_destroyedFactory.AddList(A_Brick_being_destroyedList);
             Factories.MushroomFactory.AddList(MushroomList);
             Factories.TurtleFactory.AddList(TurtleList);
+            Factories.CoinFactory.AddList(CoinList);
             MarioInstance.AddToManagers(mLayer);
             DeadMarioInstance.AddToManagers(mLayer);
             FlatRedBall.TileEntities.TileEntityInstantiator.CreateEntitiesFrom(Map);
@@ -341,6 +351,14 @@ namespace Super_Marios_Bros.Screens
                     }
                 }
                 DeadMarioInstance.Activity();
+                for (int i = CoinList.Count - 1; i > -1; i--)
+                {
+                    if (i < CoinList.Count)
+                    {
+                        // We do the extra if-check because activity could destroy any number of entities
+                        CoinList[i].Activity();
+                    }
+                }
             }
             else
             {
@@ -360,6 +378,7 @@ namespace Super_Marios_Bros.Screens
             Factories.A_Brick_being_destroyedFactory.Destroy();
             Factories.MushroomFactory.Destroy();
             Factories.TurtleFactory.Destroy();
+            Factories.CoinFactory.Destroy();
             Mario_Main_GUI.RemoveFromManagers();FlatRedBall.FlatRedBallServices.GraphicsOptions.SizeOrOrientationChanged -= RefreshLayoutInternal;
             Mario_Main_GUI = null;
             
@@ -369,6 +388,7 @@ namespace Super_Marios_Bros.Screens
             A_Brick_being_destroyedList.MakeOneWay();
             MushroomList.MakeOneWay();
             TurtleList.MakeOneWay();
+            CoinList.MakeOneWay();
             for (int i = A_BrickList.Count - 1; i > -1; i--)
             {
                 A_BrickList[i].Destroy();
@@ -407,12 +427,17 @@ namespace Super_Marios_Bros.Screens
                 DeadMarioInstance.Destroy();
                 DeadMarioInstance.Detach();
             }
+            for (int i = CoinList.Count - 1; i > -1; i--)
+            {
+                CoinList[i].Destroy();
+            }
             A_BrickList.MakeTwoWay();
             Lucky_blockList.MakeTwoWay();
             GumbaList.MakeTwoWay();
             A_Brick_being_destroyedList.MakeTwoWay();
             MushroomList.MakeTwoWay();
             TurtleList.MakeTwoWay();
+            CoinList.MakeTwoWay();
             FlatRedBall.Math.Collision.CollisionManager.Self.Relationships.Clear();
             CustomDestroy();
         }
@@ -436,6 +461,8 @@ namespace Super_Marios_Bros.Screens
             TurtleListAxisAlignedRectangleInstanceVsSolidCollision.CollisionOccurred += OnTurtleListVsSolidCollisionCollisionOccurredTunnel;
             MarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstance.CollisionOccurred += OnMarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstanceCollisionOccurred;
             MarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstance.CollisionOccurred += OnMarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstanceCollisionOccurredTunnel;
+            MarioInstanceVsCoinList.CollisionOccurred += OnMarioInstanceVsCoinListCollisionOccurred;
+            MarioInstanceVsCoinList.CollisionOccurred += OnMarioInstanceVsCoinListCollisionOccurredTunnel;
             if (Map!= null)
             {
             }
@@ -525,6 +552,10 @@ namespace Super_Marios_Bros.Screens
                 TurtleList[i].Destroy();
             }
             DeadMarioInstance.RemoveFromManagers();
+            for (int i = CoinList.Count - 1; i > -1; i--)
+            {
+                CoinList[i].Destroy();
+            }
         }
         public virtual void AssignCustomVariables (bool callOnContainedElements) 
         {
@@ -620,6 +651,10 @@ namespace Super_Marios_Bros.Screens
                 TurtleList[i].ConvertToManuallyUpdated();
             }
             DeadMarioInstance.ConvertToManuallyUpdated();
+            for (int i = 0; i < CoinList.Count; i++)
+            {
+                CoinList[i].ConvertToManuallyUpdated();
+            }
         }
         public static void LoadStaticContent (string contentManagerName) 
         {

@@ -23,6 +23,10 @@ namespace Super_Marios_Bros.Screens
 		}
 		void CustomActivity(bool firstTimeCalled)
 		{
+			if (PassonClass.Score > PassonClass.HiScore)
+			{
+				PassonClass.HiScore = PassonClass.Score;
+			}
 			TimeToShow -= TimeManager.LastSecondDifference;
 			GameoverScreenGum.NoOfLifes = PassonClass.lifes.ToString("");
 			if (PassonClass.lifes < 0)
@@ -31,12 +35,26 @@ namespace Super_Marios_Bros.Screens
 				GameoverScreenGum.SpriteInstance1.Visible = false;
 				GameoverScreenGum.TextInstance7.Visible = false;
 				GameoverScreenGum.TextInstance8.Visible = false;
-				GameoverScreenGum.TextInstance5.Text = "GAME OVER";
-				PassonClass.FullRestart();
+				if (PassonClass.win)
+				{
+					GameoverScreenGum.TextInstance5.Text = "Im Sorry Mario Your Princess is in another Castle";
+				}
+				else
+				{
+					GameoverScreenGum.TextInstance5.Text = "GAME OVER";
+				}		
 			}
 			if (TimeToShow <= 0)
 			{
-				MoveToScreen("World1level1");
+				if (PassonClass.lifes < 0)
+				{
+					PassonClass.FullRestart();
+					MoveToScreen("StartScreen");
+				}
+				else
+				{
+					MoveToScreen("World1level1");
+				}
 			}
 		}
 		void CustomDestroy()

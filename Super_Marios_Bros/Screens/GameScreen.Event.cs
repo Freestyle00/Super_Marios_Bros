@@ -17,11 +17,15 @@ namespace Super_Marios_Bros.Screens
 						
 						Console.WriteLine("Collided");
 						Lucky_blockList[i].HandleHit();
-						if (Lucky_blockList[i].HasPilzInIt == true)
+						if (Lucky_blockList[i].HasPilzInIt)
 						{
 							var mushroom = Factories.MushroomFactory.CreateNew();
 							mushroom.X = Lucky_blockList[i].X;
 							mushroom.Y = Lucky_blockList[i].Y + 17;
+						}
+						if (Lucky_blockList[i].HasPilzInIt == false)
+						{
+							PassonClass.Coins += 1;
 						}
 						break;
 					}
@@ -199,6 +203,11 @@ namespace Super_Marios_Bros.Screens
 					HandleMarioDead();
 				}
 			}
-		}
+		}        
+		void OnMarioInstanceVsCoinListCollisionOccurred (Super_Marios_Bros.Entities.Mario first, Entities.Coin second) 
+        {
+			second.Destroy();
+			PassonClass.Coins += 1;
+        }
 	}
 }

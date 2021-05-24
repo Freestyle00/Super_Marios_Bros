@@ -68,5 +68,12 @@ namespace Super_Marios_Bros.Screens
                 MarioInstanceAxisAlignedRectangleInstanceVsTurtleListAxisAlignedRectangleInstanceCollisionOccurred(first, second);
             }
         }
+        void OnMarioInstanceVsCoinListCollisionOccurredTunnel (Super_Marios_Bros.Entities.Mario first, Entities.Coin second) 
+        {
+            if (this.MarioInstanceVsCoinListCollisionOccurred != null)
+            {
+                MarioInstanceVsCoinListCollisionOccurred(first, second);
+            }
+        }
     }
 }

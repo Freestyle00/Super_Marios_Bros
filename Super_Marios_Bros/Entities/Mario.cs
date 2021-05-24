@@ -99,7 +99,7 @@ namespace Super_Marios_Bros.Entities
 			//Xbox360GamePad gamePad = InputManager.Xbox360GamePads[0];
 			if (this.IsOnGround == true && JumpInput.WasJustPressed)
 			{
-				Mariojumpsound.Play(0.5f, 0, 0); //that gets annyoing after some time so i should not forget to decomment it
+				Mariojumpsound.Play(0.2f, 0, 0); //that gets annyoing after some time so i should not forget to decomment it
 			}
 		}
 

@@ -350,6 +350,62 @@
         "ElementType": "Screens",
         "EventType": 5,
         "TimestampUtc": "2021-05-18T13:42:30.5244872Z"
+      },
+      {
+        "NewName": " StartScreenGum.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-19T16:40:06.6155289Z"
+      },
+      {
+        "NewName": " StartScreenGum.SpriteInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-19T16:55:56.4791677Z"
+      },
+      {
+        "NewName": " StartScreenGum.Score1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-19T16:55:56.4961702Z"
+      },
+      {
+        "NewName": " StartScreenGum.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-19T16:55:56.4991708Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " StartScreenGum.Text Score1 in  StartScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-19T16:56:02.8630344Z"
+      },
+      {
+        "NewName": null,
+        "OldName": " StartScreenGum.Text TextInstance1 in  StartScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2021-05-19T16:56:02.8680358Z"
+      },
+      {
+        "NewName": " StartScreenGum.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-19T16:56:40.9035351Z"
+      },
+      {
+        "NewName": " StartScreenGum.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2021-05-19T18:41:47.87567Z"
       }
     ]
   }

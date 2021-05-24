@@ -15,7 +15,6 @@ namespace Super_Marios_Bros.Screens
 		}
 		void CustomActivity(bool firstTimeCalled)
 		{
-			GuiActivity(); //AT THE END OR ELSE IT WILL GET BUGGY
 			Mario_Main_GUI.AnimateSelf();
 			if (MarioInstance.X > 140 && MarioInstance.X < 3232)
 			{
@@ -29,8 +28,19 @@ namespace Super_Marios_Bros.Screens
 			{
 				Deadactivity();
 			}
+			if (MarioInstance.Y <= -300)
+			{
+				HandleMarioDead();
+			}
+			if (MarioInstance.X >= 3232)
+			{
+				PassonClass.win = true;
+				PassonClass.lifes = -1;
+				MoveToScreen("GameoverScreen");
+			}
 			CheatCodes();
 			TimeActivity();
+			GuiActivity(); //AT THE END OR ELSE IT WILL GET BUGGY
 		}
 		void CustomDestroy()
 		{

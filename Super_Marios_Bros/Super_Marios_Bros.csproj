@@ -60,6 +60,10 @@
     <Compile Include="Entities\A_Brick_being_destroyed.Generated.cs">
       <DependentUpon>A_Brick_being_destroyed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Coin.cs" />
+    <Compile Include="Entities\Coin.Generated.cs">
+      <DependentUpon>Coin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\DeadMario.cs" />
     <Compile Include="Entities\DeadMario.Generated.cs">
       <DependentUpon>DeadMario.cs</DependentUpon>
@@ -86,6 +90,7 @@
     </Compile>
     <Compile Include="Factories\A_BrickFactory.Generated.cs" />
     <Compile Include="Factories\A_Brick_being_destroyedFactory.Generated.cs" />
+    <Compile Include="Factories\CoinFactory.Generated.cs" />
     <Compile Include="Factories\DeadMarioFactory.Generated.cs" />
     <Compile Include="Factories\GumbaFactory.Generated.cs" />
     <Compile Include="Factories\Lucky_blockFactory.Generated.cs" />
@@ -100,6 +105,10 @@
     <Compile Include="Forms\Screens\Mario_Main_GUIForms.cs" />
     <Compile Include="Forms\Screens\Mario_Main_GUIForms.Generated.cs">
       <DependentUpon>Mario_Main_GUIForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Screens\StartScreenGumForms.cs" />
+    <Compile Include="Forms\Screens\StartScreenGumForms.Generated.cs">
+      <DependentUpon>StartScreenGumForms.cs</DependentUpon>
     </Compile>
     <Compile Include="Game1.cs" />
     <Compile Include="Game1.Generated.cs">
@@ -247,6 +256,10 @@
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\StartScreenGumRuntime.cs" />
+    <Compile Include="GumRuntimes\StartScreenGumRuntime.Generated.cs">
+      <DependentUpon>StartScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="KeyboordInput.cs" />
     <Compile Include="PassonClass.cs" />
@@ -268,6 +281,10 @@
     </Compile>
     <Compile Include="Screens\GameScreen.Generated.Event.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\StartScreen.cs" />
+    <Compile Include="Screens\StartScreen.Generated.cs">
+      <DependentUpon>StartScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\World1level1.cs" />
     <Compile Include="Screens\World1level1.Generated.cs">
@@ -366,6 +383,10 @@
     <None Include="content\entities\a_brick_being_destroyed\the_brick3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>the_brick3</Name>
+    </None>
+    <None Include="content\entities\coin\münze.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>münze</Name>
     </None>
     <None Include="content\entities\deadmario\platformervaluesstatic.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -523,6 +544,22 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>usercontrol</Name>
     </None>
+    <None Include="content\gumproject\fontcache\font12verdana_nosmooth.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font12verdana_nosmooth</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font12verdana_nosmooth_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font12verdana_nosmooth_0</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font13verdana_nosmooth.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font13verdana_nosmooth</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font13verdana_nosmooth_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font13verdana_nosmooth_0</Name>
+    </None>
     <None Include="content\gumproject\fontcache\font18verdana_nosmooth.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>font18verdana_nosmooth</Name>
@@ -539,6 +576,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumProject</Name>
     </None>
+    <None Include="content\gumproject\imtoolazytomakeitgum.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>imtoolazytomakeitgum</Name>
+    </None>
     <None Include="content\gumproject\mariostandalone.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>mariostandalone</Name>
@@ -550,6 +591,10 @@
     <None Include="content\gumproject\screens\mario_main_gui.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>mario_main_gui</Name>
+    </None>
+    <None Include="content\gumproject\screens\startscreengum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>StartScreenGum</Name>
     </None>
     <None Include="content\gumproject\sprite-0003.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -626,6 +671,10 @@
     <None Include="content\gumproject\standards\text.gutx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>text</Name>
+    </None>
+    <None Include="content\gumproject\themushroom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>themushroom</Name>
     </None>
     <None Include="content\gumproject\uispritesheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

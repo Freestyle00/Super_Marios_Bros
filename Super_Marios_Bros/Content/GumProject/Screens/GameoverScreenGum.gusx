@@ -366,7 +366,7 @@
     <Variable>
       <Type>int?</Type>
       <Name>TextInstance5.MaxLettersToShow</Name>
-      <Value xsi:type="xsd:int">15</Value>
+      <Value xsi:type="xsd:int">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

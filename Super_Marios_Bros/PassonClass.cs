@@ -15,6 +15,8 @@ namespace Super_Marios_Bros
 		public static float TimeTillTheEnd = 400;
 		public static bool TimeToGo = false;
 		public static int lifes = 3;
+		public static int HiScore = 0;
+		public static bool win = false;
 		public static void Restart()
 		{
 			mariobig = false; 
@@ -22,10 +24,12 @@ namespace Super_Marios_Bros
 			Coins = 0;
 			TimeTillTheEnd = 400;
 			lifes -= 1;
+			win = false;
 		}
 		public static void FullRestart()
 		{
 			Score = 0;
+			win = false;
 			mariobig = false;
 			Wrong();
 			Coins = 0;

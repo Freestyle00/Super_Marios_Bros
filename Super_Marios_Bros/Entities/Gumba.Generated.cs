@@ -525,7 +525,7 @@ namespace Super_Marios_Bros.Entities
             }
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
-            AxisAlignedRectangleInstance.Visible = true;
+            AxisAlignedRectangleInstance.Visible = false;
             AxisAlignedRectangleInstance.Color = Microsoft.Xna.Framework.Color.White;
             if (mLeftMarioDead.Parent == null)
             {
@@ -540,8 +540,9 @@ namespace Super_Marios_Bros.Entities
             {
                 LeftMarioDead.RelativeX = -8.5f;
             }
-            LeftMarioDead.Width = 5f;
+            LeftMarioDead.Width = 3f;
             LeftMarioDead.Height = 2f;
+            LeftMarioDead.Visible = false;
             LeftMarioDead.Color = Microsoft.Xna.Framework.Color.Violet;
             if (mRightMarioDead.Parent == null)
             {
@@ -556,8 +557,9 @@ namespace Super_Marios_Bros.Entities
             {
                 RightMarioDead.RelativeX = 8.5f;
             }
-            RightMarioDead.Width = 5f;
+            RightMarioDead.Width = 3f;
             RightMarioDead.Height = 2f;
+            RightMarioDead.Visible = false;
             RightMarioDead.Color = Microsoft.Xna.Framework.Color.Violet;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
@@ -600,7 +602,7 @@ namespace Super_Marios_Bros.Entities
             SpriteInstance.CurrentChainName = "";
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
-            AxisAlignedRectangleInstance.Visible = true;
+            AxisAlignedRectangleInstance.Visible = false;
             AxisAlignedRectangleInstance.Color = Microsoft.Xna.Framework.Color.White;
             if (LeftMarioDead.Parent == null)
             {
@@ -610,8 +612,9 @@ namespace Super_Marios_Bros.Entities
             {
                 LeftMarioDead.RelativeX = -8.5f;
             }
-            LeftMarioDead.Width = 5f;
+            LeftMarioDead.Width = 3f;
             LeftMarioDead.Height = 2f;
+            LeftMarioDead.Visible = false;
             LeftMarioDead.Color = Microsoft.Xna.Framework.Color.Violet;
             if (RightMarioDead.Parent == null)
             {
@@ -621,8 +624,9 @@ namespace Super_Marios_Bros.Entities
             {
                 RightMarioDead.RelativeX = 8.5f;
             }
-            RightMarioDead.Width = 5f;
+            RightMarioDead.Width = 3f;
             RightMarioDead.Height = 2f;
+            RightMarioDead.Visible = false;
             RightMarioDead.Color = Microsoft.Xna.Framework.Color.Violet;
             AxisAlignedRectangleInstanceHeight = 16f;
             HeightOftheRectangle = 0f;

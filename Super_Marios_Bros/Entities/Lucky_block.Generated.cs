@@ -147,6 +147,7 @@ namespace Super_Marios_Bros.Entities
             }
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 15.9f;
+            AxisAlignedRectangleInstance.Visible = false;
             AxisAlignedRectangleInstance.RepositionDirections = FlatRedBall.Math.Geometry.RepositionDirections.All;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
@@ -179,6 +180,7 @@ namespace Super_Marios_Bros.Entities
             SpriteInstance.TextureScale = 1f;
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 15.9f;
+            AxisAlignedRectangleInstance.Visible = false;
             AxisAlignedRectangleInstance.RepositionDirections = FlatRedBall.Math.Geometry.RepositionDirections.All;
         }
         public virtual void ConvertToManuallyUpdated () 

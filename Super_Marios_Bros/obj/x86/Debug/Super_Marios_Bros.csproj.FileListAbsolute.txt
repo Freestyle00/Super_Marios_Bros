@@ -319,3 +319,10 @@ C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\screens\startscreengum.gusx
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\gumproject\themushroom.png
 C:\Users\Nick\Documents\FlatRedBallProjects\Super_Marios_Bros\Super_Marios_Bros\bin\DesktopGL\x86\Debug\content\entities\coin\münze.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\entities\coin\münze.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\fontcache\font12verdana_nosmooth.fnt
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\fontcache\font12verdana_nosmooth_0.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\fontcache\font13verdana_nosmooth.fnt
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\fontcache\font13verdana_nosmooth_0.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\imtoolazytomakeitgum.png
+c:\users\nick\documents\flatredballprojects\super_marios_bros\Super_Marios_Bros\bin\x86\Debug\content\gumproject\themushroom.png

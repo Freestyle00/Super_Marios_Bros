@@ -134,6 +134,7 @@ namespace Super_Marios_Bros.Entities
             }
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
+            AxisAlignedRectangleInstance.Visible = false;
             AxisAlignedRectangleInstance.Color = Microsoft.Xna.Framework.Color.White;
             AxisAlignedRectangleInstance.RepositionDirections = FlatRedBall.Math.Geometry.RepositionDirections.All;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
@@ -167,6 +168,7 @@ namespace Super_Marios_Bros.Entities
             SpriteInstance.BlendOperation = FlatRedBall.Graphics.BlendOperation.Regular;
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
+            AxisAlignedRectangleInstance.Visible = false;
             AxisAlignedRectangleInstance.Color = Microsoft.Xna.Framework.Color.White;
             AxisAlignedRectangleInstance.RepositionDirections = FlatRedBall.Math.Geometry.RepositionDirections.All;
             if (Parent == null)

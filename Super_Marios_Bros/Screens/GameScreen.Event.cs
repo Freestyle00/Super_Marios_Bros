@@ -9,6 +9,7 @@ namespace Super_Marios_Bros.Screens
 			bool wasPushedDown = first.AxisAlignedRectangleInstance.LastMoveCollisionReposition.Y < 0;
 			if (wasPushedDown)
 			{
+				bool hasDestroyedBlock = false;
 				Console.WriteLine("was pushed down true");
 				for (int i = 0; i < Lucky_blockList.Count; i++)
 				{	
@@ -16,19 +17,36 @@ namespace Super_Marios_Bros.Screens
 					{
 						
 						Console.WriteLine("Collided");
-						Lucky_blockList[i].HandleHit();
-						if (Lucky_blockList[i].HasPilzInIt)
+						if (Lucky_blockList[i].HasPilzInIt && Lucky_blockList[i].Used3 == false)
 						{
 							var mushroom = Factories.MushroomFactory.CreateNew();
 							mushroom.X = Lucky_blockList[i].X;
 							mushroom.Y = Lucky_blockList[i].Y + 17;
+							hasDestroyedBlock = true;
 						}
-						if (Lucky_blockList[i].HasPilzInIt == false)
+						if (Lucky_blockList[i].HasPilzInIt == false && !Lucky_blockList[i].Used3)
 						{
 							PassonClass.Coins += 1;
 						}
+						Lucky_blockList[i].HandleHit();
 						break;
 					}
+				}
+				if (!hasDestroyedBlock)
+				{
+					// New code:
+					Console.WriteLine("The other way");
+					if (second.HasPilzInIt == true && second.Used3 == false)
+					{
+						var mushroom = Factories.MushroomFactory.CreateNew();
+						mushroom.X = second.X;
+						mushroom.Y = second.Y + 17;
+					}
+					if (!second.HasPilzInIt && !second.Used3)
+					{
+						PassonClass.Coins += 1;
+					}
+					second.HandleHit();
 				}
 			}
 		}

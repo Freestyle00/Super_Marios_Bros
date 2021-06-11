@@ -572,6 +572,7 @@ namespace Super_Marios_Bros.Entities
             }
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
+            AxisAlignedRectangleInstance.Visible = false;
             if (mCollisionThing.Parent == null)
             {
                 mCollisionThing.CopyAbsoluteToRelative();
@@ -579,6 +580,7 @@ namespace Super_Marios_Bros.Entities
             }
             CollisionThing.Width = 1f;
             CollisionThing.Height = 5f;
+            CollisionThing.Visible = false;
             if (mDieThing.Parent == null)
             {
                 mDieThing.CopyAbsoluteToRelative();
@@ -594,6 +596,7 @@ namespace Super_Marios_Bros.Entities
             }
             DieThing.Width = 1f;
             DieThing.Height = 5f;
+            DieThing.Visible = false;
             mGeneratedCollision = new FlatRedBall.Math.Geometry.ShapeCollection();
             Collision.AxisAlignedRectangles.AddOneWay(mAxisAlignedRectangleInstance);
             FlatRedBall.Math.Geometry.ShapeManager.SuppressAddingOnVisibilityTrue = oldShapeManagerSuppressAdd;
@@ -632,8 +635,10 @@ namespace Super_Marios_Bros.Entities
             SpriteInstance.AnimationChains = Mario_walking;
             AxisAlignedRectangleInstance.Width = 16f;
             AxisAlignedRectangleInstance.Height = 16f;
+            AxisAlignedRectangleInstance.Visible = false;
             CollisionThing.Width = 1f;
             CollisionThing.Height = 5f;
+            CollisionThing.Visible = false;
             if (DieThing.Parent == null)
             {
                 DieThing.Y = -8f;
@@ -644,6 +649,7 @@ namespace Super_Marios_Bros.Entities
             }
             DieThing.Width = 1f;
             DieThing.Height = 5f;
+            DieThing.Visible = false;
             GroundMovement = Entities.Mario.PlatformerValuesStatic["Ground"];
             AirMovement = Entities.Mario.PlatformerValuesStatic["Air"];
             AfterDoubleJump = Entities.Mario.PlatformerValuesStatic["Air"];

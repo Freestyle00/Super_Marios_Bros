@@ -40,6 +40,7 @@ namespace Super_Marios_Bros.Screens
 			}
 			CheatCodes();
 			TimeActivity();
+			SlowMotionTestsForTheNewGame();
 			GuiActivity(); //AT THE END OR ELSE IT WILL GET BUGGY
 		}
 		void CustomDestroy()
@@ -56,6 +57,7 @@ namespace Super_Marios_Bros.Screens
 		{
 
 		}
+		void SlowMotionTestsForTheNewGame() { if (InputManager.Keyboard.KeyDown(Microsoft.Xna.Framework.Input.Keys.E)) { TimeManager.TimeFactor = 0.5f; } else { TimeManager.TimeFactor = 1; } } //A one liner
 		void TimeActivity()
 		{
 			if (checkforit == false)
